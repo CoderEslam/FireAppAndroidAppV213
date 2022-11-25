@@ -1,0 +1,30 @@
+<component name="libraryTable">
+  <library name="Gradle: com.devlomi:circularstatusview:1.0.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d7b2a36a4a66d58fba91186980f7ed19/jetified-circularstatusview-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d7b2a36a4a66d58fba91186980f7ed19/jetified-circularstatusview-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/d7b2a36a4a66d58fba91186980f7ed19/jetified-circularstatusview-1.0.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/66320a0c50250aa8d18003b06d09cb31/jetified-circularstatusview-1.0.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/66320a0c50250aa8d18003b06d09cb31/jetified-circularstatusview-1.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/66320a0c50250aa8d18003b06d09cb31/jetified-circularstatusview-1.0.1/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/186000af9ae6617206fe348977c97e0a/transformed/jetified-circularstatusview-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/186000af9ae6617206fe348977c97e0a/transformed/jetified-circularstatusview-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/186000af9ae6617206fe348977c97e0a/transformed/jetified-circularstatusview-1.0.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/09949477a5be6a15499e86fcf6e7e604/transformed/jetified-circularstatusview-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/09949477a5be6a15499e86fcf6e7e604/transformed/jetified-circularstatusview-1.0.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/09949477a5be6a15499e86fcf6e7e604/transformed/jetified-circularstatusview-1.0.1/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2b76f70bbdba1bd5226e07f1b7e4092d/transformed/jetified-circularstatusview-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2b76f70bbdba1bd5226e07f1b7e4092d/transformed/jetified-circularstatusview-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2b76f70bbdba1bd5226e07f1b7e4092d/transformed/jetified-circularstatusview-1.0.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e74c60f036ca3fc2ddb459f97e1790db/transformed/jetified-circularstatusview-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e74c60f036ca3fc2ddb459f97e1790db/transformed/jetified-circularstatusview-1.0.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/e74c60f036ca3fc2ddb459f97e1790db/transformed/jetified-circularstatusview-1.0.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.devlomi/circularstatusview/1.0.1/ce9dede5c65f43a76dd67b4f6c6da705e678f256/circularstatusview-1.0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.devlomi/circularstatusview/1.0.1/5cc217467c0fe441c01c66280caefda84a54003f/circularstatusview-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

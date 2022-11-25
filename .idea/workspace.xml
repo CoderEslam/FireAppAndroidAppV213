@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="3llomi" />
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="583057fa-3e82-494a-8561-5f2f1c716ec7" name="Default Changelist" comment="V2.1.3" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[9ec70f68]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Object" />
+        <option value="Kotlin Data Class" />
+        <option value="Kotlin File" />
+        <option value="Kotlin Class" />
+        <option value="resourceFile" />
+      </list>
+    </option>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/../../../../myKeyDevlomi Google Play Signing.jks" />
+    <option name="KEY_ALIAS" value="devlomi" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="scoped-storage" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="KotlinMultiplatform">
+    <allAvailableExecutables />
+  </component>
+  <component name="ProjectId" id="1aPaPulAA11KPVK2nIY6dsSpFsa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="FireApp_Android_App__-_Dev_Version_-_V2.1.3_-_FireApp_Linked.app" />
+    <property name="BundleExportedModule" value="FireApp_Android_App__-_Dev_Version_-_V2.1.app" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="VirtualDevicePath@/Users/devlomi/.android/avd/Pixel_3a_API_30.avd" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-07-18T13:01:53.829414Z" />
+    <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="ExportApk.SignV1" value="true" />
+    <property name="ExportApk.SignV2" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SelectDeploymentTargetsDialog.selectedDevices" value="VirtualDevicePath@/Users/devlomi/.android/avd/Pixel_3a_API_30.avd&#10;VirtualDevicePath@/Users/devlomi/.android/avd/Pixel_3_XL_API_29_2.avd" />
+    <property name="android-custom-view/Users/devlomi/.gradle/caches/modules-2/files-2.1/com.aghajari.emojiview/AXEmojiView/1.3.0/1556815146a34c9468b8605f4dc954560f105ed5/AXEmojiView-1.3.0-sources.jar!/com/aghajari/emojiview/view/AXEmojiPager.java_AXEmojiPager_DIMENSIONS" value="1080&#10;1920" />
+    <property name="android-custom-view/Users/devlomi/.gradle/caches/modules-2/files-2.1/com.aghajari.emojiview/AXEmojiView/1.3.0/1556815146a34c9468b8605f4dc954560f105ed5/AXEmojiView-1.3.0-sources.jar!/com/aghajari/emojiview/view/AXEmojiPager.java_SELECTED" value="AXEmojiPager" />
+    <property name="android-custom-view/Users/devlomi/.gradle/caches/modules-2/files-2.1/com.aghajari.emojiview/AXEmojiView/1.3.0/1556815146a34c9468b8605f4dc954560f105ed5/AXEmojiView-1.3.0-sources.jar!/com/aghajari/emojiview/view/AXEmojiPopupLayout.java_SELECTED" value="AXEmojiPopupLayout" />
+    <property name="android-custom-view/Users/devlomi/.gradle/caches/modules-2/files-2.1/com.github.CanHub/Android-Image-Cropper/2.1.1/85a1d98099238667dc0dc8b045e763c133911c54/Android-Image-Cropper-2.1.1-sources.jar!/com/canhub/cropper/CropImageView.java_SELECTED" value="CropImageView" />
+    <property name="android-custom-view/Volumes/Data/FireApp Project/FireApp Files/V1.4/FireApp Android App  - Dev Version - V1.4/app/src/main/java/com/devlomi/fireapp/views/AutoResizeEditText.java_SELECTED" value="AutoResizeEditText" />
+    <property name="android-custom-view/Volumes/Data/FireApp Project/FireApp Files/V1.4/FireApp Android App  - Dev Version - V1.4/app/src/main/java/com/devlomi/fireapp/views/ChatEditText.java_SELECTED" value="ChatEditText" />
+    <property name="android-custom-view/Volumes/Data/FireApp Project/FireApp Files/V1.4/FireApp Android App  - Dev Version - V1.4/app/src/main/java/com/devlomi/fireapp/views/backgroundtintlayouts/LinearLayoutWithBackgroundTint.java_SELECTED" value="LinearLayoutWithBackgroundTint" />
+    <property name="android-custom-view/Volumes/Data/FireApp Project/FireApp Files/V1.4/FireApp Android App  - Dev Version - V1.4/cameraView/src/main/java/com/cjt2325/cameralibrary/JCameraView.java_SELECTED" value="JCameraView" />
+    <property name="android-custom-view/Volumes/Data/FireApp Project/FireApp Files/V2.0/FireApp Android App  - Dev Version - V1.4.2/app/src/main/java/com/devlomi/fireapp/views/GroupVideoGridLayout.kt_SELECTED" value="" />
+    <property name="android-custom-view/Volumes/Data/FireApp Project/FireApp Files/V2.1/FireApp Android App  - Dev Version - V2.1/app/src/main/java/com/devlomi/fireapp/views/GroupVideoGridLayout.kt_SELECTED" value="CallingGridLayout" />
+    <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="com.developerphil.adbidea.selecteddevices" value="emulator-5556" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="memory.settings.postsync.last.time.stamp" value="1622206353478" />
+    <property name="multi-representation-preview/Users/devlomi/.gradle/caches/modules-2/files-2.1/com.aghajari.emojiview/AXEmojiView/1.3.0/1556815146a34c9468b8605f4dc954560f105ed5/AXEmojiView-1.3.0-sources.jar!/com/aghajari/emojiview/view/AXEmojiPopupLayout.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/Users/devlomi/.gradle/caches/modules-2/files-2.1/com.github.CanHub/Android-Image-Cropper/2.1.1/85a1d98099238667dc0dc8b045e763c133911c54/Android-Image-Cropper-2.1.1-sources.jar!/com/canhub/cropper/CropImageView.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/Volumes/Data/FireApp Project/FireApp Files/V1.4/FireApp Android App  - Dev Version - V1.4/app/src/main/java/com/devlomi/fireapp/views/AutoResizeEditText.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/Volumes/Data/FireApp Project/FireApp Files/V1.4/FireApp Android App  - Dev Version - V1.4/app/src/main/java/com/devlomi/fireapp/views/ChatEditText.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/Volumes/Data/FireApp Project/FireApp Files/V1.4/FireApp Android App  - Dev Version - V1.4/app/src/main/java/com/devlomi/fireapp/views/backgroundtintlayouts/LinearLayoutWithBackgroundTint.java_selected" value="Custom views" />
+    <property name="multi-representation-preview/Volumes/Data/FireApp Project/FireApp Files/V1.4/FireApp Android App  - Dev Version - V1.4/cameraView/src/main/java/com/cjt2325/cameralibrary/JCameraView.java_selected" value="Custom views" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="PsdUISettings">
+    <option name="MODULE_TAB" value="Properties" />
+    <option name="LAST_EDITED_BUILD_TYPE" value="release" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.336355033">
+      <recent name="com.devlomi.fireapp.activities" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable/" />
+      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
+    </key>
+    <key name="android.template.-59966983">
+      <recent name="com.devlomi.fireapp.activities" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/calling/model" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/messaging/holders" />
+    </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="com.devlomi.fireapp.events" />
+      <recent name="com.devlomi.fireapp.utils.biometricks" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.devlomi.fireapp.utils.mediastore" />
+      <recent name="com.devlomi.fireapp.utils.ethree" />
+      <recent name="com.devlomi.fireapp.activities.calling.model" />
+      <recent name="com.devlomi.fireapp.activities.calling.event" />
+      <recent name="com.devlomi.fireapp.activities.calling" />
+    </key>
+    <key name="android.template.-1850509451">
+      <recent name="com.devlomi.fireapp.activities.setup" />
+    </key>
+    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
+      <recent name="com.devlomi.fireapp.utils" />
+      <recent name="com.devlomi.fireapp.utils.enc" />
+      <recent name="com.devlomi.fireapp" />
+      <recent name="com.devlomi.fireapp.adapters.messaging.holders" />
+      <recent name="com.devlomi.fireapp.activities.calling.model" />
+    </key>
+    <key name="android.template.1113037942">
+      <recent name="com.devlomi.fireapp.activities.settings" />
+      <recent name="com.devlomi.fireapp.activities" />
+    </key>
+    <key name="android.template.-1789328833">
+      <recent name="com.devlomi.fireapp.activities.authentication" />
+      <recent name="com.devlomi.fireapp.activities" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.devlomi.fireapp.activities" />
+      <recent name="com.devlomi.fireapp.services" />
+      <recent name="com.devlomi.fireapp" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Applet">
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
+    <configuration name="FireApp Android App  - Dev Version - V1.3.2-app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="FireApp Android App  - Dev Version - V1.3.2-app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FireApp Android App  - Dev Version - V1.4.2.FireApp_Android_App__-_Dev_Version_-_V1.4.2.app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="FireApp Android App  - Dev Version - V1.4.2.FireApp_Android_App__-_Dev_Version_-_V1.4.2.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
+      <module name="FireApp_Android_App_-_V2.1.3.app.main" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="INSPECTION_WITHOUT_ACTIVITY_RESTART" value="false" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FireApp Android App  - Dev Version - V1.4.2 [assembleDebug]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assembleDebug" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="FireApp Android App  - Developer Version - V1.3.1 [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonUtilKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.devlomi.fireapp.utils.JsonUtilKt" />
+      <module name="FireApp_Android_App__-_Dev_Version_-_V1.4.2.app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MyFCMServiceKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.devlomi.fireapp.services.MyFCMServiceKt" />
+      <module name="FireApp_Android_App__-_Dev_Version_-_V1.4.app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RealmBackupRestoreKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.devlomi.fireapp.utils.RealmBackupRestoreKt" />
+      <module name="FireApp_Android_App__-_Dev_Version_-_V2.1.app" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="FireApp_Android_App__-_Dev_Version_-_V2.1.2.stories-progress-view" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="FireApp_Android_App__-_Dev_Version_-_V2.1.2.stories-progress-view" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.FireApp Android App  - Developer Version - V1.3.1 [signingReport]" />
+        <item itemvalue="Gradle.FireApp Android App  - Dev Version - V1.4.2 [assembleDebug]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="583057fa-3e82-494a-8561-5f2f1c716ec7" name="Default Changelist" comment="" />
+      <created>1586639661316</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586639661316</updated>
+    </task>
+    <task id="LOCAL-00001" summary="V1.3 - NOT COMPLETED">
+      <created>1590008892116</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590008892117</updated>
+    </task>
+    <task id="LOCAL-00002" summary="V1.3 Semi-Final">
+      <created>1590069428595</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1590069428595</updated>
+    </task>
+    <task id="LOCAL-00003" summary="V1.3 Semi-Final">
+      <created>1590072959809</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1590072959809</updated>
+    </task>
+    <task id="LOCAL-00004" summary="V1.3.0.1 Final">
+      <created>1591133430825</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1591133430825</updated>
+    </task>
+    <task id="LOCAL-00005" summary="V1.3.0.1 Final-Fixed Text Status Crash">
+      <created>1591137898792</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1591137898793</updated>
+    </task>
+    <task id="LOCAL-00006" summary="V1.3.1-dev0&#10;Added Translations&#10;new Auth UI&#10;Force Update Mode&#10;Lock&#10;Dark Mode&#10;Swipe to Reply&#10;Prefs AndroidX&#10;Ringtone API 26+&#10;Places Picker FIx&#10;RecorderSettings Fix">
+      <created>1596308565651</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1596308565651</updated>
+    </task>
+    <task id="LOCAL-00007" summary="V1.3.1-Semi Final">
+      <created>1596830363848</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1596830363848</updated>
+    </task>
+    <task id="LOCAL-00008" summary="V1.3.1 Final.">
+      <created>1596929749117</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1596929749117</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Working with Video calls">
+      <created>1599007482781</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1599007482782</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Almost Finished setting up Calls">
+      <created>1600360264137</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1600360264138</updated>
+    </task>
+    <task id="LOCAL-00011" summary="V1.3.2">
+      <created>1602092807464</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1602092807465</updated>
+    </task>
+    <task id="LOCAL-00012" summary="V1.4">
+      <created>1614618090060</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1614618090060</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Encryption Ongoing...">
+      <created>1621787655379</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1621787655379</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Finalizing Encryption (V2.0)">
+      <created>1622756476966</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1622756476966</updated>
+    </task>
+    <task id="LOCAL-00015" summary="V2.0">
+      <created>1623862517750</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1623862517750</updated>
+    </task>
+    <task id="LOCAL-00016" summary="V2.0">
+      <created>1623868337032</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1623868337032</updated>
+    </task>
+    <task id="LOCAL-00017" summary="V2.0">
+      <created>1623873081179</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1623873081179</updated>
+    </task>
+    <task id="LOCAL-00018" summary="V2.0">
+      <created>1626553453187</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1626553453187</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Finalizing V2.1">
+      <created>1626553526923</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1626553526923</updated>
+    </task>
+    <task id="LOCAL-00020" summary="V2.1 Final">
+      <created>1626636988776</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1626636988776</updated>
+    </task>
+    <task id="LOCAL-00021" summary="V2.1.1">
+      <created>1631197612562</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1631197612562</updated>
+    </task>
+    <task id="LOCAL-00022" summary="V2.1.2">
+      <created>1656520568931</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1656520568931</updated>
+    </task>
+    <task id="LOCAL-00023" summary="V2.1.3">
+      <created>1661823346382</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1661823346382</updated>
+    </task>
+    <task id="LOCAL-00024" summary="V2.1.3">
+      <created>1669347252344</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1669347252344</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
+    <servers />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:androidx.arch.core:core-common" />
+    <option featureType="dependencySupport" implementationName="java:javax.inject:javax.inject" />
+    <option featureType="dependencySupport" implementationName="java:org.ow2.asm:asm-tree" />
+    <option featureType="dependencySupport" implementationName="java:org.hamcrest:hamcrest-core" />
+    <option featureType="dependencySupport" implementationName="java:com.squareup:javawriter" />
+    <option featureType="dependencySupport" implementationName="java:com.github.bumptech.glide:annotations" />
+    <option featureType="dependencySupport" implementationName="java:org.codehaus.plexus:plexus-utils" />
+    <option featureType="dependencySupport" implementationName="java:com.squareup.okhttp3:okhttp" />
+    <option featureType="dependencySupport" implementationName="java:androidx.collection:collection" />
+    <option featureType="dependencySupport" implementationName="java:org.jetbrains.kotlinx:kotlinx-coroutines-android" />
+    <option featureType="dependencySupport" implementationName="java:nekohtml:xercesMinimal" />
+    <option featureType="dependencySupport" implementationName="java:com.google.code.gson:gson" />
+    <option featureType="dependencySupport" implementationName="java:xpp3:xpp3_min" />
+    <option featureType="dependencySupport" implementationName="java:com.virgilsecurity:common" />
+    <option featureType="dependencySupport" implementationName="java:com.squareup.okio:okio" />
+    <option featureType="dependencySupport" implementationName="java:com.virgilsecurity.sdk:api" />
+    <option featureType="dependencySupport" implementationName="java:org.robolectric:robolectric-junit" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven.wagon:wagon-file" />
+    <option featureType="dependencySupport" implementationName="java:org.robolectric:robolectric-resources" />
+    <option featureType="dependencySupport" implementationName="java:org.hamcrest:hamcrest-library" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven:maven-artifact-manager" />
+    <option featureType="dependencySupport" implementationName="java:com.almworks.sqlite4java:sqlite4java" />
+    <option featureType="dependencySupport" implementationName="java:backport-util-concurrent:backport-util-concurrent" />
+    <option featureType="dependencySupport" implementationName="java:com.google.android.apps.common.testing.accessibility.framework:accessibility-test-framework" />
+    <option featureType="dependencySupport" implementationName="java:com.squareup.retrofit2:retrofit" />
+    <option featureType="dependencySupport" implementationName="java:org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm" />
+    <option featureType="dependencySupport" implementationName="java:nekohtml:nekohtml" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven.wagon:wagon-http-shared" />
+    <option featureType="dependencySupport" implementationName="java:org.freemarker:freemarker" />
+    <option featureType="dependencySupport" implementationName="java:com.nineoldandroids:library" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven:maven-ant-tasks" />
+    <option featureType="dependencySupport" implementationName="java:com.github.mangstadt:vinnie" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.ant:ant-launcher" />
+    <option featureType="dependencySupport" implementationName="java:junit:junit" />
+    <option featureType="dependencySupport" implementationName="java:com.virgilsecurity.sdk:crypto" />
+    <option featureType="dependencySupport" implementationName="java:com.google.guava:listenablefuture" />
+    <option featureType="dependencySupport" implementationName="java:com.virgilsecurity:pythia" />
+    <option featureType="dependencySupport" implementationName="java:com.virgilsecurity:ratchet" />
+    <option featureType="dependencySupport" implementationName="java:com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter" />
+    <option featureType="dependencySupport" implementationName="java:com.virgilsecurity.sdk:sdk" />
+    <option featureType="dependencySupport" implementationName="java:org.robolectric:robolectric-utils" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven:maven-plugin-registry" />
+    <option featureType="dependencySupport" implementationName="java:com.squareup.retrofit2:converter-gson" />
+    <option featureType="dependencySupport" implementationName="java:org.jetbrains:annotations" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven.wagon:wagon-http-lightweight" />
+    <option featureType="dependencySupport" implementationName="java:io.realm:realm-annotations" />
+    <option featureType="dependencySupport" implementationName="java:classworlds:classworlds" />
+    <option featureType="dependencySupport" implementationName="java:com.google.protobuf:protobuf-java" />
+    <option featureType="dependencySupport" implementationName="java:androidx.constraintlayout:constraintlayout-solver" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven:maven-artifact" />
+    <option featureType="dependencySupport" implementationName="java:xmlpull:xmlpull" />
+    <option featureType="dependencySupport" implementationName="java:com.fasterxml.jackson.core:jackson-core" />
+    <option featureType="dependencySupport" implementationName="java:org.robolectric:shadow-api" />
+    <option featureType="dependencySupport" implementationName="java:org.robolectric:robolectric" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven.wagon:wagon-provider-api" />
+    <option featureType="dependencySupport" implementationName="java:androidx.annotation:annotation" />
+    <option featureType="dependencySupport" implementationName="java:org.robolectric:shadows-core" />
+    <option featureType="dependencySupport" implementationName="java:org.jsoup:jsoup" />
+    <option featureType="dependencySupport" implementationName="java:org.ow2.asm:asm-commons" />
+    <option featureType="dependencySupport" implementationName="java:org.codehaus.plexus:plexus-container-default" />
+    <option featureType="dependencySupport" implementationName="java:org.jetbrains.kotlin:kotlin-stdlib-jdk7" />
+    <option featureType="dependencySupport" implementationName="java:org.ow2.asm:asm" />
+    <option featureType="dependencySupport" implementationName="java:org.bouncycastle:bcprov-jdk16" />
+    <option featureType="dependencySupport" implementationName="java:org.jetbrains.kotlin:kotlin-stdlib-common" />
+    <option featureType="dependencySupport" implementationName="java:com.google.code.findbugs:jsr305" />
+    <option featureType="dependencySupport" implementationName="java:io.reactivex.rxjava2:rxkotlin" />
+    <option featureType="dependencySupport" implementationName="java:com.google.guava:guava" />
+    <option featureType="dependencySupport" implementationName="java:com.github.bumptech.glide:disklrucache" />
+    <option featureType="dependencySupport" implementationName="java:com.ibm.icu:icu4j" />
+    <option featureType="dependencySupport" implementationName="java:com.thoughtworks.xstream:xstream" />
+    <option featureType="dependencySupport" implementationName="java:net.sf.kxml:kxml2" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven:maven-repository-metadata" />
+    <option featureType="dependencySupport" implementationName="java:org.mongodb:bson" />
+    <option featureType="dependencySupport" implementationName="java:org.hamcrest:hamcrest-integration" />
+    <option featureType="dependencySupport" implementationName="java:org.codehaus.plexus:plexus-interpolation" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven:maven-error-diagnostics" />
+    <option featureType="dependencySupport" implementationName="java:org.reactivestreams:reactive-streams" />
+    <option featureType="dependencySupport" implementationName="java:org.jetbrains.kotlin:kotlin-stdlib" />
+    <option featureType="dependencySupport" implementationName="java:androidx.lifecycle:lifecycle-common" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven:maven-project" />
+    <option featureType="dependencySupport" implementationName="java:io.reactivex.rxjava2:rxjava" />
+    <option featureType="dependencySupport" implementationName="java:com.googlecode.ez-vcard:ez-vcard" />
+    <option featureType="dependencySupport" implementationName="java:org.assertj:assertj-core" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven:maven-model" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven:maven-settings" />
+    <option featureType="dependencySupport" implementationName="java:org.robolectric:robolectric-sandbox" />
+    <option featureType="dependencySupport" implementationName="java:org.robolectric:robolectric-annotations" />
+    <option featureType="dependencySupport" implementationName="java:com.google.firebase:firebase-annotations" />
+    <option featureType="dependencySupport" implementationName="java:androidx.collection:collection-ktx" />
+    <option featureType="dependencySupport" implementationName="java:com.google.firebase:firebase-encoders" />
+    <option featureType="dependencySupport" implementationName="java:org.jetbrains.kotlin:kotlin-android-extensions-runtime" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.ant:ant" />
+    <option featureType="dependencySupport" implementationName="java:org.apache.maven:maven-profile" />
+    <option featureType="dependencySupport" implementationName="java:org.greenrobot:eventbus" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="V2.0" />
+    <MESSAGE value="Finalizing V2.1" />
+    <MESSAGE value="V2.1 Final" />
+    <MESSAGE value="V2.1.1" />
+    <MESSAGE value="V2.1.2" />
+    <MESSAGE value="V2.1.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="V2.1.3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/DownloadManager.kt</url>
+          <line>198</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/DownloadManager.kt</url>
+          <line>202</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>52</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>59</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>62</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>67</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>93</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>94</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>96</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>101</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>105</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>110</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>120</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>114</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/NewMessageHandler.kt</url>
+          <line>109</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/ZipUtil.kt</url>
+          <line>70</line>
+          <option name="timeStamp" value="74" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/mediastore/MediaStoreFileInfo.kt</url>
+          <line>14</line>
+          <option name="timeStamp" value="92" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/messaging/holders/SentImageHolder.kt</url>
+          <line>29</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/messaging/holders/SentImageHolder.kt</url>
+          <line>31</line>
+          <option name="timeStamp" value="110" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/messaging/holders/SentImageHolder.kt</url>
+          <line>36</line>
+          <option name="timeStamp" value="111" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/messaging/holders/SentImageHolder.kt</url>
+          <line>38</line>
+          <option name="timeStamp" value="112" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/messaging/ChatActivity.java</url>
+          <line>618</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/messaging/ChatActivity.java</url>
+          <line>2593</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/MessageCreator.java</url>
+          <line>622</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/MessageCreator.java</url>
+          <line>634</line>
+          <option name="timeStamp" value="95" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/MessageCreator.java</url>
+          <line>636</line>
+          <option name="timeStamp" value="96" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/MessageCreator.java</url>
+          <line>811</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/MessageCreator.java</url>
+          <line>619</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: com.virgilsecurity:ratchet-android:0.1.4@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/0f15b8191d70704623fd5c845681c59c/jetified-ratchet-android-0.1.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/24694440e13a56d9e1ac70b8985d33f6/transformed/jetified-ratchet-android-0.1.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3ec15dadb36224c47ffa04036f8f36c6/transformed/jetified-ratchet-android-0.1.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/54c3001cf72df0132f7e2c594d5fc649/transformed/jetified-ratchet-android-0.1.4/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/24694440e13a56d9e1ac70b8985d33f6/transformed/jetified-ratchet-android-0.1.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/24694440e13a56d9e1ac70b8985d33f6/transformed/jetified-ratchet-android-0.1.4/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.virgilsecurity/ratchet-android/0.1.4/d69f60fd64b6dd43047d11ff9a57498d6956207c/ratchet-android-0.1.4-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.virgilsecurity/ratchet-android/0.1.4/af39c12217ff550a8a23a108771e301a265b5208/ratchet-android-0.1.4-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

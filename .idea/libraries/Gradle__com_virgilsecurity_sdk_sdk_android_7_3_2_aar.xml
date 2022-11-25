@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: com.virgilsecurity.sdk:sdk-android:7.3.2@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1bf453a029610067f6c89ecc90fa4004/transformed/jetified-sdk-android-7.3.2/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/1bf453a029610067f6c89ecc90fa4004/transformed/jetified-sdk-android-7.3.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1bf453a029610067f6c89ecc90fa4004/transformed/jetified-sdk-android-7.3.2/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.virgilsecurity.sdk/sdk-android/7.3.2/bdba623c8f6e66332e5fcf7c781d03d7b27b70f7/sdk-android-7.3.2-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.virgilsecurity.sdk/sdk-android/7.3.2/bdba623c8f6e66332e5fcf7c781d03d7b27b70f7/sdk-android-7.3.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

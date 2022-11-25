@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.google.firebase:firebase-iid:21.0.1@aar">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/316a09d971697e996040a94797c23dcf/jetified-firebase-iid-21.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/aca6afc367caaec8981c82516a39736a/transformed/jetified-firebase-iid-21.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/95a0a9224d02d0da82864a85236d3f48/transformed/jetified-firebase-iid-21.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9be7543585d9ac34cba804540157c12d/transformed/jetified-firebase-iid-21.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/aca6afc367caaec8981c82516a39736a/transformed/jetified-firebase-iid-21.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/aca6afc367caaec8981c82516a39736a/transformed/jetified-firebase-iid-21.0.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-iid/21.0.1/b07dee5360751c1b87705100bc672728fb77b46b/firebase-iid-21.0.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>

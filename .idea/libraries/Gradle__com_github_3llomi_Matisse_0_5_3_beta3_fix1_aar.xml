@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="Gradle: com.github.3llomi:Matisse:0.5.3-beta3-fix1@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/27b3be23ee4b2c0b841a4a4a106ae7fb/transformed/jetified-Matisse-0.5.3-beta3-fix1/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/27b3be23ee4b2c0b841a4a4a106ae7fb/transformed/jetified-Matisse-0.5.3-beta3-fix1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/27b3be23ee4b2c0b841a4a4a106ae7fb/transformed/jetified-Matisse-0.5.3-beta3-fix1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/27b3be23ee4b2c0b841a4a4a106ae7fb/transformed/jetified-Matisse-0.5.3-beta3-fix1/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.3llomi/Matisse/0.5.3-beta3-fix1/57cc549e494b44f55af4262ecce656b2ed79ff65/Matisse-0.5.3-beta3-fix1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
