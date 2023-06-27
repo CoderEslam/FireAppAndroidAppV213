@@ -10,7 +10,6 @@ import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.SystemClock;
-import androidx.annotation.RequiresApi;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.util.TypedValue;
@@ -26,6 +25,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.VideoView;
+
+import androidx.annotation.RequiresApi;
 
 import com.cjt2325.cameralibrary.listener.CaptureListener;
 import com.cjt2325.cameralibrary.listener.ClickListener;
@@ -328,7 +329,11 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
 
     @Override
     public void cameraHasOpened() {
-        CameraInterface.getInstance().doStartPreview(mVideoView.getHolder(), screenProp);
+        try {
+            CameraInterface.getInstance().doStartPreview(mVideoView.getHolder(), screenProp);
+        } catch (RuntimeException e) {
+
+        }
     }
 
     //生命周期onResume
@@ -346,7 +351,6 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
         stopVideo();
         resetState(TYPE_PICTURE);
         CameraInterface.getInstance().isPreview(false);
-
         CameraInterface.getInstance().unregisterSensorManager(mContext);
 
     }
@@ -354,13 +358,18 @@ public class JCameraView extends FrameLayout implements CameraInterface.CameraOp
     //SurfaceView生命周期
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
-        LogUtil.i("JCameraView SurfaceCreated");
-        new Thread() {
-            @Override
-            public void run() {
-                CameraInterface.getInstance().doOpenCamera(JCameraView.this);
-            }
-        }.start();
+        try {
+            LogUtil.i("JCameraView SurfaceCreated");
+            new Thread() {
+                @Override
+                public void run() {
+                    CameraInterface.getInstance().doOpenCamera(JCameraView.this);
+                }
+            }.start();
+        } catch (RuntimeException e) {
+            Log.e(TAG, "surfaceCreated: " + e.getMessage());
+        }
+
     }
 
     @Override

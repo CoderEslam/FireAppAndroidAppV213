@@ -19,6 +19,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9fa6fcedecfba18e17bb2bc39c2e3c37/transformed/jetified-quickpermissions-kotlin-0.4.0/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/9fa6fcedecfba18e17bb2bc39c2e3c37/transformed/jetified-quickpermissions-kotlin-0.4.0/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/9fa6fcedecfba18e17bb2bc39c2e3c37/transformed/jetified-quickpermissions-kotlin-0.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/647f7cd26ec09af653a5b0debce24cc3/transformed/jetified-quickpermissions-kotlin-0.4.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/647f7cd26ec09af653a5b0debce24cc3/transformed/jetified-quickpermissions-kotlin-0.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/647f7cd26ec09af653a5b0debce24cc3/transformed/jetified-quickpermissions-kotlin-0.4.0/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

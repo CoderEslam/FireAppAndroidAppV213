@@ -19,6 +19,9 @@
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/66e9103237f8bf32e3553225ba5352e4/transformed/jetified-record-view-2.0.1/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/66e9103237f8bf32e3553225ba5352e4/transformed/jetified-record-view-2.0.1/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/66e9103237f8bf32e3553225ba5352e4/transformed/jetified-record-view-2.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/89a6501ec240f42aad0728d0517a8a8a/transformed/jetified-record-view-2.0.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/89a6501ec240f42aad0728d0517a8a8a/transformed/jetified-record-view-2.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/89a6501ec240f42aad0728d0517a8a8a/transformed/jetified-record-view-2.0.1/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.devlomi.record-view/record-view/2.0.1/10d190698bfb0d4d2d117d0c921820e51bfc8659/record-view-2.0.1-javadoc.jar!/" />

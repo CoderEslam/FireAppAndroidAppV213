@@ -14,7 +14,89 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="583057fa-3e82-494a-8561-5f2f1c716ec7" name="Default Changelist" comment="V2.1.3" />
+    <list default="true" id="583057fa-3e82-494a-8561-5f2f1c716ec7" name="Default Changelist" comment="FireApp">
+      <change afterPath="$PROJECT_DIR$/.idea/modules/FireAppAndroidAppV213.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.androidTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.unitTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/cameraView/FireAppAndroidAppV213.cameraView.androidTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/cameraView/FireAppAndroidAppV213.cameraView.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/cameraView/FireAppAndroidAppV213.cameraView.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/cameraView/FireAppAndroidAppV213.cameraView.unitTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireAppAndroidAppV213.imageeditengine.androidTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireAppAndroidAppV213.imageeditengine.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireAppAndroidAppV213.imageeditengine.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireAppAndroidAppV213.imageeditengine.unitTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireAppAndroidAppV213.stories-progress-view.androidTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireAppAndroidAppV213.stories-progress-view.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireAppAndroidAppV213.stories-progress-view.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireAppAndroidAppV213.stories-progress-view.unitTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/Bubblenavigation/BubbleNavigationConstraintView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/Bubblenavigation/BubbleNavigationLinearView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/Bubblenavigation/BubbleToggleItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/Bubblenavigation/BubbleToggleView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/Bubblenavigation/IBubbleNavigation.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/Bubblenavigation/listener/BubbleNavigationChangeListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/Bubblenavigation/util/ViewUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-night-hdpi/badge_background_white.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-night-hdpi/default_icon.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-night-hdpi/rounded_rect.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/home_background_oval.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/search_background_oval.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/transition_background_drawable_home.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/transition_background_drawable_search.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__ca_barrenechea_header_decor_header_decor_0_2_8_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__ca_barrenechea_header_decor_header_decor_0_2_8_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_devlomi_circularstatusview_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_devlomi_circularstatusview_1_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_devlomi_hidely_hidely_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_devlomi_hidely_hidely_1_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_devlomi_record_view_record_view_2_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_devlomi_record_view_record_view_2_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_FrangSierra_RxFirebase_1_5_6_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_FrangSierra_RxFirebase_1_5_6_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_broakenmedia_MultiContactPicker_1_8_5_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_broakenmedia_MultiContactPicker_1_8_5_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_oxoooo_pull_back_layout_1_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_oxoooo_pull_back_layout_1_0_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_ozodrukh_CircularReveal_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_ozodrukh_CircularReveal_1_1_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_quickpermissions_quickpermissions_kotlin_0_4_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_quickpermissions_quickpermissions_kotlin_0_4_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_functions_19_2_0_aar.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_thoughtbot_expandablerecyclerview_1_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_thoughtbot_expandablerecyclerview_1_3_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/FireApp_Android_App_-_V2.1.3.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireApp_Android_App_-_V2.1.3.app.androidTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireApp_Android_App_-_V2.1.3.app.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireApp_Android_App_-_V2.1.3.app.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireApp_Android_App_-_V2.1.3.app.unitTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/cameraView/FireApp_Android_App_-_V2.1.3.cameraView.androidTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/cameraView/FireApp_Android_App_-_V2.1.3.cameraView.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/cameraView/FireApp_Android_App_-_V2.1.3.cameraView.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/cameraView/FireApp_Android_App_-_V2.1.3.cameraView.unitTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireApp_Android_App_-_V2.1.3.imageeditengine.androidTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireApp_Android_App_-_V2.1.3.imageeditengine.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireApp_Android_App_-_V2.1.3.imageeditengine.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireApp_Android_App_-_V2.1.3.imageeditengine.unitTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireApp_Android_App_-_V2.1.3.stories-progress-view.androidTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireApp_Android_App_-_V2.1.3.stories-progress-view.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireApp_Android_App_-_V2.1.3.stories-progress-view.main.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireApp_Android_App_-_V2.1.3.stories-progress-view.unitTest.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/google-services.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/google-services.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/authentication/AuthenticationViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/authentication/AuthenticationViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/authentication/FirebaseAuthError.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/authentication/FirebaseAuthError.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/extensions/EthreeExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/extensions/EthreeExtensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/extensions/FirebaseExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/extensions/FirebaseExtensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/fragments/BaseFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/fragments/BaseFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/enc/ethree/EthreeInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/enc/ethree/EthreeInstance.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/network/FireManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/network/FireManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_search.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_search.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/dimens.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cameraView/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/cameraView/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cameraView/src/main/java/com/cjt2325/cameralibrary/CameraInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/cameraView/src/main/java/com/cjt2325/cameralibrary/CameraInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cameraView/src/main/java/com/cjt2325/cameralibrary/JCameraView.java" beforeDir="false" afterPath="$PROJECT_DIR$/cameraView/src/main/java/com/cjt2325/cameralibrary/JCameraView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/imageeditengine/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/imageeditengine/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stories-progress-view/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/stories-progress-view/build.gradle" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,7 +105,7 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[9ec70f68]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[adb-9ec70f68-nJrR1W._adb-tls-connect._tcp]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -37,7 +119,23 @@
         </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FireAppAndroidAppV213" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FireAppAndroidAppV213" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="FireAppAndroidAppV213" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="android" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -79,10 +177,13 @@
   <component name="KotlinMultiplatform">
     <allAvailableExecutables />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="ProjectId" id="1aPaPulAA11KPVK2nIY6dsSpFsa" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="autoscrollToSource" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -97,6 +198,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SelectDeploymentTargetsDialog.selectedDevices" value="VirtualDevicePath@/Users/devlomi/.android/avd/Pixel_3a_API_30.avd&#10;VirtualDevicePath@/Users/devlomi/.android/avd/Pixel_3_XL_API_29_2.avd" />
     <property name="android-custom-view/Users/devlomi/.gradle/caches/modules-2/files-2.1/com.aghajari.emojiview/AXEmojiView/1.3.0/1556815146a34c9468b8605f4dc954560f105ed5/AXEmojiView-1.3.0-sources.jar!/com/aghajari/emojiview/view/AXEmojiPager.java_AXEmojiPager_DIMENSIONS" value="1080&#10;1920" />
     <property name="android-custom-view/Users/devlomi/.gradle/caches/modules-2/files-2.1/com.aghajari.emojiview/AXEmojiView/1.3.0/1556815146a34c9468b8605f4dc954560f105ed5/AXEmojiView-1.3.0-sources.jar!/com/aghajari/emojiview/view/AXEmojiPager.java_SELECTED" value="AXEmojiPager" />
@@ -108,12 +210,17 @@
     <property name="android-custom-view/Volumes/Data/FireApp Project/FireApp Files/V1.4/FireApp Android App  - Dev Version - V1.4/cameraView/src/main/java/com/cjt2325/cameralibrary/JCameraView.java_SELECTED" value="JCameraView" />
     <property name="android-custom-view/Volumes/Data/FireApp Project/FireApp Files/V2.0/FireApp Android App  - Dev Version - V1.4.2/app/src/main/java/com/devlomi/fireapp/views/GroupVideoGridLayout.kt_SELECTED" value="" />
     <property name="android-custom-view/Volumes/Data/FireApp Project/FireApp Files/V2.1/FireApp Android App  - Dev Version - V2.1/app/src/main/java/com/devlomi/fireapp/views/GroupVideoGridLayout.kt_SELECTED" value="CallingGridLayout" />
+    <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/Bubblenavigation/BubbleNavigationConstraintView.java_SELECTED" value="BubbleNavigationConstraintView" />
+    <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/Bubblenavigation/BubbleNavigationLinearView.java_SELECTED" value="BubbleNavigationLinearView" />
+    <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/Bubblenavigation/BubbleToggleView.java_SELECTED" value="BubbleToggleView" />
+    <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/cameraView/src/main/java/com/cjt2325/cameralibrary/JCameraView.java_SELECTED" value="JCameraView" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="com.developerphil.adbidea.selecteddevices" value="emulator-5556" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="memory.settings.postsync.last.time.stamp" value="1622206353478" />
     <property name="multi-representation-preview/Users/devlomi/.gradle/caches/modules-2/files-2.1/com.aghajari.emojiview/AXEmojiView/1.3.0/1556815146a34c9468b8605f4dc954560f105ed5/AXEmojiView-1.3.0-sources.jar!/com/aghajari/emojiview/view/AXEmojiPopupLayout.java_selected" value="Custom views" />
     <property name="multi-representation-preview/Users/devlomi/.gradle/caches/modules-2/files-2.1/com.github.CanHub/Android-Image-Cropper/2.1.1/85a1d98099238667dc0dc8b045e763c133911c54/Android-Image-Cropper-2.1.1-sources.jar!/com/canhub/cropper/CropImageView.java_selected" value="Custom views" />
@@ -136,11 +243,11 @@
       <recent name="com.devlomi.fireapp.activities" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\drawable" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\drawable-night-hdpi" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\java\com\devlomi\fireapp\views\Bubblenavigation" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app" />
       <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/drawable/" />
-      <recent name="$PROJECT_DIR$/app/src/main/res/layout" />
     </key>
     <key name="android.template.-59966983">
       <recent name="com.devlomi.fireapp.activities" />
@@ -211,6 +318,7 @@
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
       <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -250,6 +358,7 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
         <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+        <option name="PROFILING_MODE" value="NOT_SET" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -268,6 +377,7 @@
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
       <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -307,6 +417,7 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
         <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+        <option name="PROFILING_MODE" value="NOT_SET" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -316,8 +427,8 @@
         <option name="Android.Gradle.BeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App">
-      <module name="FireApp_Android_App_-_V2.1.3.app.main" />
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="FireAppAndroidAppV213.app.main" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -325,6 +436,7 @@
       <option name="PM_INSTALL_OPTIONS" value="" />
       <option name="ALL_USERS" value="false" />
       <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="CLEAR_APP_STORAGE" value="false" />
       <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
       <option name="ACTIVITY_EXTRA_FLAGS" value="" />
       <option name="MODE" value="default_activity" />
@@ -364,6 +476,7 @@
         <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Java/Kotlin Method Sample (legacy)" />
         <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
         <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+        <option name="PROFILING_MODE" value="NOT_SET" />
       </Profilers>
       <option name="DEEP_LINK" value="" />
       <option name="ACTIVITY_CLASS" value="" />
@@ -767,7 +880,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
@@ -779,7 +891,8 @@
     <MESSAGE value="V2.1.1" />
     <MESSAGE value="V2.1.2" />
     <MESSAGE value="V2.1.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="V2.1.3" />
+    <MESSAGE value="FireApp" />
+    <option name="LAST_COMMIT_MESSAGE" value="FireApp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

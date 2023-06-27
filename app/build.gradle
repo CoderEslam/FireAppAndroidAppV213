@@ -10,7 +10,7 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
 
     defaultConfig {
-        applicationId "com.devlomi.fireapp.android"
+        applicationId "com.devlomi.fireapp"
         minSdkVersion 21
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 32
@@ -32,7 +32,7 @@ android {
         resValue 'string', "website", "http://devlomi.com/"
         resValue 'string', "email", ""
 
-        resValue 'string', "agora_app_id", ""
+        resValue 'string', "agora_app_id", "9fe342b9af774820ad4495e9744a2ccc"
 
         resValue 'integer', "max_group_call_count", "11"
 

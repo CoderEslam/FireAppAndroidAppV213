@@ -1,8 +1,6 @@
 package com.devlomi.fireapp.extensions
 
-import com.google.firebase.functions.HttpsCallableResult
-import com.virgilsecurity.android.common.model.FindUsersResult
-import com.virgilsecurity.android.ethree.interaction.EThree
+
 import com.virgilsecurity.common.callback.OnCompleteListener
 import com.virgilsecurity.common.callback.OnResultListener
 import com.virgilsecurity.common.model.Completable

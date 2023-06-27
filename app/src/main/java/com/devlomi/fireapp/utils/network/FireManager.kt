@@ -15,6 +15,7 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ServerValue
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.functions.FirebaseFunctions
+//import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import durdinapps.rxfirebase2.RxFirebaseDatabase
@@ -73,9 +74,10 @@ class FireManager {
     //set the current presence as Online
 
     fun setOnlineStatus(): Completable {
-        return RxFirebaseDatabase.setValue(FireConstants.presenceRef.child(uid), "Online").doOnComplete {
-            SharedPreferencesManager.setLastSeenState(LastSeenStates.ONLINE)
-        }
+        return RxFirebaseDatabase.setValue(FireConstants.presenceRef.child(uid), "Online")
+            .doOnComplete {
+                SharedPreferencesManager.setLastSeenState(LastSeenStates.ONLINE)
+            }
     }
 
 
@@ -116,7 +118,10 @@ class FireManager {
     //update user username
 
     fun updateMyUserName(username: String): Completable {
-        return RxFirebaseDatabase.setValue(FireConstants.usersRef.child(uid).child("name"), username)
+        return RxFirebaseDatabase.setValue(
+            FireConstants.usersRef.child(uid).child("name"),
+            username
+        )
     }
 
     //this will upload the user photo that he picked and generate a Small circle image and decode as base64
@@ -137,7 +142,8 @@ class FireManager {
             val updateMap: MutableMap<String, Any> = HashMap()
 
             //generate circle bitmap
-            val circleBitmap = BitmapUtils.getCircleBitmap(BitmapUtils.convertFileImageToBitmap(imagePath))
+            val circleBitmap =
+                BitmapUtils.getCircleBitmap(BitmapUtils.convertFileImageToBitmap(imagePath))
             //decode the image as base64 string
             val decodedImage = BitmapUtils.decodeImageAsPng(circleBitmap)
             SharedPreferencesManager.saveMyThumbImg(decodedImage)
@@ -149,8 +155,11 @@ class FireManager {
             updateMap["thumbImg"] = decodedImage
 
             //save them in firebase database using one request
-            return@flatMap RxFirebaseDatabase.updateChildren(FireConstants.usersRef.child(uid), updateMap).andThen(
-                    Maybe.just(Triple(decodedImage, file.path!!, downloadUrl))
+            return@flatMap RxFirebaseDatabase.updateChildren(
+                FireConstants.usersRef.child(uid),
+                updateMap
+            ).andThen(
+                Maybe.just(Triple(decodedImage, file.path!!, downloadUrl))
             )
         }
 
@@ -171,7 +180,13 @@ class FireManager {
         //get unread messages
         val results = RealmHelper.getInstance().getUnReadIncomingMessages(chatId)
         for (message in results) {
-            ServiceHelper.startUpdateMessageStatRequest(context, message.messageId, uid, chatId, MessageStat.READ)
+            ServiceHelper.startUpdateMessageStatRequest(
+                context,
+                message.messageId,
+                uid,
+                chatId,
+                MessageStat.READ
+            )
         }
     }
 
@@ -180,19 +195,30 @@ class FireManager {
 
     fun setLastSeen(): Completable {
 
-        return RxFirebaseDatabase.setValue(FireConstants.presenceRef.child(uid), ServerValue.TIMESTAMP).doOnComplete {
+        return RxFirebaseDatabase.setValue(
+            FireConstants.presenceRef.child(uid),
+            ServerValue.TIMESTAMP
+        ).doOnComplete {
             SharedPreferencesManager.setLastSeenState(LastSeenStates.LAST_SEEN)
         }
     }
 
     //set the typing or recording or do nothing state
 
-    fun setTypingStat(receiverUid: String, stat: Int, isGroup: Boolean, isBroadcast: Boolean): Completable {
+    fun setTypingStat(
+        receiverUid: String,
+        stat: Int,
+        isGroup: Boolean,
+        isBroadcast: Boolean
+    ): Completable {
 
         if (isBroadcast) return Completable.complete()
 
         return if (isGroup) {
-            RxFirebaseDatabase.setValue(FireConstants.groupTypingStat.child(receiverUid).child(uid), stat)
+            RxFirebaseDatabase.setValue(
+                FireConstants.groupTypingStat.child(receiverUid).child(uid),
+                stat
+            )
         } else {
             RxFirebaseDatabase.setValue(FireConstants.typingStat.child(receiverUid), stat)
         }
@@ -202,39 +228,53 @@ class FireManager {
     //update message state as received or read
 
     private fun updateMessageStat(myUid: String, messageId: String, stat: Int): Completable {
-        return RxFirebaseDatabase.setValue(FireConstants.messageStat.child(myUid)
-                .child(messageId), stat)
-                .doOnComplete {
-                    RealmHelper.getInstance().updateMessageStatLocally(messageId, stat)
-                    RealmHelper.getInstance().deleteUnUpdateStat(messageId)
-                }
+        return RxFirebaseDatabase.setValue(
+            FireConstants.messageStat.child(myUid)
+                .child(messageId), stat
+        )
+            .doOnComplete {
+                RealmHelper.getInstance().updateMessageStatLocally(messageId, stat)
+                RealmHelper.getInstance().deleteUnUpdateStat(messageId)
+            }
 
     }
 
-    fun updateMessagesState(myUid: String, messageId: String, state: Int, isVoiceMessage: Boolean): Completable {
+    fun updateMessagesState(
+        myUid: String,
+        messageId: String,
+        state: Int,
+        isVoiceMessage: Boolean
+    ): Completable {
         return updateMessageStat(myUid, messageId, state)
-                .andThen(Observable.fromIterable(RealmHelper.getInstance().unUpdateMessageStat))
-                .flatMapCompletable { unUpdatedStat ->
-                    return@flatMapCompletable updateMessageStat(unUpdatedStat.myUid, unUpdatedStat.messageId, unUpdatedStat.statToBeUpdated).andThen {
-                        RealmHelper.getInstance().updateMessageStatLocally(unUpdatedStat.messageId, unUpdatedStat.statToBeUpdated)
-                        RealmHelper.getInstance().deleteUnUpdateStat(unUpdatedStat.messageId)
-                        RealmHelper.getInstance().deleteJobId(unUpdatedStat.messageId, isVoiceMessage)
+            .andThen(Observable.fromIterable(RealmHelper.getInstance().unUpdateMessageStat))
+            .flatMapCompletable { unUpdatedStat ->
+                return@flatMapCompletable updateMessageStat(
+                    unUpdatedStat.myUid,
+                    unUpdatedStat.messageId,
+                    unUpdatedStat.statToBeUpdated
+                ).andThen {
+                    RealmHelper.getInstance().updateMessageStatLocally(
+                        unUpdatedStat.messageId,
+                        unUpdatedStat.statToBeUpdated
+                    )
+                    RealmHelper.getInstance().deleteUnUpdateStat(unUpdatedStat.messageId)
+                    RealmHelper.getInstance().deleteJobId(unUpdatedStat.messageId, isVoiceMessage)
 
-                    }
                 }
+            }
     }
 //update voice message state as Seen
 
     fun updateVoiceMessageStat(myUid: String, messageId: String): Completable {
         val ref = FireConstants.voiceMessageStat.child(myUid).child(messageId)
         return RxFirebaseDatabase.setValue(ref, true)
-                .doOnComplete {
-                    RealmHelper.getInstance().updateVoiceMessageStatLocally(messageId)
-                    RealmHelper.getInstance().deleteUnUpdatedVoiceMessageStat(messageId)
+            .doOnComplete {
+                RealmHelper.getInstance().updateVoiceMessageStatLocally(messageId)
+                RealmHelper.getInstance().deleteUnUpdatedVoiceMessageStat(messageId)
 
-                }.doOnError {
-                    RealmHelper.getInstance().saveUnUpdatedVoiceMessageStat(myUid, messageId, true)
-                }
+            }.doOnError {
+                RealmHelper.getInstance().saveUnUpdatedVoiceMessageStat(myUid, messageId, true)
+            }
     }
 
 
@@ -249,10 +289,11 @@ class FireManager {
 
 
     fun getServerTime(): Single<Long> {
-        return RxFirebaseFunctions.getHttpsCallable(FirebaseFunctions.getInstance(), "getTime").map { task ->
-            return@map task.data as? Long
-        }
-
+        return RxFirebaseFunctions.getHttpsCallable(FirebaseFunctions.getInstance(), "getTime")
+            .map { task ->
+                Log.e("FirebaseFunction", "FirebaseFunction: $task")
+                return@map task.data as? Long
+            }
     }
 
 
@@ -264,23 +305,26 @@ class FireManager {
         if (imageDownloadProcessIds.contains(uid)) return Single.error(Throwable("already downloading"))
 
         imageDownloadProcessIds.add(uid)
-        val ref = if (isGroup) FireConstants.groupsRef.child(uid).child("info") else FireConstants.usersRef.child(uid)
+        val ref = if (isGroup) FireConstants.groupsRef.child(uid)
+            .child("info") else FireConstants.usersRef.child(uid)
 
         val imagePath = DirManager.generateUserProfileImage()
 
         var foundPhoto: String? = null
-        return RxFirebaseDatabase.observeSingleValueEvent(ref.child("photo")).toSingle().flatMap { dataSnapshot ->
-            if (dataSnapshot.exists()) {
-                val photo = dataSnapshot.getValue(String::class.java)
-                val referenceFromUrl = FirebaseStorage.getInstance().getReferenceFromUrl(photo!!)
-                foundPhoto = photo
-                return@flatMap RxFirebaseStorage.getFile(referenceFromUrl, imagePath)
+        return RxFirebaseDatabase.observeSingleValueEvent(ref.child("photo")).toSingle()
+            .flatMap { dataSnapshot ->
+                if (dataSnapshot.exists()) {
+                    val photo = dataSnapshot.getValue(String::class.java)
+                    val referenceFromUrl =
+                        FirebaseStorage.getInstance().getReferenceFromUrl(photo!!)
+                    foundPhoto = photo
+                    return@flatMap RxFirebaseStorage.getFile(referenceFromUrl, imagePath)
 
-            } else {
-                return@flatMap Single.error<String>(Throwable("Not exists"))
-            }
+                } else {
+                    return@flatMap Single.error<String>(Throwable("Not exists"))
+                }
 
-        }.map {
+            }.map {
             imagePath.path
         }.doOnSuccess {
             foundPhoto?.let { photo ->
@@ -409,39 +453,48 @@ class FireManager {
             if (user == null) return Observable.error(Throwable("User is null"))
 
 
-            val databaseReference = if (user.isGroupBool) FireConstants.groupsRef.child(user.uid).child("info") else FireConstants.usersRef.child(user.uid)
+            val databaseReference = if (user.isGroupBool) FireConstants.groupsRef.child(user.uid)
+                .child("info") else FireConstants.usersRef.child(user.uid)
 
             return Observable.create { emitter ->
-                databaseReference.observeSingleValueEvent().subscribe({ dataSnapshot: DataSnapshot ->
-                    if (!dataSnapshot.exists()) {
-                        emitter.onError(Throwable("Snapshot Not Exists"))
-                        return@subscribe
-                    }
-                    val photo = dataSnapshot.child("photo").getValue(String::class.java)
-                    val thumbImg = dataSnapshot.child("thumbImg").getValue(String::class.java)
+                databaseReference.observeSingleValueEvent()
+                    .subscribe({ dataSnapshot: DataSnapshot ->
+                        if (!dataSnapshot.exists()) {
+                            emitter.onError(Throwable("Snapshot Not Exists"))
+                            return@subscribe
+                        }
+                        val photo = dataSnapshot.child("photo").getValue(String::class.java)
+                        val thumbImg = dataSnapshot.child("thumbImg").getValue(String::class.java)
 
-                    if (user.thumbImg == null) {
-                        RealmHelper.getInstance().updateThumbImg(user.uid, thumbImg)
-                        emitter.onNext(ImageItem(thumbImg, null))
-                    } else if (user.thumbImg != null && user.thumbImg != thumbImg) {
-                        RealmHelper.getInstance().updateThumbImg(user.uid, thumbImg)
-                        emitter.onNext(ImageItem(thumbImg, null))
-                    }
-                    if (user.photo != null && photo != user.photo || !FileUtils.isFileExists(user.userLocalPhoto)) {
-                        downloadUserPhoto(photo, user.uid, user.userLocalPhoto).subscribe({ photoPath ->
-                            emitter.onNext(ImageItem(null, photoPath))
+                        if (user.thumbImg == null) {
+                            RealmHelper.getInstance().updateThumbImg(user.uid, thumbImg)
+                            emitter.onNext(ImageItem(thumbImg, null))
+                        } else if (user.thumbImg != null && user.thumbImg != thumbImg) {
+                            RealmHelper.getInstance().updateThumbImg(user.uid, thumbImg)
+                            emitter.onNext(ImageItem(thumbImg, null))
+                        }
+                        if (user.photo != null && photo != user.photo || !FileUtils.isFileExists(
+                                user.userLocalPhoto
+                            )
+                        ) {
+                            downloadUserPhoto(
+                                photo,
+                                user.uid,
+                                user.userLocalPhoto
+                            ).subscribe({ photoPath ->
+                                emitter.onNext(ImageItem(null, photoPath))
+                                emitter.onComplete()
+                            }, { throwable ->
+
+                            })
+
+                        } else {
                             emitter.onComplete()
-                        }, { throwable ->
+                        }
 
-                        })
-
-                    } else {
-                        emitter.onComplete()
-                    }
-
-                }, { throwable ->
-                    emitter.onError(throwable)
-                })
+                    }, { throwable ->
+                        emitter.onError(throwable)
+                    })
             }
 
 
@@ -453,32 +506,37 @@ class FireManager {
         fun checkAndDownloadUserThumbImg(user: User?): Maybe<String?> {
             if (user == null) return Maybe.error(Throwable("user is null"))
 
-            val databaseReference = if (user.isGroupBool) FireConstants.groupsRef.child(user.uid).child("info") else FireConstants.usersRef.child(user.uid)
-            return RxFirebaseDatabase.observeSingleValueEvent(databaseReference.child("thumbImg")).map { dataSnapshot ->
-                val thumbImg = dataSnapshot.getValue(String::class.java)
-                if (user.thumbImg == null) {
-                    RealmHelper.getInstance().updateThumbImg(user.uid, thumbImg)
-                } else
-                    if (user.thumbImg != null && user.thumbImg != thumbImg) {
+            val databaseReference = if (user.isGroupBool) FireConstants.groupsRef.child(user.uid)
+                .child("info") else FireConstants.usersRef.child(user.uid)
+            return RxFirebaseDatabase.observeSingleValueEvent(databaseReference.child("thumbImg"))
+                .map { dataSnapshot ->
+                    val thumbImg = dataSnapshot.getValue(String::class.java)
+                    if (user.thumbImg == null) {
                         RealmHelper.getInstance().updateThumbImg(user.uid, thumbImg)
+                    } else
+                        if (user.thumbImg != null && user.thumbImg != thumbImg) {
+                            RealmHelper.getInstance().updateThumbImg(user.uid, thumbImg)
 
-                    }
-                return@map thumbImg
-            }.doOnSuccess {
+                        }
+                    return@map thumbImg
+                }.doOnSuccess {
                 RealmHelper.getInstance().setLastImageSyncDate(user.uid, Date().time)
             }
         }
 
         @JvmStatic
         fun downloadUserPhoto(photo: String?, uid: String, oldLocalPath: String?): Single<String> {
-            if (photo == null || imageDownloadProcessIds.contains(uid)) return Single.error(Throwable("Already Downloading"))
+            if (photo == null || imageDownloadProcessIds.contains(uid)) return Single.error(
+                Throwable("Already Downloading")
+            )
             val referenceFromUrl = FirebaseStorage.getInstance().getReferenceFromUrl(photo)
             val imagePath = DirManager.generateUserProfileImage()
             imageDownloadProcessIds.add(uid)
 
-            return RxFirebaseStorage.getFile(referenceFromUrl, imagePath).map { imagePath.path }.doFinally {
-                imageDownloadProcessIds.remove(uid)
-            }.doOnSuccess {
+            return RxFirebaseStorage.getFile(referenceFromUrl, imagePath).map { imagePath.path }
+                .doFinally {
+                    imageDownloadProcessIds.remove(uid)
+                }.doOnSuccess {
                 //save user image to realm if it's not the same
                 RealmHelper.getInstance().updateUserImg(uid, photo, imagePath.path, oldLocalPath)
 

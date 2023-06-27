@@ -30,12 +30,14 @@ object EthreeInstance {
             val tokenCallback = object : OnGetTokenCallback {
                 override fun onGetToken(): String {
                     val tokenTask = FirebaseFunctions.getInstance()
-                            .getHttpsCallable("getVirgilJwt")
-                            .call()
+                        .getHttpsCallable("getVirgilJwt")
+                        .call()
 
 
                     val result = Tasks.await(tokenTask).data as Map<String, String>
 
+
+                    Log.e("FirebaseFunction", "FirebaseFunction: $result", )
 
                     return result["token"]!!
                 }

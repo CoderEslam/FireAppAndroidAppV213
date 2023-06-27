@@ -1,5 +1,7 @@
 package com.cjt2325.cameralibrary;
 
+import static android.graphics.Bitmap.createBitmap;
+
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.content.Context;
@@ -36,8 +38,6 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import static android.graphics.Bitmap.createBitmap;
 
 /**
  * =====================================
@@ -397,6 +397,8 @@ public class CameraInterface implements Camera.PreviewCallback {
                 isPreviewing = true;
                 Log.i(TAG, "=== Start Preview ===");
             } catch (IOException e) {
+                e.printStackTrace();
+            } catch (RuntimeException e) {
                 e.printStackTrace();
             }
         }

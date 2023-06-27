@@ -19,6 +19,9 @@
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cdddc3f1c071f1eca84fd69e3683f434/transformed/jetified-MultiContactPicker-1.8.5/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cdddc3f1c071f1eca84fd69e3683f434/transformed/jetified-MultiContactPicker-1.8.5/AndroidManifest.xml" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cdddc3f1c071f1eca84fd69e3683f434/transformed/jetified-MultiContactPicker-1.8.5/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6df6a17ee54aba3de5f8f9a194915f01/transformed/jetified-MultiContactPicker-1.8.5/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/6df6a17ee54aba3de5f8f9a194915f01/transformed/jetified-MultiContactPicker-1.8.5/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6df6a17ee54aba3de5f8f9a194915f01/transformed/jetified-MultiContactPicker-1.8.5/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

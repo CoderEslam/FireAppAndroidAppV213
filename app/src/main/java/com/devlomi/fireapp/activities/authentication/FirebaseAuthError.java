@@ -1,8 +1,12 @@
 package com.devlomi.fireapp.activities.authentication;
 
+import android.util.Log;
+
 import com.google.firebase.auth.FirebaseAuthException;
 
 public enum FirebaseAuthError {
+
+    Logt("FirebaseAuthError"),
 
     ERROR_INVALID_CUSTOM_TOKEN("The custom token format is incorrect. Please check the documentation."),
 
@@ -86,6 +90,7 @@ public enum FirebaseAuthError {
         try {
             return FirebaseAuthError.valueOf(ex.getErrorCode());
         } catch (IllegalArgumentException e) {
+            Log.e(Logt.description, "onVerificationFailed: " + e.getMessage());
             return FirebaseAuthError.ERROR_UNKNOWN;
         }
     }

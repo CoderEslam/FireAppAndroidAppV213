@@ -5,7 +5,6 @@ import com.google.android.gms.auth.api.signin.internal.Storage
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
 import com.google.firebase.database.*
-import com.google.firebase.functions.HttpsCallableResult
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.firebase.storage.*
 import durdinapps.rxfirebase2.RxFirebaseChildEvent

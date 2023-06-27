@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id=":app:androidTest" external.linked.project.path="$MODULE_DIR$/../../../app" external.root.project.path="$MODULE_DIR$/../../.." external.system.id="GRADLE" external.system.module.type="sourceSet" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
+    <facet type="android" name="Android">
+      <configuration>
+        <option name="SELECTED_BUILD_VARIANT" value="debug" />
+        <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
+        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
+        <afterSyncTasks>
+          <task>generateDebugSources</task>
+        </afterSyncTasks>
+        <option name="ALLOW_USER_CONFIGURATION" value="false" />
+        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
+        <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
+        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../app/src/main/res;file://$MODULE_DIR$/../../../app/src/debug/res;file://$MODULE_DIR$/../../../app/build/generated/res/rs/debug;file://$MODULE_DIR$/../../../app/build/generated/res/resValues/debug" />
+        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../app/src/androidTest/res;file://$MODULE_DIR$/../../../app/src/androidTestDebug/res;file://$MODULE_DIR$/../../../app/build/generated/res/rs/androidTest/debug;file://$MODULE_DIR$/../../../app/build/generated/res/resValues/androidTest/debug" />
+        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
+      </configuration>
+    </facet>
     <facet type="kotlin-language" name="Kotlin">
       <configuration version="5" platform="JVM 1.8" allPlatforms="JVM [1.8]" useProjectSettings="false">
         <compilerSettings>
@@ -27,7 +43,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/f1879a2cb126072a6eddfb3f9ac2b317/transformed/jetified-expandablecheckrecyclerview-1.4-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/7d98b4c53724ca55e26c91d4678be228/transformed/jetified-Android-Image-Cropper-2.1.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/2e628a6d638141a1752d95d0e7283921/transformed/jetified-AutoFitEditText-53238e2d29-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/545ce599b8bcf9a6e1bb33fdfa4f941c/transformed/jetified-expandablerecyclerview-1.3-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/983ee559b6f33b1db81eb7462b54c36c/transformed/jetified-expandablerecyclerview-1.3-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/da4515e4ef5dd1418adfc318321195f3/transformed/jetified-preference-ktx-1.1.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d8225eaa98399ce64353124e6d0e09f8/transformed/preference-1.1.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/9b59beb5e286ef03e1449b58d3786ae4/transformed/appcompat-1.3.0-beta01-api.jar</arg>
@@ -57,21 +73,21 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/be0848f2d4ca8855caa9cf10f2be50ed/transformed/jetified-om-recorder-1.1.5-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d8f7d8fce9e9bbe5ef38cd82a9dbf1e0/transformed/jetified-androidbuttonprogress-1.0.2-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d31195e0db9dd7bef2f2eefb000cdee6/transformed/jetified-storage-chooser-2.0.4.4a-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/a40e2f8d7af32ddb49fe34aecf71ab41/transformed/jetified-header-decor-0.2.8-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/f3a2ac621f402ec21dad99296bb7902b/transformed/jetified-record-view-2.0.1-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/7909b87aad8dab9e6b00450072f09285/transformed/jetified-header-decor-0.2.8-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/115b3ffacfc6d81f0431058b4c439696/transformed/jetified-record-view-2.0.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/ac882fa4139a2fa20d4b1b29962ed4d4/transformed/jetified-android-adapters-4.0.0-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/bc10b7f2305df5483f2baf59719fb422/transformed/jetified-hidely-1.0.0-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/9d9c816c217617476e3c339a29fb690a/transformed/jetified-MultiContactPicker-1.8.5-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/46bd07d371582dc9387eb3ae8b01d38b/transformed/jetified-hidely-1.0.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/6a60efe260812eeefc3779fad46a93ee/transformed/jetified-MultiContactPicker-1.8.5-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/85e04c257701d9f4a66780a5b9bae86b/transformed/jetified-ShortcutBadger-1.1.22-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/424a33fb05d1248551a9327c0096ad03/transformed/jetified-CircularReveal-1.1.0-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/5f097b5a83b721aeae5a93cef5df124c/transformed/jetified-pull-back-layout-1.0.1-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/ff8df29fa27a333070213d6157fa7125/transformed/jetified-CircularReveal-1.1.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/a69a9faf3490288a88e534eae4f708f7/transformed/jetified-pull-back-layout-1.0.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/99eed1f14df9d3a33afd33cb34eade64/transformed/jetified-libphonenumber-android-8.8.5-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/d68584336302dc7ec65f207fb4cbcda1/transformed/jetified-eventbus-3.0.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/c832abd1fdf254335fb001421db81d03/transformed/jetified-ez-vcard-0.10.3.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/a362c4924581b54e12f769fa70baaa48/transformed/multidex-2.0.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/26830be792b9fff272fbfe199bf92401/transformed/jetified-library-1.0.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/269a8588b4ac1e168bfb01e6a0ae6c2e/transformed/jetified-android-job-1.4.5-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/e08b53ab8aec3e4d4944ec390e7abbab/transformed/jetified-circularstatusview-1.0.1-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/661c8a312c5738df3bfabba5be937ca9/transformed/jetified-circularstatusview-1.0.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/ef75d293b08a37af2a90628ecd59dc98/transformed/jetified-firebase-common-ktx-19.5.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/a7c39bae8fc103ddbb2c5a3c5edec5bd/transformed/jetified-kotlin-stdlib-jdk7-1.5.10.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/efc5ee7e381d6bb5f648a3cefc4a59be/transformed/lifecycle-extensions-2.2.0-api.jar</arg>
@@ -81,7 +97,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/32756038a8c86c9cb13e375969f21d45/transformed/jetified-activity-ktx-1.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/e64b78c2db6e403acc0f7ec157e2f073/transformed/jetified-lifecycle-viewmodel-ktx-2.2.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/678cb56327ebe7cd8fa693a84d579159/transformed/jetified-core-ktx-1.3.2-api.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/f7fd37b6babbc5288e8be9735028fc90/transformed/jetified-quickpermissions-kotlin-0.4.0-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/dc5c8d146212a88219cb6449ac5b9f46/transformed/jetified-quickpermissions-kotlin-0.4.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/a21e1e47ee509f5ca551e75ba3593650/transformed/jetified-retrofit2-kotlin-coroutines-adapter-0.9.2.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/052f20a88597bdda19803512df306ce7/transformed/jetified-converter-gson-2.9.0.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/ddd4b5fd190fb00c4b4f6e632f016304/transformed/jetified-retrofit-2.9.0.jar</arg>
@@ -90,7 +106,7 @@
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/e8958c53c6ff9bb3f6c941cca960b211/transformed/jetified-rxandroid-2.1.1-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/b3bea8599ad6508243d1554be845638c/transformed/jetified-rxjava-2.2.8.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/dc3a347c721da3146c98d2e0f96798b7/transformed/jetified-rxkotlin-2.2.0.jar</arg>
-                <arg>$USER_HOME$/.gradle/caches/transforms-3/9587e2560727ea3277480aa9e237438a/transformed/jetified-RxFirebase-1.5.6-api.jar</arg>
+                <arg>$USER_HOME$/.gradle/caches/transforms-3/3745511c44833f9fe2b72311cde6c042/transformed/jetified-RxFirebase-1.5.6-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/688d7f21742b68423ae9fc52cc261c3d/transformed/biometric-1.1.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/cf9f8881a54856bd9e01db7c0766b5b6/transformed/jetified-full-sdk-3.3.0-api.jar</arg>
                 <arg>$USER_HOME$/.gradle/caches/transforms-3/172f8f015295e70374db81e9489ae948/transformed/jetified-ethree-2.0.9-api.jar</arg>
@@ -257,22 +273,6 @@
         </compilerArguments>
       </configuration>
     </facet>
-    <facet type="android" name="Android">
-      <configuration>
-        <option name="SELECTED_BUILD_VARIANT" value="debug" />
-        <option name="ASSEMBLE_TASK_NAME" value="assembleDebug" />
-        <option name="COMPILE_JAVA_TASK_NAME" value="compileDebugSources" />
-        <afterSyncTasks>
-          <task>generateDebugSources</task>
-        </afterSyncTasks>
-        <option name="ALLOW_USER_CONFIGURATION" value="false" />
-        <option name="MANIFEST_FILE_RELATIVE_PATH" value="/src/main/AndroidManifest.xml" />
-        <option name="RES_FOLDER_RELATIVE_PATH" value="/src/main/res" />
-        <option name="RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../app/src/main/res;file://$MODULE_DIR$/../../../app/src/debug/res;file://$MODULE_DIR$/../../../app/build/generated/res/rs/debug;file://$MODULE_DIR$/../../../app/build/generated/res/resValues/debug" />
-        <option name="TEST_RES_FOLDERS_RELATIVE_PATH" value="file://$MODULE_DIR$/../../../app/src/androidTest/res;file://$MODULE_DIR$/../../../app/src/androidTestDebug/res;file://$MODULE_DIR$/../../../app/build/generated/res/rs/androidTest/debug;file://$MODULE_DIR$/../../../app/build/generated/res/resValues/androidTest/debug" />
-        <option name="ASSETS_FOLDER_RELATIVE_PATH" value="/src/main/assets" />
-      </configuration>
-    </facet>
   </component>
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8" inherit-compiler-output="true">
     <exclude-output />
@@ -284,16 +284,23 @@
     <content url="file://$MODULE_DIR$/../../../app/build/generated/source/buildConfig/androidTest/debug" />
     <content url="file://$MODULE_DIR$/../../../app/build/generated/source/kapt/debugAndroidTest" />
     <content url="file://$MODULE_DIR$/../../../app/build/generated/source/kaptKotlin/debugAndroidTest" />
-    <content url="file://$MODULE_DIR$/../../../app/src/androidTest">
-      <sourceFolder url="file://$MODULE_DIR$/../../../app/src/androidTest/java" isTestSource="true" />
-    </content>
+    <content url="file://$MODULE_DIR$/../../../app/src/androidTest" />
     <content url="file://$MODULE_DIR$/../../../app/src/androidTestDebug" />
     <orderEntry type="jdk" jdkName="Android API 31 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="FireApp_Android_App_-_V2.1.3.app.main" scope="TEST" />
-    <orderEntry type="module" module-name="FireApp_Android_App_-_V2.1.3.cameraView.main" scope="TEST" />
-    <orderEntry type="module" module-name="FireApp_Android_App_-_V2.1.3.stories-progress-view.main" scope="TEST" />
-    <orderEntry type="module" module-name="FireApp_Android_App_-_V2.1.3.imageeditengine.main" scope="TEST" />
+    <orderEntry type="module" module-name="FireAppAndroidAppV213.app.main" scope="TEST" />
+    <orderEntry type="module-library" scope="TEST">
+      <library name="Gradle: kaptGeneratedClasses">
+        <CLASSES>
+          <root url="file://$MODULE_DIR$/../../../app/build/tmp/kapt3/classes/debugAndroidTest" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module" module-name="FireAppAndroidAppV213.cameraView.main" scope="TEST" />
+    <orderEntry type="module" module-name="FireAppAndroidAppV213.stories-progress-view.main" scope="TEST" />
+    <orderEntry type="module" module-name="FireAppAndroidAppV213.imageeditengine.main" scope="TEST" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.google.code.findbugs:jsr305:3.0.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: io.reactivex.rxjava2:rxjava:2.2.8" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: org.reactivestreams:reactive-streams:1.0.2" level="project" />
@@ -492,5 +499,5 @@
     <orderEntry type="library" scope="TEST" name="Gradle: com.virgilsecurity:ratchet-android:0.1.4@aar" level="project" />
     <orderEntry type="library" scope="TEST" name="Gradle: com.virgilsecurity.crypto:ratchet-android:0.15.2@aar" level="project" />
   </component>
-  <component name="TestModuleProperties" production-module="FireApp_Android_App_-_V2.1.3.app.main" />
+  <component name="TestModuleProperties" production-module="FireAppAndroidAppV213.app.main" />
 </module>

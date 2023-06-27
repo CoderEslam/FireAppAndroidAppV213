@@ -2,6 +2,7 @@ package com.devlomi.fireapp.fragments
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
@@ -15,11 +16,11 @@ import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.LoadAdError
 import io.reactivex.disposables.CompositeDisposable
 
-abstract class BaseFragment : Fragment(),Base {
+abstract class BaseFragment : Fragment(), Base {
     @JvmField
     var fragmentCallback: FragmentCallback? = null
     open var adView: AdView? = null
-
+    private val TAG = "BaseFragment"
     abstract fun showAds(): Boolean
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -62,7 +63,11 @@ abstract class BaseFragment : Fragment(),Base {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        if (adView != null && showAds()) adView!!.loadAd(AdRequest.Builder().build())
+        try {
+            if (adView != null && showAds()) adView!!.loadAd(AdRequest.Builder().build())
+        } catch (e: IllegalStateException) {
+            Log.e(TAG, "onActivityCreated: ${e.message}")
+        }
     }
 
     open fun onQueryTextChange(newText: String?) {}

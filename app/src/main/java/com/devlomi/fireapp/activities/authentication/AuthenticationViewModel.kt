@@ -29,6 +29,7 @@ import kotlinx.coroutines.withContext
 class AuthenticationViewModel : ViewModel() {
     private var storedVerificationId = ""
 
+    private val TAG = "AuthenticationViewModel"
     private val authManager = AuthManager()
     private val auth = FirebaseAuth.getInstance()
     private var currentPhoneNumber = ""
@@ -45,7 +46,8 @@ class AuthenticationViewModel : ViewModel() {
     private val _goToAuthActivity = MutableLiveData<Unit>()
     val goToAuthActivity: LiveData<Unit> get() = _goToAuthActivity
 
-    private val _verify = MutableLiveData<Pair<String, PhoneAuthProvider.OnVerificationStateChangedCallbacks>>()
+    private val _verify =
+        MutableLiveData<Pair<String, PhoneAuthProvider.OnVerificationStateChangedCallbacks>>()
     val verify: LiveData<Pair<String, PhoneAuthProvider.OnVerificationStateChangedCallbacks>> get() = _verify
 
     private val _goToEnterVerifyPhoneFragment = MutableLiveData<Bundle>()
@@ -65,6 +67,7 @@ class AuthenticationViewModel : ViewModel() {
 
 
             val message = if (e is FirebaseAuthException) {
+                Log.e(TAG, "onVerificationFailed: ${e.message}")
                 FirebaseAuthError.fromException(e).description
             } else {
                 e.localizedMessage
@@ -75,7 +78,10 @@ class AuthenticationViewModel : ViewModel() {
 
         }
 
-        override fun onCodeSent(verificationId: String, token: PhoneAuthProvider.ForceResendingToken) {
+        override fun onCodeSent(
+            verificationId: String,
+            token: PhoneAuthProvider.ForceResendingToken
+        ) {
             super.onCodeSent(verificationId, token)
 
             storedVerificationId = verificationId
