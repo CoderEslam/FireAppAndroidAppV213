@@ -13,18 +13,17 @@
 
 
         <CheckedTextView
-            android:textColor="@color/colorText"
             android:id="@+id/check_text_view_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:checkMark="?android:attr/listChoiceIndicatorMultiple"
             android:checked="true"
-            android:drawableLeft="@drawable/ic_phone_wrapped"
-            android:drawableTint="@color/iconTintColor"
+            android:drawableLeft="@drawable/ic_phone_white"
             android:drawablePadding="20dp"
             android:gravity="center"
             android:padding="15dp"
-            tools:text="Test" />
+            android:textColor="@color/colorPrimary"
+            tools:text="Eslam" />
 
         <View
             android:layout_width="match_parent"

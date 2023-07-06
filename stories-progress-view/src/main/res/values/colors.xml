@@ -7,4 +7,5 @@
 
     <color name="gray_scale">#8affffff</color>
     <color name="white">#fff</color>
+    <color name="color_less">#00000000</color>
 </resources>

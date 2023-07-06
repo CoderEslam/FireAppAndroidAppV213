@@ -3,9 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="4dp"
+    android:background="?selectableItemBackground"
     android:clickable="true"
-    android:focusable="true"
-    android:background="?selectableItemBackground">
+    android:focusable="true">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_view_group_participant"
@@ -16,27 +16,26 @@
 
 
     <TextView
-        android:layout_marginLeft="8dp"
         android:id="@+id/tv_username_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="14dp"
         android:layout_toRightOf="@id/img_view_group_participant"
-        android:text="John Doe"
+        android:text="Eslam Ghazy"
         android:textColor="@color/colorText" />
 
     <TextView
-        android:layout_marginLeft="8dp"
         android:id="@+id/tv_user_status"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_username_group"
+        android:layout_marginLeft="8dp"
         android:layout_toRightOf="@id/img_view_group_participant"
-        android:text="Hello World"
+        android:text="status"
         android:textColor="@color/grey" />
 
     <TextView
-        android:visibility="gone"
         android:id="@+id/tv_group_admin_tag"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -46,6 +45,7 @@
         android:padding="4dp"
         android:text="Group Admin"
         android:textColor="@color/dark_blue"
-        android:textSize="9sp" />
+        android:textSize="9sp"
+        android:visibility="gone" />
 
 </RelativeLayout>

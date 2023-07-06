@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/user_img_selected_user_group"
         android:gravity="center"
-        android:text="John Doe"
+        android:text="Eslam Ghazy"
         android:textColor="@color/colorText" />
 
 

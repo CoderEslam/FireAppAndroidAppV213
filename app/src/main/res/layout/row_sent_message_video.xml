@@ -3,21 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/margin_bottom_message"
     android:layout_marginTop="@dimen/margin_top_message"
+    android:layout_marginBottom="@dimen/margin_bottom_message"
     android:orientation="vertical">
-
 
 
     <com.devlomi.fireapp.views.backgroundtintlayouts.LinearLayoutWithBackgroundTint
         android:id="@+id/container"
-        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
-        android:layout_marginLeft="20dp"
         android:layout_marginStart="20dp"
-        android:background="@drawable/sent_message"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/sent__message_"
+        android:orientation="vertical"
+        android:padding="10dp"
         app:linearBgTintColor="@color/sent_message_background_color">
 
 
@@ -26,7 +26,8 @@
 
         <RelativeLayout
             android:layout_width="@dimen/img_width"
-            android:layout_height="@dimen/img_height">
+            android:layout_height="@dimen/img_height"
+            android:layout_marginEnd="5dp">
 
             <ImageView
                 android:id="@+id/thumb_img"
@@ -51,14 +52,12 @@
                     app:srcCompat="@drawable/ic_play_arrow" />
 
 
-
                 <com.github.abdularis.buttonprogress.DownloadButtonProgress
                     android:id="@+id/progress_button"
                     android:layout_width="35dp"
                     android:layout_height="35dp"
                     android:layout_alignParentBottom="true"
-                    android:visibility="gone"
-                    />
+                    android:visibility="gone" />
 
             </RelativeLayout>
 
@@ -95,10 +94,10 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:layout_alignParentEnd="true"
-                android:layout_marginBottom="1dp"
+                android:layout_alignParentBottom="true"
                 android:layout_marginTop="2dp"
+                android:layout_marginBottom="1dp"
                 android:background="@drawable/bg_tv"
                 android:orientation="horizontal">
 

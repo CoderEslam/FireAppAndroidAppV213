@@ -16,7 +16,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="?attr/colorPrimary"
+            android:background="@color/white"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
             app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay">
@@ -47,14 +47,16 @@
                         android:background="@null"
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
-                        app:srcCompat="@drawable/ic_arrow_back" />
+                        app:srcCompat="@drawable/ic_arrow_back"
+                        app:tint="@color/colorPrimary" />
 
                     <de.hdodenhof.circleimageview.CircleImageView
-                        android:transitionName="@string/profile_translation_name"
                         android:id="@+id/user_img_toolbar_chat_act"
                         android:layout_width="45dp"
                         android:layout_height="45dp"
-                        android:src="@drawable/user_img_wrapped" />
+                        android:layout_marginStart="10dp"
+                        android:src="@drawable/user_img_wrapped"
+                        android:transitionName="@string/profile_translation_name" />
 
 
                 </LinearLayout>
@@ -130,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginTop="8dp"
-                    android:text="John Doe"
+                    android:text="Eslam Ghazy"
                     android:textSize="18sp"
                     app:layout_constraintStart_toEndOf="@+id/img_and_back_container"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -177,9 +179,6 @@
 
 
     <include layout="@layout/content_chat" />
-
-
-
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

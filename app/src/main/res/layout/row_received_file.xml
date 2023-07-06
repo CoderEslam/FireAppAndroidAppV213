@@ -14,8 +14,9 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:layout_gravity="left"
-        android:background="@drawable/received_message"
+        android:background="@drawable/received__message_"
         android:orientation="vertical"
+        android:padding="15dp"
         app:linearBgTintColor="@color/received_message_background_color">
 
 
@@ -23,8 +24,8 @@
             android:id="@+id/tv_username_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginTop="4dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:text="test"
             android:textColor="@color/blue"
             android:visibility="gone" />
@@ -62,18 +63,16 @@
                 tools:text="File_20323232-15951.APK" />
 
 
-
             <com.github.abdularis.buttonprogress.DownloadButtonProgress
+                android:id="@+id/progress_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
-                android:id="@+id/progress_button"
                 android:padding="8dp"
                 android:tint="#fff"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:visibility="invisible"
-                />
+                android:visibility="invisible" />
 
 
             <TextView

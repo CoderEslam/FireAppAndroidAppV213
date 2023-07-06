@@ -14,30 +14,29 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <ImageView
-            android:layout_marginBottom="8dp"
-
             android:id="@+id/arrow_up"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/ic_arrow_up" />
+            android:layout_marginBottom="8dp"
+            app:srcCompat="@drawable/ic_arrow_up"
+            app:tint="@color/colorPrimary" />
 
         <TextView
-            android:text="0"
-            android:drawablePadding="6dp"
             android:id="@+id/tv_seen_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="60dp"
-            app:drawableLeftCompat="@drawable/ic_remove_red_eye"
+            android:drawablePadding="6dp"
             android:gravity="center"
-            android:textColor="@color/white"
+            android:text="0"
+            android:textColor="#000"
+            app:drawableLeftCompat="@drawable/ic_remove_red_eye"
             tools:text="8 Users" />
 
         <androidx.recyclerview.widget.RecyclerView

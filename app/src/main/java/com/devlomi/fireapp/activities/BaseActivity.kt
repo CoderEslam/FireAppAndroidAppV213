@@ -28,10 +28,15 @@ import kotlinx.coroutines.launch
 
 
 abstract class BaseActivity : AppCompatActivity(), Base {
+
     override val disposables = CompositeDisposable()
+
     abstract fun enablePresence(): Boolean
+
     private var presenceUtil: PresenceUtil? = null
+
     val fireManager = FireManager()
+
     private lateinit var newMessageHandler: NewMessageHandler
 
     private var logoutReceiver: BroadcastReceiver? = null

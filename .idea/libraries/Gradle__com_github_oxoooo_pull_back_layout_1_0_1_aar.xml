@@ -1,29 +1,10 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.oxoooo:pull-back-layout:1.0.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2bbaebb7e89e22fd4b6420018108e604/jetified-pull-back-layout-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2bbaebb7e89e22fd4b6420018108e604/jetified-pull-back-layout-1.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2bbaebb7e89e22fd4b6420018108e604/jetified-pull-back-layout-1.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5df5b273a24572c6ffad07fcd3be6743/jetified-pull-back-layout-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5df5b273a24572c6ffad07fcd3be6743/jetified-pull-back-layout-1.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/5df5b273a24572c6ffad07fcd3be6743/jetified-pull-back-layout-1.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/76078cb6c11d9333dd6b1fe584dfa17d/jetified-pull-back-layout-1.0.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cf21484daed5a3428bf34a6bc6d90052/transformed/jetified-pull-back-layout-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cf21484daed5a3428bf34a6bc6d90052/transformed/jetified-pull-back-layout-1.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cf21484daed5a3428bf34a6bc6d90052/transformed/jetified-pull-back-layout-1.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3ffaf10335c99146fa1da525547e3be6/transformed/jetified-pull-back-layout-1.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/3ffaf10335c99146fa1da525547e3be6/transformed/jetified-pull-back-layout-1.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/3ffaf10335c99146fa1da525547e3be6/transformed/jetified-pull-back-layout-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5ef62e2a9d5c6c3fb2618fee60ce3b30/transformed/jetified-pull-back-layout-1.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/1b5ba7756e428706ae9c3898384e43de/transformed/jetified-pull-back-layout-1.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/26b6f58a65ac193451b576ccc129798d/transformed/jetified-pull-back-layout-1.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5ef62e2a9d5c6c3fb2618fee60ce3b30/transformed/jetified-pull-back-layout-1.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/5ef62e2a9d5c6c3fb2618fee60ce3b30/transformed/jetified-pull-back-layout-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b989e0d9a8001f252def21a8d76466bf/transformed/jetified-pull-back-layout-1.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b989e0d9a8001f252def21a8d76466bf/transformed/jetified-pull-back-layout-1.0.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b989e0d9a8001f252def21a8d76466bf/transformed/jetified-pull-back-layout-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d831144fab0bed34f3485f39f2692123/transformed/jetified-pull-back-layout-1.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/d831144fab0bed34f3485f39f2692123/transformed/jetified-pull-back-layout-1.0.1/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f89351ae4401b8e657a4d64f9a8e0607/transformed/jetified-pull-back-layout-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f89351ae4401b8e657a4d64f9a8e0607/transformed/jetified-pull-back-layout-1.0.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e14bdea526498abe689ec141a9690fc5/transformed/jetified-pull-back-layout-1.0.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/e14bdea526498abe689ec141a9690fc5/transformed/jetified-pull-back-layout-1.0.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

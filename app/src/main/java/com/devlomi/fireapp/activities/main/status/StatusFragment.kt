@@ -316,7 +316,7 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
 
     private fun initAdapter() {
         adapter = StatusAdapter(statusesList, true, context, this@StatusFragment)
-        rv_status.layoutManager = LinearLayoutManager(context)
+//        rv_status.layoutManager = LinearLayoutManager(context)
         rv_status.adapter = adapter
         decor = HeaderViewDecoration(context)
         decor?.let {

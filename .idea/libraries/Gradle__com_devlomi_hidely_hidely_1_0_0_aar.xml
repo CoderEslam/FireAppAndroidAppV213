@@ -1,27 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.devlomi.hidely:hidely:1.0.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7d34253e8b24ab9bc27d74a739be8ed9/jetified-hidely-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7d34253e8b24ab9bc27d74a739be8ed9/jetified-hidely-1.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7d34253e8b24ab9bc27d74a739be8ed9/jetified-hidely-1.0.0/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fd251c5e8c3c0a20c89ef677a66cdacd/jetified-hidely-1.0.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fd251c5e8c3c0a20c89ef677a66cdacd/jetified-hidely-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/fd251c5e8c3c0a20c89ef677a66cdacd/jetified-hidely-1.0.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b64c569ac526d98918b009da3e578228/transformed/jetified-hidely-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b64c569ac526d98918b009da3e578228/transformed/jetified-hidely-1.0.0/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b64c569ac526d98918b009da3e578228/transformed/jetified-hidely-1.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f5dc0ca1a9c98b0129efbb60be41bffd/transformed/jetified-hidely-1.0.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f5dc0ca1a9c98b0129efbb60be41bffd/transformed/jetified-hidely-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f5dc0ca1a9c98b0129efbb60be41bffd/transformed/jetified-hidely-1.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/db339c7a3d7ddd4f0a734427a2f4436e/transformed/jetified-hidely-1.0.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/db339c7a3d7ddd4f0a734427a2f4436e/transformed/jetified-hidely-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/db339c7a3d7ddd4f0a734427a2f4436e/transformed/jetified-hidely-1.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b56f1714864f59fd90731caf4ad7712b/transformed/jetified-hidely-1.0.0/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/b56f1714864f59fd90731caf4ad7712b/transformed/jetified-hidely-1.0.0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/b56f1714864f59fd90731caf4ad7712b/transformed/jetified-hidely-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/35e0e539c8d7b458b093a38c360c764d/transformed/jetified-hidely-1.0.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/35e0e539c8d7b458b093a38c360c764d/transformed/jetified-hidely-1.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/35e0e539c8d7b458b093a38c360c764d/transformed/jetified-hidely-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8ee15416a3b657d3791cb4e1d14470f4/transformed/jetified-hidely-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/8ee15416a3b657d3791cb4e1d14470f4/transformed/jetified-hidely-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/8ee15416a3b657d3791cb4e1d14470f4/transformed/jetified-hidely-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/489d98dc1faa10966e8d89db6387fa8b/transformed/jetified-hidely-1.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/489d98dc1faa10966e8d89db6387fa8b/transformed/jetified-hidely-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/489d98dc1faa10966e8d89db6387fa8b/transformed/jetified-hidely-1.0.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.devlomi.hidely/hidely/1.0.0/838ba436a89ecc882015d2b455d1ba4b2cfac80d/hidely-1.0.0-javadoc.jar!/" />

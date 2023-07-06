@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/bgColor">
+    android:background="@color/bgColor"
+    android:orientation="vertical">
 
     <FrameLayout
         android:layout_width="wrap_content"
@@ -18,46 +18,61 @@
             android:layout_width="200dp"
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
-            app:civ_border_width="1dp"
-            app:civ_border_color="@color/grey"
             android:src="@drawable/user_img_wrapped"
-            android:transitionName="profile_photo_trans" />
+            android:transitionName="profile_photo_trans"
+            app:civ_border_color="@color/colorPrimary"
+            app:civ_border_width="1dp" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/image_button_change_user_profile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|right"
             android:layout_marginRight="38dp"
-            android:background="@drawable/circle_bg"
+            android:background="@drawable/bg_mic"
             android:padding="8dp"
-            android:tint="#ffffff"
-            app:srcCompat="@drawable/ic_photo_camera" />
+            app:srcCompat="@drawable/ic_photo_camera"
+            app:tint="#ffffff" />
 
     </FrameLayout>
 
     <androidx.cardview.widget.CardView
-app:cardBackgroundColor="@color/cardBgColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp">
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/cardBgColor">
 
 
         <LinearLayout
+            android:padding="12dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <TextView
-                android:id="@+id/tv_username"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:padding="12dp"
-                android:textColor="@color/colorText"
-                tools:text="John Doe" />
+                android:orientation="vertical">
 
-            <ImageButton
-                android:tint="@color/iconTintColor"
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Name"
+                    android:layout_marginBottom="12dp"
+                    android:textColor="#8E8A80" />
+
+
+                <TextView
+                    android:id="@+id/tv_username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textColor="@color/colorText"
+                    tools:text="Eslam Ghazy" />
+            </LinearLayout>
+
+            <ImageView
                 android:id="@+id/image_button_edit_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,10 +84,10 @@ app:cardBackgroundColor="@color/cardBgColor"
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-app:cardBackgroundColor="@color/cardBgColor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp">
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="@color/cardBgColor">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -81,20 +96,42 @@ app:cardBackgroundColor="@color/cardBgColor"
             android:padding="12dp">
 
 
-            <TextView
-                android:textStyle="bold"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="About and Phone Number"
-                android:textColor="@color/colorText" />
+                android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/tv_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="14dp"
-                tools:text="www.Devlomi.com"
-                android:textColor="@color/colorText" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about"
+                        android:textColor="@color/colorText"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_status"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="14dp"
+                        android:textColor="@color/colorText"
+                        tools:text="Ring Ring" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/edit_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="8dp"
+                    android:background="@null"
+                    app:srcCompat="@drawable/ic_edit" />
+            </LinearLayout>
 
             <View
                 android:layout_width="match_parent"
@@ -107,7 +144,7 @@ app:cardBackgroundColor="@color/cardBgColor"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="14dp"
-                android:text="+1 111 111 111 "
+                android:text="+2 0122 193 0858"
                 android:textColor="@color/colorText" />
 
 

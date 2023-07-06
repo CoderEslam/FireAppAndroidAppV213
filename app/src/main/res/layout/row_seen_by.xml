@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#fff"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="#fff">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/user_img"
@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/user_img"
         app:layout_constraintTop_toTopOf="@+id/user_img"
-        tools:text="John Doe" />
+        tools:text="Eslam Ghazy" />
 
     <TextView
         android:id="@+id/tv_seen_time"
@@ -43,15 +43,14 @@
 
 
     <View
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_width="0dp"
         android:layout_height="0.5dp"
-
         android:layout_marginTop="8dp"
         android:background="#e1e1e1"
-        app:layout_constraintTop_toBottomOf="@id/user_img"
-        />
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/user_img" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

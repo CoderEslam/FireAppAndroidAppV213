@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
-
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
 
 
@@ -13,13 +12,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="start"
+        android:padding="10dp"
+        android:layout_marginTop="@dimen/margin_top_message"
         android:layout_marginEnd="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginTop="@dimen/margin_top_message"
-        android:background="@drawable/received_message"
+        android:background="@drawable/received__message_"
         android:orientation="vertical"
         app:linearBgTintColor="@color/received_message_background_color">
-
 
 
         <TextView
@@ -33,6 +32,7 @@
         <include layout="@layout/item_reply" />
 
         <RelativeLayout
+            android:layout_marginStart="5dp"
             android:layout_width="@dimen/img_width"
             android:layout_height="@dimen/img_height">
 
@@ -78,8 +78,7 @@
                     android:paddingRight="4dp"
                     android:paddingBottom="2dp"
                     android:text="4 MB"
-                    android:textSize="12sp"
-                  />
+                    android:textSize="12sp" />
 
             </RelativeLayout>
 
@@ -87,8 +86,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
+                android:layout_alignParentBottom="true"
                 android:background="@drawable/bg_tv"
                 android:orientation="horizontal">
 

@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
     android:background="@color/bgColor"
     android:orientation="vertical"
     tools:context=".activities.main.status.StatusFragment">
@@ -14,9 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/cardBgColor">
-
         <include layout="@layout/row_status" />
-
 
     </androidx.cardview.widget.CardView>
 
@@ -35,8 +32,10 @@
         android:id="@+id/rv_status"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1" />
-
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_status" />
 
     <com.google.android.gms.ads.AdView
         android:id="@+id/ad_view"

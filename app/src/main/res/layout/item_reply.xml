@@ -77,4 +77,5 @@
         android:layout_marginRight="3dp"
         android:visibility="gone"
         app:srcCompat="@drawable/ic_clear" />
+
 </FrameLayout>

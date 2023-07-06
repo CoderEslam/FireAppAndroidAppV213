@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/message"
+        android:icon="@drawable/message"
+        android:title="@string/message"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/status"
+        android:icon="@drawable/status"
+        android:title="@string/status"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/calls"
+        android:icon="@drawable/calles"
+        android:title="@string/calls"
+        app:showAsAction="never" />
+</menu>

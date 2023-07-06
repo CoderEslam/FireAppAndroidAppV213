@@ -13,13 +13,15 @@
         android:layout_gravity="left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/received_message"
+        android:background="@drawable/received__message_"
         android:padding="6dp"
         android:orientation="horizontal"
         app:linearBgTintColor="@color/received_message_background_color">
 
         <TextView
-            android:layout_marginLeft="8dp"
+            android:paddingLeft="5dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawableLeft="@drawable/ic_not_interested_wrapped"
@@ -31,6 +33,7 @@
             android:textStyle="italic" />
 
         <TextView
+            android:layout_gravity="center"
             android:id="@+id/tv_time"
             style="@style/ReceivedMessageTimeTextStyle"
             android:layout_width="wrap_content"

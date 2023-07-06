@@ -16,7 +16,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="@dimen/margin_top_message"
         android:layout_marginBottom="@dimen/margin_bottom_message"
-        android:background="@drawable/sent_message"
+        android:background="@drawable/sent__message_"
         android:orientation="vertical"
         app:linearBgTintColor="@color/sent_message_background_color">
 
@@ -79,9 +79,9 @@
                     android:layout_toRightOf="@id/profile_image_container"
                     android:background="@drawable/btn_play_bg"
                     android:padding="6dp"
-                    android:tint="@color/colorWhite"
                     android:visibility="visible"
-                    app:srcCompat="@drawable/ic_play_arrow" />
+                    app:srcCompat="@drawable/ic_play_arrow"
+                    app:tint="@color/colorWhite" />
 
 
                 <com.devlomi.fireapp.views.DevlomiSeekbar

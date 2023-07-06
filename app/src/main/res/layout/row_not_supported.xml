@@ -12,7 +12,7 @@
         android:layout_gravity="left"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/received_message"
+        android:background="@drawable/received__message_"
         android:padding="6dp"
         android:orientation="horizontal"
         app:linearBgTintColor="@color/received_message_background_color">

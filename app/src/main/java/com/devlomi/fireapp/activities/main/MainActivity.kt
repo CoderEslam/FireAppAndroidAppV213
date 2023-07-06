@@ -13,6 +13,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
@@ -42,6 +43,8 @@ import com.devlomi.fireapp.services.NetworkService
 import com.devlomi.fireapp.utils.*
 import com.devlomi.fireapp.utils.network.FireManager
 import com.devlomi.fireapp.views.dialogs.IgnoreBatteryDialog
+import com.devlomi.fireapp.views.lavafab.Child
+import com.devlomi.fireapp.views.lavafab.LavaFab
 import com.devlomi.fireapp.views.sticker.StickerLoader
 import com.droidninja.imageeditengine.ImageEditor
 import com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -53,6 +56,7 @@ import com.karumi.dexter.listener.PermissionGrantedResponse
 import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import io.reactivex.rxkotlin.addTo
+import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.EventBus
 
 
@@ -61,6 +65,7 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
     private var isInSearchMode = false
 
     private lateinit var fab: FloatingActionButton
+    private lateinit var lava_fab_bottom_right: LavaFab
     private lateinit var textStatusFab: FloatingActionButton
 
     private lateinit var toolbar: Toolbar
@@ -74,7 +79,6 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
     private var fireListener: FireListener? = null
     private var adapter: ViewPagerAdapter? = null
     private lateinit var rotationAnimation: FabRotationAnimation
-    private var root: CoordinatorLayout? = null
 
     private var currentPage = 0
 
@@ -100,6 +104,10 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 
 
         setSupportActionBar(toolbar)
+        supportActionBar?.title= ""
+        supportActionBar?.setDisplayShowHomeEnabled(false)
+        supportActionBar?.setDisplayHomeAsUpEnabled(false)
+
 
         rotationAnimation = FabRotationAnimation(this)
 
@@ -116,6 +124,22 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
                 2 -> startActivity(Intent(this@MainActivity, NewCallActivity::class.java))
             }
         }
+
+        with(lava_fab_bottom_right) {
+            setParentOnClickListener { lava_fab_bottom_right.trigger() }
+            setChildOnClickListener(Child.TOP) {
+                startActivity(Intent(this@MainActivity, NewChatActivity::class.java))
+            }
+            setChildOnClickListener(Child.LEFT) {
+                val intent = Intent(this@MainActivity, NewGroupActivity::class.java)
+                intent.putExtra(IntentUtils.IS_BROADCAST, true)
+                startActivity(intent)
+            }
+            setChildOnClickListener(Child.LEFT_TOP) {
+                createGroupClicked()
+            }
+        }
+
 
         textStatusFab.setOnClickListener {
             startActivityForResult(
@@ -224,6 +248,7 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 
     }
 
+    private fun showToast() = Toast.makeText(this, "Child clicked", Toast.LENGTH_SHORT).show()
 
     private fun listenForDeviceIdChange() {
         FireConstants.deviceIdRef.child(FireManager.uid).observeValueEvent()
@@ -274,6 +299,7 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
                 SharedPreferencesManager.setDoNotShowBatteryOptimizationAgain(checkBoxChecked)
             }
 
+            @RequiresApi(Build.VERSION_CODES.M)
             override fun onOk() {
                 try {
                     val intent = Intent()
@@ -394,12 +420,13 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 
     private fun init() {
         fab = findViewById(R.id.open_new_chat_fab)
+        lava_fab_bottom_right = findViewById(R.id.lava_fab_bottom_right)
         toolbar = findViewById(R.id.toolbar)
+
         tvSelectedChatCount = findViewById(R.id.tv_selected_chat)
         viewPager = findViewById(R.id.view_pager)
         tabLayout = findViewById(R.id.tab_layout)
         textStatusFab = findViewById(R.id.text_status_fab)
-        root = findViewById(R.id.root)
 
         initTabLayout()
 
@@ -471,16 +498,15 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 
             R.id.search_item -> searchItemClicked()
 
-            R.id.new_group_item -> createGroupClicked()
+//            R.id.new_group_item -> createGroupClicked()
 
+//            R.id.invite_item -> startActivity(IntentUtils.getShareAppIntent(this@MainActivity))
 
-            R.id.invite_item -> startActivity(IntentUtils.getShareAppIntent(this@MainActivity))
-
-            R.id.new_broadcast_item -> {
-                val intent = Intent(this@MainActivity, NewGroupActivity::class.java)
-                intent.putExtra(IntentUtils.IS_BROADCAST, true)
-                startActivity(intent)
-            }
+//            R.id.new_broadcast_item -> {
+//                val intent = Intent(this@MainActivity, NewGroupActivity::class.java)
+//                intent.putExtra(IntentUtils.IS_BROADCAST, true)
+//                startActivity(intent)
+//            }
         }
 
         return super.onOptionsItemSelected(item)

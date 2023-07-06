@@ -14,8 +14,9 @@
         android:layout_gravity="end"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:background="@drawable/sent_message"
+        android:background="@drawable/sent__message_"
         android:orientation="vertical"
+        android:padding="10dp"
         app:linearBgTintColor="@color/sent_message_background_color">
 
 
@@ -24,7 +25,8 @@
 
         <RelativeLayout
             android:layout_width="@dimen/img_width"
-            android:layout_height="@dimen/img_height">
+            android:layout_height="@dimen/img_height"
+            android:layout_marginEnd="5dp">
 
             <ImageView
                 android:id="@+id/img_msg"

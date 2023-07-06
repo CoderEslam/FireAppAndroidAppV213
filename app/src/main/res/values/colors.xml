@@ -23,9 +23,9 @@
 
 
     <!--  by default some libs use this default colors, so we are just adding it and reference the colors above -->
-    <color name="colorPrimary">#2196F3</color>
-    <color name="colorPrimaryDark">#1976D2</color>
-    <color name="colorAccent">#FF5722</color>
+    <color name="colorPrimary">#E2A602</color>
+    <color name="colorPrimaryDark">#E2A602</color>
+    <color name="colorAccent">#ffffff</color>
 
     <color name="colorsecondary_text">#757575</color>
 

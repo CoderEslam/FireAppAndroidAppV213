@@ -19,12 +19,12 @@ android {
 
         vectorDrawables.useSupportLibrary = true
 
-        resValue 'string', "app_name", "FireApp"
-        resValue 'string', "app_folder_name", "FireApp"
+        resValue 'string', "app_name", "RingRing"
+        resValue 'string', "app_folder_name", "RingRing"
 
         resValue 'string', "privacy_policy_link", "http://devlomi.com/fireapp_privacy_policy.html"
 
-        resValue 'string', "group_invite_host", "join.fireapp.pro"
+        resValue 'string', "group_invite_host", "join.ringring.pro"
 
         resValue 'string', "update_app_link", "http://devlomi.com/"
 

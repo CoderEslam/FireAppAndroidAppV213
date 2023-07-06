@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -13,20 +11,18 @@
     tools:showIn="@layout/content_chat">
 
 
-
     <ImageView
-        android:layout_marginLeft="4dp"
-        android:background="?attr/selectableItemBackgroundBorderless"
         android:id="@+id/emoji_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:tint="@color/iconTintColor"
-        app:srcCompat="@drawable/ic_insert_emoticon_black" />
+        android:layout_marginLeft="4dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        app:srcCompat="@drawable/ic_insert_emoticon_black"
+        app:tint="@color/iconTintColor" />
 
 
     <com.devlomi.fireapp.views.ChatEditText
-        android:textColor="@color/colorText"
         android:id="@+id/et_message"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -39,6 +35,7 @@
         android:maxLines="2"
         android:paddingTop="4dp"
         android:paddingBottom="4dp"
+        android:textColor="@color/colorText"
         android:textColorHint="@color/grey"
         android:textSize="@dimen/et_message_text_size" />
 
@@ -50,8 +47,8 @@
         android:layout_gravity="center_vertical"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="8dp"
-        android:tint="@color/iconTintColor"
-        app:srcCompat="@drawable/ic_attach_file" />
+        app:srcCompat="@drawable/ic_attach_file"
+        app:tint="@color/iconTintColor" />
 
 
     <ImageView
@@ -63,10 +60,8 @@
         android:layout_marginRight="8dp"
         android:background="?attr/selectableItemBackgroundBorderless"
         android:padding="6dp"
-        android:tint="@color/iconTintColor"
-        app:srcCompat="@drawable/ic_photo_camera" />
-
-
+        app:srcCompat="@drawable/ic_photo_camera"
+        app:tint="@color/iconTintColor" />
 
 
 </LinearLayout>

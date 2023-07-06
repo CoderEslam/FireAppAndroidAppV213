@@ -1,27 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.devlomi.record-view:record-view:2.0.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bcef9e1ee83358431003ef731c4d86a9/jetified-record-view-2.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bcef9e1ee83358431003ef731c4d86a9/jetified-record-view-2.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/bcef9e1ee83358431003ef731c4d86a9/jetified-record-view-2.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/186ddb901c2ef3364af6e5a1682ca43c/jetified-record-view-2.0.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/186ddb901c2ef3364af6e5a1682ca43c/jetified-record-view-2.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/186ddb901c2ef3364af6e5a1682ca43c/jetified-record-view-2.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f50d0143b1fdf09c3f36d6cd9ad94da3/transformed/jetified-record-view-2.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f50d0143b1fdf09c3f36d6cd9ad94da3/transformed/jetified-record-view-2.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f50d0143b1fdf09c3f36d6cd9ad94da3/transformed/jetified-record-view-2.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/697c7b7fd1366a8908f4b46de9aeb53c/transformed/jetified-record-view-2.0.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/697c7b7fd1366a8908f4b46de9aeb53c/transformed/jetified-record-view-2.0.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/697c7b7fd1366a8908f4b46de9aeb53c/transformed/jetified-record-view-2.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f6c884a397d15c047ee0ecbe9bfcc26c/transformed/jetified-record-view-2.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/f6c884a397d15c047ee0ecbe9bfcc26c/transformed/jetified-record-view-2.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/f6c884a397d15c047ee0ecbe9bfcc26c/transformed/jetified-record-view-2.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/66e9103237f8bf32e3553225ba5352e4/transformed/jetified-record-view-2.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/66e9103237f8bf32e3553225ba5352e4/transformed/jetified-record-view-2.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/66e9103237f8bf32e3553225ba5352e4/transformed/jetified-record-view-2.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/89a6501ec240f42aad0728d0517a8a8a/transformed/jetified-record-view-2.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/89a6501ec240f42aad0728d0517a8a8a/transformed/jetified-record-view-2.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/89a6501ec240f42aad0728d0517a8a8a/transformed/jetified-record-view-2.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/312e6b623e6a0b9705709eb8a21a0092/transformed/jetified-record-view-2.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/312e6b623e6a0b9705709eb8a21a0092/transformed/jetified-record-view-2.0.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/312e6b623e6a0b9705709eb8a21a0092/transformed/jetified-record-view-2.0.1/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/be7f86672c242711a6e73fc412a0beb3/transformed/jetified-record-view-2.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/be7f86672c242711a6e73fc412a0beb3/transformed/jetified-record-view-2.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/be7f86672c242711a6e73fc412a0beb3/transformed/jetified-record-view-2.0.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.devlomi.record-view/record-view/2.0.1/10d190698bfb0d4d2d117d0c921820e51bfc8659/record-view-2.0.1-javadoc.jar!/" />

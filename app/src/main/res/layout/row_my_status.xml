@@ -68,7 +68,6 @@
         </FrameLayout>
 
         <TextView
-            android:textColor="@color/colorText"
             android:id="@+id/tv_status_time"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -77,6 +76,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="@string/tap_to_add_status"
+            android:textColor="@color/colorText"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/profile_image_container"
             app:layout_constraintEnd_toStartOf="@+id/imageView2"
@@ -103,13 +103,15 @@
             app:layout_constraintBottom_toBottomOf="@+id/tv_status_seen_count"
             app:layout_constraintEnd_toStartOf="@+id/tv_status_seen_count"
             app:layout_constraintTop_toTopOf="@+id/tv_status_seen_count"
-            app:srcCompat="@drawable/ic_remove_red_eye" />
+            app:srcCompat="@drawable/ic_remove_red_eye"
+            app:tint="@color/colorPrimary" />
 
         <TextView
             android:id="@+id/tv_status_seen_count"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
+            android:padding="5dp"
             android:text="0"
             android:textColor="@color/blue"
             app:layout_constraintBottom_toTopOf="@+id/view"

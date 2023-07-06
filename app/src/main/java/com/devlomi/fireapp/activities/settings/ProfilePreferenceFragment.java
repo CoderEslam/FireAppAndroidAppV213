@@ -1,5 +1,7 @@
 package com.devlomi.fireapp.activities.settings;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -11,7 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,9 +32,9 @@ import com.devlomi.fireapp.utils.BitmapUtils;
 import com.devlomi.fireapp.utils.CropImageRequest;
 import com.devlomi.fireapp.utils.DirManager;
 import com.devlomi.fireapp.utils.IntentUtils;
-import com.devlomi.fireapp.utils.mediastore.MediaStoreUtil;
 import com.devlomi.fireapp.utils.NetworkHelper;
 import com.devlomi.fireapp.utils.SharedPreferencesManager;
+import com.devlomi.fireapp.utils.mediastore.MediaStoreUtil;
 import com.devlomi.fireapp.utils.network.FireManager;
 
 import org.jetbrains.annotations.NotNull;
@@ -42,8 +44,6 @@ import java.io.File;
 import de.hdodenhof.circleimageview.CircleImageView;
 import io.reactivex.disposables.CompositeDisposable;
 
-import static android.app.Activity.RESULT_OK;
-
 /**
  * Created by Devlomi on 25/03/2018.
  */
@@ -51,8 +51,9 @@ import static android.app.Activity.RESULT_OK;
 public class ProfilePreferenceFragment extends PreferenceFragmentCompat implements Base {
     public static final int PICK_IMAGE_REQUEST = 4951;
     private CircleImageView imageViewUserProfile;
-    private ImageButton imageButtonChangeUserProfile;
-    private ImageButton imageButtonEditUsername;
+    private ImageView imageButtonChangeUserProfile;
+    private ImageView imageButtonEditUsername;
+    private ImageView edit_status;
     private TextView tvUsername;
     private TextView tvStatus;
     private TextView tvPhoneNumber;
@@ -95,6 +96,7 @@ public class ProfilePreferenceFragment extends PreferenceFragmentCompat implemen
         tvUsername = view.findViewById(R.id.tv_username);
         imageButtonEditUsername = view.findViewById(R.id.image_button_edit_username);
         tvStatus = view.findViewById(R.id.tv_status);
+        edit_status = view.findViewById(R.id.edit_status);
         tvPhoneNumber = view.findViewById(R.id.tv_phone_number);
 
 
@@ -151,7 +153,7 @@ public class ProfilePreferenceFragment extends PreferenceFragmentCompat implemen
                 });
             }
         });
-        tvStatus.setOnClickListener(new View.OnClickListener() {
+        edit_status.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showEditTextDialog(getString(R.string.enter_your_status), new EditTextDialogListener() {
@@ -180,7 +182,7 @@ public class ProfilePreferenceFragment extends PreferenceFragmentCompat implemen
             }
         });
 
-        Glide.with(getActivity()).load(new File(myPhoto))
+        Glide.with(requireActivity()).load(new File(myPhoto))
                 .into(imageViewUserProfile);
 
         return view;

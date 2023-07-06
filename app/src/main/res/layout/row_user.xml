@@ -18,6 +18,7 @@
         android:layout_marginLeft="8dp"
         android:scaleType="centerCrop"
         android:src="@drawable/user_img_wrapped"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,16 +27,17 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="8dp"
         android:layout_toEndOf="@+id/user_photo"
         android:layout_toRightOf="@id/user_photo"
         android:ellipsize="end"
         android:maxLines="1"
-        android:text="John Doe"
+        android:text="Eslam Ghazy"
         android:textColor="@color/colorText"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/user_photo"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -49,12 +51,12 @@
         android:layout_marginTop="8dp"
         android:ellipsize="end"
         android:maxLines="1"
-        tools:text="Trust in Yourself!"
         android:textColor="@color/colorTextDesc"
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="@+id/tv_name"
         app:layout_constraintStart_toStartOf="@+id/tv_name"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        tools:text="Good" />
 
     <View
         android:layout_width="match_parent"

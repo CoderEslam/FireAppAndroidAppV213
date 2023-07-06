@@ -3,8 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
 
 
     <com.devlomi.fireapp.views.backgroundtintlayouts.LinearLayoutWithBackgroundTint
@@ -14,19 +13,24 @@
         android:layout_gravity="end"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="@dimen/margin_top_message"
-        android:layout_marginBottom="@dimen/margin_bottom_message"
-        android:background="@drawable/sent_message"
+        android:padding="10dp"
+        android:background="@drawable/sent__message_"
         android:orientation="vertical"
         app:linearBgTintColor="@color/sent_message_background_color">
 
-        <include layout="@layout/item_reply" />
+        <include layout="@layout/item_reply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginTop="5dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingLeft="4dp">
+            android:paddingLeft="4dp"
+            android:layout_marginRight="10dp">
 
 
             <com.aghajari.emojiview.view.AXEmojiTextView
@@ -39,10 +43,9 @@
                 android:paddingTop="5dp"
                 android:text="Test"
                 android:textColor="@color/sent_message_title_color"
-                app:emojiSize="20sp"
                 android:textColorLink="#8498fc"
                 android:textDirection="anyRtl"
-                />
+                app:emojiSize="20sp" />
 
 
         </LinearLayout>
@@ -50,11 +53,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="10dp"
             android:layout_marginBottom="4dp"
             android:gravity="right"
-            android:orientation="horizontal"
-
-            >
+            android:orientation="horizontal">
 
             <TextView
                 android:id="@+id/tv_time"

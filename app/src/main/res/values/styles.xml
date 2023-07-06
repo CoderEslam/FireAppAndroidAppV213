@@ -124,4 +124,9 @@
         <item name="android:windowBackground">@drawable/splash_image_dr</item>
     </style>
 
+    <style name="LavaFab">
+        <item name="lavaParentSize">@dimen/default_fab_size</item>
+        <item name="lavaBackgroundColor">@color/white</item>
+    </style>
+
 </resources>

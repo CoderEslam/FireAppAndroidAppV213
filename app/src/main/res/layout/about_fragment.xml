@@ -40,7 +40,7 @@
                         android:layout_height="120dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="75dp"
-                        android:src="@mipmap/ic_launcher_foreground" />
+                        android:src="@mipmap/ic_launcher_round" />
 
 
                 </FrameLayout>
