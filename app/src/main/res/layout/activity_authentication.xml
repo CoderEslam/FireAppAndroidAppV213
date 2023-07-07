@@ -2,19 +2,16 @@
 
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/bgColor"
-        tools:context=".activities.authentication.AuthenticationActivity"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        tools:context=".activities.authentication.AuthenticationActivity">
 
         <ProgressBar
             android:id="@+id/progressbar"
@@ -33,7 +30,8 @@
             android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:defaultNavHost="true" />
+            app:defaultNavHost="true"
+            app:navGraph='@navigation/nav_signup' />
 
     </LinearLayout>
 

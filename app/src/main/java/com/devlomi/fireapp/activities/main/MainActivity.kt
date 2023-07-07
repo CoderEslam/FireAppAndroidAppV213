@@ -24,6 +24,9 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager.widget.ViewPager
 import com.devlomi.fireapp.R
 import com.devlomi.fireapp.activities.*
+import com.devlomi.fireapp.activities.main.calls.CallsFragment
+import com.devlomi.fireapp.activities.main.chats.FragmentChats
+import com.devlomi.fireapp.activities.main.status.StatusFragment
 import com.devlomi.fireapp.activities.settings.SettingsActivity
 import com.devlomi.fireapp.adapters.ViewPagerAdapter
 import com.devlomi.fireapp.common.ViewModelFactory
@@ -47,6 +50,7 @@ import com.devlomi.fireapp.views.lavafab.Child
 import com.devlomi.fireapp.views.lavafab.LavaFab
 import com.devlomi.fireapp.views.sticker.StickerLoader
 import com.droidninja.imageeditengine.ImageEditor
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.android.material.tabs.TabLayout
 import com.karumi.dexter.Dexter
@@ -60,6 +64,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 import org.greenrobot.eventbus.EventBus
 
 
+
+
+
 class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListener, FragmentCallback,
     StatusFragmentCallbacks {
     private var isInSearchMode = false
@@ -71,13 +78,16 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
     private lateinit var toolbar: Toolbar
     private lateinit var tvSelectedChatCount: TextView
     private lateinit var searchView: SearchView
-    private lateinit var viewPager: ViewPager
-    private lateinit var tabLayout: TabLayout
+
+    //    private lateinit var viewPager: ViewPager
+//    private lateinit var tabLayout: TabLayout
+    private lateinit var bottomNavigationView: BottomNavigationView
 
 
     private var users: List<User>? = null
     private var fireListener: FireListener? = null
-    private var adapter: ViewPagerAdapter? = null
+
+    //    private var adapter: ViewPagerAdapter? = null
     private lateinit var rotationAnimation: FabRotationAnimation
 
     private var currentPage = 0
@@ -104,7 +114,7 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 
 
         setSupportActionBar(toolbar)
-        supportActionBar?.title= ""
+        supportActionBar?.title = ""
         supportActionBar?.setDisplayShowHomeEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
@@ -119,9 +129,15 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 
         fab.setOnClickListener {
             when (currentPage) {
-                0 -> startActivity(Intent(this@MainActivity, NewChatActivity::class.java))
-                1 -> startCamera()
-                2 -> startActivity(Intent(this@MainActivity, NewCallActivity::class.java))
+                0 -> {
+                    startActivity(Intent(this@MainActivity, NewChatActivity::class.java))
+                }
+                1 -> {
+                    startCamera()
+                }
+                2 -> {
+                    startActivity(Intent(this@MainActivity, NewCallActivity::class.java))
+                }
             }
         }
 
@@ -151,54 +167,48 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
         }
 
 
-        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
-
-            override fun onPageScrolled(
-                position: Int,
-                positionOffset: Float,
-                positionOffsetPixels: Int
-            ) = Unit
-
-            //onSwipe or tab change
-            override fun onPageSelected(position: Int) {
-                currentPage = position
-                if (isInSearchMode)
-                    exitSearchMode()
-
-                when (position) {
-
-
-                    //add margin to fab when tab is changed only if ads are shown
-                    //animate fab with rotation animation also
-                    0 -> {
-                        getFragmentByPosition(0)?.let { fragment ->
-                            val baseFragment = fragment as BaseFragment
-                            addMarginToFab(baseFragment.isVisible && baseFragment.isAdShowing)
-                        }
-
-                        animateFab(R.drawable.ic_chat)
-                    }
-                    1 -> {
-                        getFragmentByPosition(1)?.let { fragment ->
-                            val baseFragment = fragment as BaseFragment
-                            addMarginToFab(baseFragment.isVisible && baseFragment.isAdShowing)
-                        }
-                        animateFab(R.drawable.ic_photo_camera)
-                    }
-
-                    else -> {
-
-                        getFragmentByPosition(2)?.let { fragment ->
-                            val baseFragment = fragment as BaseFragment
-                            addMarginToFab(baseFragment.isVisible && baseFragment.isAdShowing)
-                        }
-                        animateFab(R.drawable.ic_phone)
-                    }
-                }
-            }
-
-            override fun onPageScrollStateChanged(state: Int) = Unit
-        })
+//        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+//            override fun onPageScrolled(
+//                position: Int,
+//                positionOffset: Float,
+//                positionOffsetPixels: Int
+//            ) = Unit
+//
+//            //onSwipe or tab change
+//            override fun onPageSelected(position: Int) {
+//                currentPage = position
+//                if (isInSearchMode)
+//                    exitSearchMode()
+//                when (position) {
+//                    //add margin to fab when tab is changed only if ads are shown
+//                    //animate fab with rotation animation also
+//                    0 -> {
+////                        getFragmentByPosition(0)?.let { fragment ->
+////                            val baseFragment = fragment as BaseFragment
+////                            addMarginToFab(baseFragment.isVisible && baseFragment.isAdShowing)
+////                        }
+////                        animateFab(R.drawable.ic_chat)
+//                    }
+//                    1 -> {
+////                        getFragmentByPosition(1)?.let { fragment ->
+////                            val baseFragment = fragment as BaseFragment
+////                            addMarginToFab(baseFragment.isVisible && baseFragment.isAdShowing)
+////                        }
+////                        animateFab(R.drawable.ic_photo_camera)
+//                    }
+//
+//                    else -> {
+////                        getFragmentByPosition(2)?.let { fragment ->
+////                            val baseFragment = fragment as BaseFragment
+////                            addMarginToFab(baseFragment.isVisible && baseFragment.isAdShowing)
+////                        }
+////                        animateFab(R.drawable.ic_phone)
+//                    }
+//                }
+//            }
+//
+//            override fun onPageScrollStateChanged(state: Int) = Unit
+//        })
 
         //revert status fab to starting position
         textStatusFab.addOnHideAnimationListener(object : Animator.AnimatorListener {
@@ -246,9 +256,27 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 
         listenForDeviceIdChange()
 
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            var selectedFragment: Fragment? = null
+            val itemId: Int = item.itemId
+            if (itemId == R.id.message) {
+                selectedFragment = FragmentChats()
+            } else if (itemId == R.id.status) {
+                selectedFragment = StatusFragment()
+            } else if (itemId == R.id.calls) {
+                selectedFragment = CallsFragment()
+            }
+            if (selectedFragment != null) {
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.fragment_container, selectedFragment).commit()
+            }
+            true
+        };
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, FragmentChats()).commit()
+
     }
 
-    private fun showToast() = Toast.makeText(this, "Child clicked", Toast.LENGTH_SHORT).show()
 
     private fun listenForDeviceIdChange() {
         FireConstants.deviceIdRef.child(FireManager.uid).observeValueEvent()
@@ -355,16 +383,16 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
         fab.startAnimation(animation)
     }
 
-    private fun animateTextStatusFab() {
-        val show = viewPager.currentItem == 1
-        if (show) {
-            textStatusFab.show()
-            textStatusFab.animate().y(fab.top - DpUtil.toPixel(70f, this)).start()
-        } else {
-            textStatusFab.hide()
-            textStatusFab.layoutParams = fab.layoutParams
-        }
-    }
+//    private fun animateTextStatusFab() {
+//        val show = viewPager.currentItem == 1
+//        if (show) {
+//            textStatusFab.show()
+//            textStatusFab.animate().y(fab.top - DpUtil.toPixel(70f, this)).start()
+//        } else {
+//            textStatusFab.hide()
+//            textStatusFab.layoutParams = fab.layoutParams
+//        }
+//    }
 
 
     override fun fetchStatuses() {
@@ -424,9 +452,10 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
         toolbar = findViewById(R.id.toolbar)
 
         tvSelectedChatCount = findViewById(R.id.tv_selected_chat)
-        viewPager = findViewById(R.id.view_pager)
-        tabLayout = findViewById(R.id.tab_layout)
+//        viewPager = findViewById(R.id.view_pager)
+//        tabLayout = findViewById(R.id.tab_layout)
         textStatusFab = findViewById(R.id.text_status_fab)
+        bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
         initTabLayout()
 
@@ -435,14 +464,14 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
     }
 
     private fun initTabLayout() {
-        tabLayout.setupWithViewPager(viewPager)
-        adapter = ViewPagerAdapter(
-            supportFragmentManager,
-            FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
-        )
-        viewPager.adapter = adapter
-        viewPager.offscreenPageLimit = 1
-        setTabsTitles(3)
+//        tabLayout.setupWithViewPager(viewPager)
+//        adapter = ViewPagerAdapter(
+//            supportFragmentManager,
+//            FragmentStatePagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT
+//        )
+        /* viewPager.adapter = adapter
+         viewPager.offscreenPageLimit = 1*/
+//        setTabsTitles(3)
     }
 
 
@@ -494,9 +523,13 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
 
-            R.id.settings_item -> settingsItemClicked()
+            R.id.settings_item -> {
+                settingsItemClicked()
+            }
 
-            R.id.search_item -> searchItemClicked()
+            R.id.search_item -> {
+                searchItemClicked()
+            }
 
 //            R.id.new_group_item -> createGroupClicked()
 
@@ -532,11 +565,11 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
         if (isInSearchMode)
             exitSearchMode()
         else {
-            if (viewPager.currentItem != CHATS_TAB_INDEX) {
+            /*if (viewPager.currentItem != CHATS_TAB_INDEX) {
                 viewPager.setCurrentItem(CHATS_TAB_INDEX, true)
             } else {
                 super.onBackPressed()
-            }
+            }*/
         }
 
     }
@@ -547,7 +580,7 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
     }
 
 
-    private fun setTabsTitles(tabsSize: Int) {
+    /*private fun setTabsTitles(tabsSize: Int) {
         for (i in 0 until tabsSize) {
             when (i) {
 
@@ -559,12 +592,12 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
             }
         }
 
-    }
+    }*/
 
 
     override fun onRotationAnimationEnd(drawable: Int) {
         fab?.setImageResource(drawable)
-        animateTextStatusFab()
+//        animateTextStatusFab()
     }
 
 
@@ -594,7 +627,7 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
         fab.clearAnimation()
         fab.animation?.cancel()
 
-        animateTextStatusFab()
+//        animateTextStatusFab()
 
     }
 
@@ -607,14 +640,14 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
         startActionMode(callback)
     }
 
-    private fun getFragmentByPosition(position: Int): Fragment? {
+    /*private fun getFragmentByPosition(position: Int): Fragment? {
         return viewPager.currentItem?.let {
             supportFragmentManager.findFragmentByTagForViewPager(
                 position,
                 it
             )
         }
-    }
+    }*/
 
 
     companion object {

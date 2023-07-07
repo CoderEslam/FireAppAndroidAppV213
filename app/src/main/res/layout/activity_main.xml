@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ads="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/root"
@@ -13,9 +12,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.NoActionBar.AppBarOverlay"
-        ads:layout_constraintEnd_toEndOf="parent"
-        ads:layout_constraintStart_toStartOf="parent"
-        ads:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
 
         <androidx.appcompat.widget.Toolbar
@@ -48,12 +47,12 @@
         </androidx.appcompat.widget.Toolbar>
 
 
-        <com.google.android.material.tabs.TabLayout
+       <!-- <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:visibility="gone"
-            app:tabSelectedTextColor="@android:color/white" />
+            app:tabSelectedTextColor="@android:color/white" />-->
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -112,7 +111,7 @@
         android:layout_width="match_parent"
         android:layout_height="75dp"
         android:layout_gravity="bottom"
-        app:layout_anchor="@id/view_pager"
+        app:layout_anchor="@id/fragment_container"
         app:layout_anchorGravity="bottom|right|end"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -121,19 +120,16 @@
         app:menu="@menu/bottom_nav_menu" />
 
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager"
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        ads:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        ads:layout_constraintTop_toBottomOf="@+id/app_bar"
-        ads:layout_constraintVertical_bias="0.0"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar"
+        app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp"
-        tools:showIn="@layout/activity_main">
-
-
-    </androidx.viewpager.widget.ViewPager>
+        tools:showIn="@layout/activity_main" />
 
     <com.devlomi.fireapp.views.lavafab.LavaFab
         android:id="@+id/lava_fab_bottom_right"
@@ -157,12 +153,11 @@
         android:layout_gravity="bottom|right"
         android:layout_margin="@dimen/fab_margin"
         android:tint="@color/colorWhite"
-        android:visibility="gone"
         app:backgroundTint="@color/colorPrimary"
         app:fabSize="normal"
-        app:layout_anchor="@id/view_pager"
+        app:layout_anchor="@id/fragment_container"
         app:layout_anchorGravity="bottom|right|end"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toTopOf="@+id/lava_fab_bottom_right"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_message" />
 
@@ -177,10 +172,11 @@
         android:visibility="gone"
         app:backgroundTint="@color/colorGreen"
         app:fabSize="normal"
-        app:layout_anchor="@id/view_pager"
+        app:layout_anchor="@id/fragment_container"
         app:layout_anchorGravity="bottom|right|end"
         app:layout_constraintBottom_toTopOf="@+id/open_new_chat_fab"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/open_new_chat_fab"
+        app:layout_constraintStart_toStartOf="@+id/open_new_chat_fab"
         app:srcCompat="@drawable/ic_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

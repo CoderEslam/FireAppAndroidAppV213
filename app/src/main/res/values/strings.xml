@@ -462,7 +462,7 @@
     <string name="enter_phone_confirmation_message">we will send you a SMS message to %s to verify your number</string>
     <string name="enter_correct_number">Please enter a correct number</string>
     <string name="otp_verification">OTP Verification</string>
-    <string name="enter_the_otp_sent_to">Enter the OTP sent to %s</string>
+    <string name="enter_the_otp_sent_to">We’ve sent an SMS with activation code to your phone %s</string>
     <string name="invalid_verification_code">Verification code is invalid</string>
     <string name="invalid_phone_number">Invalid Phone Number</string>
     <string name="too_many_verification_attempts">Too many verification attempts</string>
@@ -518,6 +518,8 @@
     <string name="backup_notice">on Android 10 and above, after deleting the app you will lose your media files unless you\'ve made a backup</string>
     <string name="restore_db_file">Restore Messages Database</string>
     <string name="initializing">Initializing</string>
+    <string name="your_phone_number">Your phone number</string>
+    <string name="enter_verification_code">Enter verification code</string>
 
 
 </resources>

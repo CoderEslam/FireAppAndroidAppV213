@@ -296,8 +296,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="camera_video_off_black" />
-                            <entry key="sourceFile" value="C:\Users\eslam\Downloads\icons\camera_video_off_black.svg" />
+                            <entry key="outputName" value="arrow_right" />
+                            <entry key="sourceFile" value="C:\Users\eslam\Downloads\icons\arrow_right.svg" />
                           </map>
                         </option>
                       </PersistentState>

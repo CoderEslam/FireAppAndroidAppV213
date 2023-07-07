@@ -98,7 +98,7 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
                 tvUsername.setText(fireCall.getPhoneNumber());
 
             callType.setImageDrawable(getPhoneCallType(fireCall.getDirection()));
-            btnCall.setImageResource(fireCall.isVideo() ? R.drawable.ic_videocam_blue : R.drawable.ic_phone_blue);
+            btnCall.setImageResource(fireCall.isVideo() ? R.drawable.ic_videocam : R.drawable.ic_phone_white);
 
             tvCallTime.setText(TimeHelper.getCallTime(fireCall.getTimestamp()));
 
@@ -142,23 +142,26 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
 
 
         private Drawable getPhoneCallType(int type) {
-            Drawable incomingDrawable = context.getResources().getDrawable(R.drawable.ic_call_received);
-            Drawable outgoingDrawable = context.getResources().getDrawable(R.drawable.ic_call_made);
+            Drawable incomingDrawable = ContextCompat.getDrawable(context, R.drawable.ic_call_received);
+            Drawable outgoingDrawable = ContextCompat.getDrawable(context, R.drawable.ic_call_made);
 
             switch (type) {
                 case FireCallDirection.OUTGOING:
+                    assert outgoingDrawable != null;
                     outgoingDrawable.mutate();
                     DrawableCompat.setTintMode(outgoingDrawable, PorterDuff.Mode.SRC_IN);
                     DrawableCompat.setTint(outgoingDrawable, context.getResources().getColor(R.color.colorGreen));
                     return outgoingDrawable;
 
                 case FireCallDirection.ANSWERED:
+                    assert incomingDrawable != null;
                     incomingDrawable.mutate();
                     DrawableCompat.setTintMode(incomingDrawable, PorterDuff.Mode.SRC_IN);
                     DrawableCompat.setTint(incomingDrawable, context.getResources().getColor(R.color.colorGreen));
                     return incomingDrawable;
 
                 default:
+                    assert incomingDrawable != null;
                     incomingDrawable.mutate();
                     DrawableCompat.setTintMode(incomingDrawable, PorterDuff.Mode.SRC_IN);
                     DrawableCompat.setTint(incomingDrawable, context.getResources().getColor(R.color.red));

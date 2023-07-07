@@ -9,6 +9,7 @@
         <item name="colorControlActivated">@color/colorAccent</item>
         <item name="colorControlHighlight">@color/colorAccent</item>
         <item name="android:windowContentTransitions">true</item>
+        <item name="homeAsUpIndicator">@drawable/ic_arrow_back_black</item>
 
     </style>
 

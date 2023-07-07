@@ -7,9 +7,7 @@
     android:fillViewport="true"
     tools:context=".activities.authentication.VerifyPhoneFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".activities.authentication.VerifyPhoneFragment">
@@ -21,7 +19,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_security_authentication" />
+            app:srcCompat="@drawable/auth" />
 
         <TextView
             android:id="@+id/tv_otp"
@@ -29,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:gravity="center_horizontal"
-            android:text="@string/otp_verification"
+            android:text="@string/enter_verification_code"
             android:textColor="@color/otp_text_color"
             android:textSize="16sp"
             android:textStyle="bold"
@@ -46,7 +44,6 @@
             android:text="@string/enter_the_otp_sent_to"
             android:textColor="@color/colorTextDesc"
             android:textSize="12sp"
-
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_otp" />
@@ -54,16 +51,17 @@
         <com.devlomi.fireapp.views.OTPEditText
             android:id="@+id/et_otp"
             android:layout_width="0dp"
-            android:textColor="@color/colorText"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="32dp"
             android:inputType="number"
+            android:textColor="@color/colorText"
             android:textSize="26sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_otp_info" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

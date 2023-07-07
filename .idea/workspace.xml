@@ -32,16 +32,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="583057fa-3e82-494a-8561-5f2f1c716ec7" name="Default Changelist" comment="FireApp">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/s1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/s2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_1_17_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.androidTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.unitTest.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/ic_arrow_back_black.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/arrow_right.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/auth.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/bg_et_main_color.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/raw/chat_animation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/navEditor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/navEditor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_enter_username.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_enter_username.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/CallsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/CallsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_phone_white.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_phone_white.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_authentication.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_authentication.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_setup_user.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_setup_user.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_enter_phone_number.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_enter_phone_number.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_verify_phone.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_verify_phone.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/navigation/nav_signup.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/navigation/nav_signup.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-v21/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -148,17 +158,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/com.devlomi/circularstatusview/1.0.1/5cc217467c0fe441c01c66280caefda84a54003f/circularstatusview-1.0.1-sources.jar!/com/devlomi/circularstatusview/CircularStatusView.java_SELECTED" value="CircularStatusView" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/com.github.abdularis/androidbuttonprogress/1.0.2/560131e8dc6b6ce7e9a9c6306c8c21ca89345869/androidbuttonprogress-1.0.2-sources.jar!/com/github/abdularis/buttonprogress/DownloadButtonProgress.java_SELECTED" value="DownloadButtonProgress" />
     <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/DevlomiSeekbar.java_SELECTED" value="DevlomiSeekbar" />
     <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/GroupVideoGridLayout.kt_SELECTED" value="CallingGridLayout" />
+    <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/OTPEditText.java_SELECTED" value="OTPEditText" />
     <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/backgroundtintlayouts/LinearLayoutWithBackgroundTint.java_SELECTED" value="LinearLayoutWithBackgroundTint" />
     <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/lavafab/LavaFab.kt_SELECTED" value="LavaFab" />
     <property name="android-custom-viewC:/Users/eslam/StudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/lavafab/LavaFab.kt_SELECTED" value="LavaFab" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="PsdUISettings">
@@ -170,11 +180,11 @@
       <recent name="com.devlomi.fireapp.activities" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\drawable-xhdpi" />
       <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\drawable" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\raw" />
       <recent name="C:\Users\eslam\StudioProjects\FireAppAndroidAppV213\app\src\main\java\com\devlomi\fireapp\views" />
       <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\drawable-night-hdpi" />
-      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\java\com\devlomi\fireapp\views\Bubblenavigation" />
-      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app" />
     </key>
     <key name="android.template.-59966983">
       <recent name="com.devlomi.fireapp.activities" />
@@ -732,7 +742,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688718506082</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="FireApp">
+      <created>1688731257971</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1688731257971</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="UnknownFeatures">
