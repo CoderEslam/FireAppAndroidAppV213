@@ -17,6 +17,7 @@ import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintSet
 import androidx.core.content.ContextCompat
@@ -72,7 +73,7 @@ class CallingActivity : BaseActivity(), ServiceConnection {
     private lateinit var btnVideo: ImageButton
     private lateinit var constraint: ConstraintLayout
     private lateinit var btnFlipCamera: ImageButton
-    private lateinit var bottomHolder: ImageView
+    private lateinit var bottomHolder: CardView
     lateinit var localViewGroup: FrameLayout
 
     private var dx = 0f
