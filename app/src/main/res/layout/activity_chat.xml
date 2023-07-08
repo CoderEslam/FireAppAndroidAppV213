@@ -19,6 +19,7 @@
             android:background="@color/white"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
+            app:menu="@menu/menu_chat"
             app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -102,7 +103,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-
                     android:layout_toLeftOf="@id/up_arrow_search_toolbar"
                     android:background="?attr/selectableItemBackgroundBorderless"
                     android:padding="4dp"
@@ -144,7 +144,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="4dp"
                     android:layout_marginBottom="4dp"
-                    android:textColor="@color/toolbar_status_text_color"
+                    android:textColor="#02C51D"
                     android:textSize="12sp"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -161,7 +161,7 @@
                     android:ellipsize="end"
                     android:maxWidth="@dimen/max_width_group_users"
                     android:maxLines="1"
-                    android:textColor="@color/toolbar_status_text_color"
+                    android:textColor="#02C51D"
                     android:textSize="12sp"
                     android:visibility="gone"
                     app:layout_constraintBottom_toBottomOf="parent"

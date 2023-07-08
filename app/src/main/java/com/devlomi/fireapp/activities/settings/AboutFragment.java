@@ -2,12 +2,11 @@ package com.devlomi.fireapp.activities.settings;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.PreferenceFragment;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,7 +22,7 @@ import com.devlomi.fireapp.utils.MyApp;
  */
 
 public class AboutFragment extends PreferenceFragmentCompat implements View.OnClickListener {
-    private ImageButton emailBtn, websiteBtn, twitterBtn;
+    private ImageView emailBtn, websiteBtn, twitterBtn;
     private TextView tvAppInfo;
 
 
@@ -56,9 +55,9 @@ public class AboutFragment extends PreferenceFragmentCompat implements View.OnCl
 
     private void initViews(View view) {
 
-        emailBtn = (ImageButton) view.findViewById(R.id.email_btn);
-        websiteBtn = (ImageButton) view.findViewById(R.id.website_btn);
-        twitterBtn = (ImageButton) view.findViewById(R.id.twitter_btn);
+        emailBtn = view.findViewById(R.id.email_btn);
+        websiteBtn = view.findViewById(R.id.website_btn);
+        twitterBtn = view.findViewById(R.id.twitter_btn);
         tvAppInfo = view.findViewById(R.id.tv_app_info);
 
     }

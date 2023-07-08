@@ -1,5 +1,6 @@
 package com.devlomi.fireapp.activities.main.status
 
+import android.Manifest
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
@@ -20,8 +21,7 @@ import com.bumptech.glide.Glide
 import com.cjt2325.cameralibrary.ResultCodes
 import com.devlomi.circularstatusview.CircularStatusView
 import com.devlomi.fireapp.R
-import com.devlomi.fireapp.activities.MyStatusActivity
-import com.devlomi.fireapp.activities.ViewStatusActivity
+import com.devlomi.fireapp.activities.*
 import com.devlomi.fireapp.activities.main.MainActivity.Companion.CAMERA_REQUEST
 import com.devlomi.fireapp.activities.main.MainActivity.Companion.REQUEST_CODE_TEXT_STATUS
 import com.devlomi.fireapp.activities.main.MainViewModel
@@ -43,6 +43,13 @@ import com.devlomi.fireapp.views.HeaderViewDecoration
 import com.devlomi.fireapp.views.TextViewWithShapeBackground
 import com.droidninja.imageeditengine.ImageEditor
 import com.google.android.gms.ads.AdView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.karumi.dexter.Dexter
+import com.karumi.dexter.PermissionToken
+import com.karumi.dexter.listener.PermissionDeniedResponse
+import com.karumi.dexter.listener.PermissionGrantedResponse
+import com.karumi.dexter.listener.PermissionRequest
+import com.karumi.dexter.listener.single.PermissionListener
 import com.zhihu.matisse.Matisse
 import io.reactivex.rxkotlin.addTo
 import io.realm.RealmResults
@@ -73,6 +80,8 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
     private lateinit var circularStatusView: CircularStatusView
     private lateinit var profileImage: ImageView
     private lateinit var rowStatusContainer: ConstraintLayout
+    private lateinit var textStatusFab: ImageView
+    private lateinit var fab: FloatingActionButton
 
 
     private val viewModel: MainViewModel by activityViewModels()
@@ -87,8 +96,7 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_status, container, false)
     }
@@ -104,6 +112,8 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
         tvTextStatus = view.findViewById(R.id.tv_text_status)
         rowStatusContainer = view.findViewById(R.id.row_status_container)
         profileImage = view.findViewById(R.id.profile_image)
+        textStatusFab = view.findViewById(R.id.text_status_fab)
+        fab = view.findViewById(R.id.open_new_chat_fab)
 
         adView = ad_view
         adViewInitialized(adView)
@@ -127,9 +137,22 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
             }
         }
 
+        textStatusFab.setOnClickListener {
+            startActivityForResult(
+                Intent(
+                    requireActivity(), TextStatusActivity::class.java
+                ), REQUEST_CODE_TEXT_STATUS
+            )
+        }
+
+        fab.setOnClickListener {
+            startCamera()
+        }
+
         viewModel.statusLiveData.observe(
             viewLifecycleOwner,
-            androidx.lifecycle.Observer { statusFragmentEvent ->
+            androidx.lifecycle.Observer
+            { statusFragmentEvent ->
                 when (statusFragmentEvent) {
                     is StatusInsertedEvent -> statusInserted()
                     is OnActivityResultEvent -> {
@@ -159,9 +182,40 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
 
         viewModel.queryTextChange.observe(
             viewLifecycleOwner,
-            androidx.lifecycle.Observer { newText ->
+            androidx.lifecycle.Observer
+            { newText ->
                 onQueryTextChange(newText)
             })
+
+    }
+
+    private fun startCamera() {
+        Dexter.withContext(requireActivity())
+            .withPermission(Manifest.permission.CAMERA)
+            .withListener(object : PermissionListener {
+                override fun onPermissionGranted(p0: PermissionGrantedResponse?) {
+                    val intent = Intent(requireActivity(), CameraActivity::class.java)
+                    intent.putExtra(IntentUtils.CAMERA_VIEW_SHOW_PICK_IMAGE_BUTTON, true)
+                    intent.putExtra(IntentUtils.IS_STATUS, true)
+                    startActivityForResult(intent, CAMERA_REQUEST)
+                }
+
+                override fun onPermissionDenied(p0: PermissionDeniedResponse?) {
+                }
+
+                override fun onPermissionRationaleShouldBeShown(
+                    p0: PermissionRequest?,
+                    p1: PermissionToken?
+                ) {
+                    Toast.makeText(
+                        requireActivity(),
+                        R.string.missing_permissions,
+                        Toast.LENGTH_SHORT
+                    ).show();
+                }
+            }).check()
+
+
     }
 
     private fun initMyStatuses() {
@@ -170,9 +224,7 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
 
     fun setMyStatus() {
         if (myStatuses == null) initMyStatuses()
-        if (myStatuses != null
-            && myStatuses?.filteredStatuses?.isNotEmpty() == true
-        ) {
+        if (myStatuses != null && myStatuses?.filteredStatuses?.isNotEmpty() == true) {
             val lastStatus = myStatuses?.statuses?.last()
             val statusTime = TimeHelper.getStatusTime(lastStatus?.timestamp ?: Date().time)
             tvLastStatusTime.text = statusTime
@@ -189,8 +241,7 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
                 tvTextStatus.text = textStatus.text
                 tvTextStatus.setShapeColor(
                     Color.parseColor(
-                        textStatus?.backgroundColor
-                            ?: "#000000"
+                        textStatus?.backgroundColor ?: "#000000"
                     )
                 )
             }
@@ -252,8 +303,7 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
                     } else {
                         //if it's only one image open image editor
                         if (mPaths.size == 1) ImageEditorRequest.open(
-                            activity,
-                            mPaths[0]
+                            activity, mPaths[0]
                         ) else for (path in mPaths) {
                             uploadImageStatus(path)
                         }
@@ -277,8 +327,7 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
                     val file = File(requireActivity().cacheDir, uris[0].lastPathSegment)
                     MediaStoreUtil.saveUriToFile(uris[0], file)
                     ImageEditorRequest.open(
-                        activity,
-                        file.path
+                        activity, file.path
                     )
 
                 } else for (uri in uris) {
@@ -288,8 +337,8 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
                 }
             } else {
                 for (uri in uris) {
-                    val duration = RealPathUtil.getAudioDuration(requireActivity(),uri)
-                    if (duration != -1){
+                    val duration = RealPathUtil.getAudioDuration(requireActivity(), uri)
+                    if (duration != -1) {
                         val seconds = TimeUnit.MILLISECONDS.toSeconds(duration.toLong())
 
                         if (seconds <= MAX_STATUS_VIDEO_TIME) {
@@ -309,7 +358,7 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
 
                 }
             }
-        }catch (e:Exception){
+        } catch (e: Exception) {
             Toast.makeText(requireActivity(), R.string.error, Toast.LENGTH_SHORT).show()
         }
     }
@@ -364,24 +413,23 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
             return
         }
         Toast.makeText(activity, R.string.uploading_status, Toast.LENGTH_SHORT).show()
-        disposables.add(
-            statusManager.uploadStatus(path, StatusType.VIDEO, true)
-                .subscribe { status, throwable ->
-                    if (throwable != null) {
-                        Toast.makeText(
-                            activity,
-                            MyApp.context().resources.getString(R.string.error_uploading_status),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    } else {
-                        setMyStatus()
-                        Toast.makeText(
-                            activity,
-                            MyApp.context().resources.getString(R.string.status_uploaded),
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                })
+        disposables.add(statusManager.uploadStatus(path, StatusType.VIDEO, true)
+            .subscribe { status, throwable ->
+                if (throwable != null) {
+                    Toast.makeText(
+                        activity,
+                        MyApp.context().resources.getString(R.string.error_uploading_status),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                } else {
+                    setMyStatus()
+                    Toast.makeText(
+                        activity,
+                        MyApp.context().resources.getString(R.string.status_uploaded),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            })
 
 
     }

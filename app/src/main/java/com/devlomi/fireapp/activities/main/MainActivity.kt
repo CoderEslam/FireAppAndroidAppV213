@@ -71,9 +71,8 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
     StatusFragmentCallbacks {
     private var isInSearchMode = false
 
-    private lateinit var fab: FloatingActionButton
-    private lateinit var lava_fab_bottom_right: LavaFab
-    private lateinit var textStatusFab: FloatingActionButton
+//    private lateinit var fab: FloatingActionButton
+//    private lateinit var textStatusFab: FloatingActionButton
 
     private lateinit var toolbar: Toolbar
     private lateinit var tvSelectedChatCount: TextView
@@ -127,44 +126,31 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 
         users = RealmHelper.getInstance().listOfUsers
 
-        fab.setOnClickListener {
-            when (currentPage) {
-                0 -> {
-                    startActivity(Intent(this@MainActivity, NewChatActivity::class.java))
-                }
-                1 -> {
-                    startCamera()
-                }
-                2 -> {
-                    startActivity(Intent(this@MainActivity, NewCallActivity::class.java))
-                }
-            }
-        }
-
-        with(lava_fab_bottom_right) {
-            setParentOnClickListener { lava_fab_bottom_right.trigger() }
-            setChildOnClickListener(Child.TOP) {
-                startActivity(Intent(this@MainActivity, NewChatActivity::class.java))
-            }
-            setChildOnClickListener(Child.LEFT) {
-                val intent = Intent(this@MainActivity, NewGroupActivity::class.java)
-                intent.putExtra(IntentUtils.IS_BROADCAST, true)
-                startActivity(intent)
-            }
-            setChildOnClickListener(Child.LEFT_TOP) {
-                createGroupClicked()
-            }
-        }
+//        fab.setOnClickListener {
+//            when (currentPage) {
+//                0 -> {
+//                    startActivity(Intent(this@MainActivity, NewChatActivity::class.java))
+//                }
+//                1 -> {
+//                    startCamera()
+//                }
+//                2 -> {
+//                    startActivity(Intent(this@MainActivity, NewCallActivity::class.java))
+//                }
+//            }
+//        }
 
 
-        textStatusFab.setOnClickListener {
-            startActivityForResult(
-                Intent(
-                    this,
-                    TextStatusActivity::class.java
-                ), REQUEST_CODE_TEXT_STATUS
-            )
-        }
+
+
+//        textStatusFab.setOnClickListener {
+//            startActivityForResult(
+//                Intent(
+//                    this,
+//                    TextStatusActivity::class.java
+//                ), REQUEST_CODE_TEXT_STATUS
+//            )
+//        }
 
 
 //        viewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
@@ -211,17 +197,17 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 //        })
 
         //revert status fab to starting position
-        textStatusFab.addOnHideAnimationListener(object : Animator.AnimatorListener {
-            override fun onAnimationStart(animation: Animator) = Unit
-
-            override fun onAnimationEnd(animation: Animator) {
-                textStatusFab.animate().y(fab.y).start()
-            }
-
-            override fun onAnimationCancel(animation: Animator) = Unit
-
-            override fun onAnimationRepeat(animation: Animator) = Unit
-        })
+//        textStatusFab.addOnHideAnimationListener(object : Animator.AnimatorListener {
+//            override fun onAnimationStart(animation: Animator) = Unit
+//
+//            override fun onAnimationEnd(animation: Animator) {
+//                textStatusFab.animate().y(fab.y).start()
+//            }
+//
+//            override fun onAnimationCancel(animation: Animator) = Unit
+//
+//            override fun onAnimationRepeat(animation: Animator) = Unit
+//        })
 
 
         viewModel.saveAppVersion()
@@ -380,7 +366,7 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
     @SuppressLint("RestrictedApi")
     private fun animateFab(drawable: Int) {
         val animation = rotationAnimation.start(drawable)
-        fab.startAnimation(animation)
+//        fab.startAnimation(animation)
     }
 
 //    private fun animateTextStatusFab() {
@@ -447,20 +433,19 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 
 
     private fun init() {
-        fab = findViewById(R.id.open_new_chat_fab)
-        lava_fab_bottom_right = findViewById(R.id.lava_fab_bottom_right)
+//        fab = findViewById(R.id.open_new_chat_fab)
         toolbar = findViewById(R.id.toolbar)
 
         tvSelectedChatCount = findViewById(R.id.tv_selected_chat)
 //        viewPager = findViewById(R.id.view_pager)
 //        tabLayout = findViewById(R.id.tab_layout)
-        textStatusFab = findViewById(R.id.text_status_fab)
+//        textStatusFab = findViewById(R.id.text_status_fab)
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
         initTabLayout()
 
         //prefix for a bug in older APIs
-        fab.bringToFront()
+//        fab.bringToFront()
     }
 
     private fun initTabLayout() {
@@ -546,9 +531,7 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
     }
 
 
-    private fun createGroupClicked() {
-        startActivity(Intent(this, NewGroupActivity::class.java))
-    }
+
 
     private fun searchItemClicked() {
         isInSearchMode = true
@@ -596,7 +579,7 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 
 
     override fun onRotationAnimationEnd(drawable: Int) {
-        fab?.setImageResource(drawable)
+//        fab?.setImageResource(drawable)
 //        animateTextStatusFab()
     }
 
@@ -613,19 +596,19 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 
 
     override fun addMarginToFab(isAdShowing: Boolean) {
-        val layoutParams = fab.layoutParams as CoordinatorLayout.LayoutParams
-        val v = if (isAdShowing) DpUtil.toPixel(
-            95f,
-            this
-        ) else resources.getDimensionPixelSize(R.dimen.fab_margin).toFloat()
-
-
-        layoutParams.bottomMargin = v.toInt()
-
-        fab.layoutParams = layoutParams
-
-        fab.clearAnimation()
-        fab.animation?.cancel()
+//        val layoutParams = fab.layoutParams as CoordinatorLayout.LayoutParams
+//        val v = if (isAdShowing) DpUtil.toPixel(
+//            95f,
+//            this
+//        ) else resources.getDimensionPixelSize(R.dimen.fab_margin).toFloat()
+//
+//
+//        layoutParams.bottomMargin = v.toInt()
+//
+//        fab.layoutParams = layoutParams
+//
+//        fab.clearAnimation()
+//        fab.animation?.cancel()
 
 //        animateTextStatusFab()
 

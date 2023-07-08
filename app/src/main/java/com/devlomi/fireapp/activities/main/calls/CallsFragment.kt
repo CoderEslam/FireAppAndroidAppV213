@@ -1,6 +1,7 @@
 package com.devlomi.fireapp.activities.main.calls
 
 import android.content.Context
+import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.*
@@ -9,6 +10,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devlomi.fireapp.R
+import com.devlomi.fireapp.activities.NewCallActivity
 import com.devlomi.fireapp.activities.main.MainViewModel
 import com.devlomi.fireapp.adapters.CallsAdapter
 import com.devlomi.fireapp.fragments.BaseFragment
@@ -19,6 +21,7 @@ import com.devlomi.fireapp.utils.RealmHelper
 import com.devlomi.fireapp.utils.network.FireManager
 import com.devlomi.hidely.hidelyviews.HidelyImageView
 import com.google.android.gms.ads.AdView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.realm.RealmResults
 import kotlinx.android.synthetic.main.fragment_calls.*
 import java.util.*
@@ -26,6 +29,7 @@ import java.util.*
 class CallsFragment : BaseFragment(), ActionMode.Callback, CallsAdapter.OnClickListener {
 
     override var adView: AdView? = null
+    private lateinit var open_new_call_fab: FloatingActionButton
     private var fireCallList: RealmResults<FireCall>? = null
     private val selectedFireCallListActionMode: MutableList<FireCall> = ArrayList()
     private lateinit var adapter: CallsAdapter
@@ -47,8 +51,10 @@ class CallsFragment : BaseFragment(), ActionMode.Callback, CallsAdapter.OnClickL
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
 
         return inflater.inflate(R.layout.fragment_calls, container, false)
     }
@@ -57,17 +63,24 @@ class CallsFragment : BaseFragment(), ActionMode.Callback, CallsAdapter.OnClickL
         super.onViewCreated(view, savedInstanceState)
 
         adView = view.findViewById(R.id.ad_view)
+        open_new_call_fab = view.findViewById(R.id.open_new_call_fab)
         adViewInitialized(adView)
         initAdapter()
 
-        viewModel.queryTextChange.observe(viewLifecycleOwner, androidx.lifecycle.Observer { newText ->
-            onQueryTextChange(newText)
-        })
+        viewModel.queryTextChange.observe(
+            viewLifecycleOwner,
+            androidx.lifecycle.Observer { newText ->
+                onQueryTextChange(newText)
+            })
+        open_new_call_fab.setOnClickListener {
+            startActivity(Intent(requireActivity(), NewCallActivity::class.java))
+        }
     }
 
     private fun initAdapter() {
         fireCallList = RealmHelper.getInstance().allCalls
-        adapter = CallsAdapter(fireCallList, selectedFireCallListActionMode, activity, this@CallsFragment)
+        adapter =
+            CallsAdapter(fireCallList, selectedFireCallListActionMode, activity, this@CallsFragment)
         rv_calls.layoutManager = LinearLayoutManager(activity)
         rv_calls.adapter = adapter
     }
@@ -115,7 +128,11 @@ class CallsFragment : BaseFragment(), ActionMode.Callback, CallsAdapter.OnClickL
         adapter?.notifyDataSetChanged()
     }
 
-    private fun itemRemovedFromActionList(selectedCircle: HidelyImageView, itemView: View, fireCall: FireCall) {
+    private fun itemRemovedFromActionList(
+        selectedCircle: HidelyImageView,
+        itemView: View,
+        fireCall: FireCall
+    ) {
         selectedFireCallListActionMode.remove(fireCall)
         if (selectedFireCallListActionMode.isEmpty()) {
             actionMode?.finish()
@@ -126,9 +143,18 @@ class CallsFragment : BaseFragment(), ActionMode.Callback, CallsAdapter.OnClickL
         }
     }
 
-    private fun itemAddedToActionList(selectedCircle: HidelyImageView, itemView: View, fireCall: FireCall) {
+    private fun itemAddedToActionList(
+        selectedCircle: HidelyImageView,
+        itemView: View,
+        fireCall: FireCall
+    ) {
         selectedCircle.show()
-        itemView.setBackgroundColor(ContextCompat.getColor(requireContext(),R.color.item_selected_background_color))
+        itemView.setBackgroundColor(
+            ContextCompat.getColor(
+                requireContext(),
+                R.color.item_selected_background_color
+            )
+        )
         selectedFireCallListActionMode.add(fireCall)
         actionMode?.title = selectedFireCallListActionMode.size.toString() + ""
     }
@@ -138,29 +164,41 @@ class CallsFragment : BaseFragment(), ActionMode.Callback, CallsAdapter.OnClickL
     }
 
 
-
     override fun onQueryTextChange(newText: String?) {
         super.onQueryTextChange(newText)
 
-            adapter?.filter(newText)
+        adapter?.filter(newText)
 
     }
 
     override fun onSearchClose() {
         super.onSearchClose()
-        adapter = CallsAdapter(fireCallList, selectedFireCallListActionMode, activity, this@CallsFragment)
+        adapter =
+            CallsAdapter(fireCallList, selectedFireCallListActionMode, activity, this@CallsFragment)
         rv_calls.adapter = adapter
     }
 
     override fun onItemClick(selectedCircle: HidelyImageView, itemView: View, fireCall: FireCall) {
         if (actionMode != null) {
-            if (selectedFireCallListActionMode.contains(fireCall)) itemRemovedFromActionList(selectedCircle, itemView, fireCall) else itemAddedToActionList(selectedCircle, itemView, fireCall)
-        } else if (fireCall.user != null && fireCall.user.uid != null) PerformCall(requireActivity(),fireManager,disposables).performCall(fireCall.isVideo, fireCall.user.uid)
+            if (selectedFireCallListActionMode.contains(fireCall)) itemRemovedFromActionList(
+                selectedCircle,
+                itemView,
+                fireCall
+            ) else itemAddedToActionList(selectedCircle, itemView, fireCall)
+        } else if (fireCall.user != null && fireCall.user.uid != null) PerformCall(
+            requireActivity(),
+            fireManager,
+            disposables
+        ).performCall(fireCall.isVideo, fireCall.user.uid)
     }
 
     override fun onIconButtonClick(view: View, fireCall: FireCall) {
         if (actionMode != null) return
-        if (fireCall.user != null && fireCall.user.uid != null) PerformCall(requireActivity(),fireManager,disposables).performCall(fireCall.isVideo, fireCall.user.uid)
+        if (fireCall.user != null && fireCall.user.uid != null) PerformCall(
+            requireActivity(),
+            fireManager,
+            disposables
+        ).performCall(fireCall.isVideo, fireCall.user.uid)
     }
 
     override fun onLongClick(selectedCircle: HidelyImageView, itemView: View, fireCall: FireCall) {

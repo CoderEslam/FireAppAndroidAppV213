@@ -25,10 +25,10 @@
 
                 <TextView
                     android:id="@+id/toolbar_title"
-                    android:textColor="@color/colorWhite"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/new_group"
+                    android:textColor="@color/colorWhite"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -44,19 +44,19 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <LinearLayout
-        android:background="@color/bgColor"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/bgColor"
         android:orientation="vertical"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
         <androidx.recyclerview.widget.RecyclerView
-            android:visibility="gone"
             android:id="@+id/rv_selected_users_new_group"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginBottom="8dp">
+            android:layout_marginBottom="8dp"
+            android:visibility="gone">
 
         </androidx.recyclerview.widget.RecyclerView>
 
@@ -74,10 +74,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
-        android:layout_marginBottom="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:visibility="invisible"
-        app:backgroundTint="@color/colorAccent"
+        app:backgroundTint="@color/colorPrimary"
         app:fabSize="normal"
         app:srcCompat="@drawable/ic_arrow_forward" />
 

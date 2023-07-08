@@ -47,12 +47,12 @@
         </androidx.appcompat.widget.Toolbar>
 
 
-       <!-- <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:visibility="gone"
-            app:tabSelectedTextColor="@android:color/white" />-->
+        <!-- <com.google.android.material.tabs.TabLayout
+             android:id="@+id/tab_layout"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:visibility="gone"
+             app:tabSelectedTextColor="@android:color/white" />-->
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -131,52 +131,7 @@
         tools:layout_editor_absoluteX="0dp"
         tools:showIn="@layout/activity_main" />
 
-    <com.devlomi.fireapp.views.lavafab.LavaFab
-        android:id="@+id/lava_fab_bottom_right"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:lavaChild="top|left|leftTop"
-        app:lavaLeftIcon="@drawable/broadcast"
-        app:lavaLeftTopIcon="@drawable/icon_group"
-        app:lavaParentIcon="@drawable/plus"
-        app:lavaParentSize="80dp"
-        app:lavaTopIcon="@drawable/add_person"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/open_new_chat_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="@dimen/fab_margin"
-        android:tint="@color/colorWhite"
-        app:backgroundTint="@color/colorPrimary"
-        app:fabSize="normal"
-        app:layout_anchor="@id/fragment_container"
-        app:layout_anchorGravity="bottom|right|end"
-        app:layout_constraintBottom_toTopOf="@+id/lava_fab_bottom_right"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_message" />
 
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/text_status_fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|right"
-        android:layout_margin="@dimen/fab_margin"
-        android:tint="@color/colorWhite"
-        android:visibility="gone"
-        app:backgroundTint="@color/colorGreen"
-        app:fabSize="normal"
-        app:layout_anchor="@id/fragment_container"
-        app:layout_anchorGravity="bottom|right|end"
-        app:layout_constraintBottom_toTopOf="@+id/open_new_chat_fab"
-        app:layout_constraintEnd_toEndOf="@+id/open_new_chat_fab"
-        app:layout_constraintStart_toStartOf="@+id/open_new_chat_fab"
-        app:srcCompat="@drawable/ic_edit" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

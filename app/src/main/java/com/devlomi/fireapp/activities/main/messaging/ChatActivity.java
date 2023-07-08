@@ -34,7 +34,6 @@ import android.os.Parcelable;
 import android.text.Editable;
 import android.text.InputType;
 import android.text.TextWatcher;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -874,6 +873,7 @@ public class ChatActivity extends BaseActivity implements GroupTyping.GroupTypin
             }
         });
 
+        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.vert_dots));
 
         if (getResources().getBoolean(R.bool.is_interstitial_ad_enabled))
             loadInterstitialAd();

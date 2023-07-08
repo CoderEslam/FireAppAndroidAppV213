@@ -2,7 +2,6 @@ package com.devlomi.fireapp.views.dialogs;
 
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
@@ -18,6 +17,7 @@ public class SetGroupTitleDialog extends AlertDialog.Builder {
     private Context context;
     private EditText etGroupName;
     private TextView tvEtLength;
+    private TextView ok;
     private String name;
     private String hint;
     private String title;
@@ -35,6 +35,7 @@ public class SetGroupTitleDialog extends AlertDialog.Builder {
         View view = LayoutInflater.from(context).inflate(R.layout.dialog_group_title, null);
         etGroupName = view.findViewById(R.id.et_group_title);
         tvEtLength = view.findViewById(R.id.tv_et_length);
+        ok = view.findViewById(R.id.ok);
 
         etGroupName.setText(name);
         if (hint != null)
@@ -44,7 +45,7 @@ public class SetGroupTitleDialog extends AlertDialog.Builder {
         etGroupName.addTextChangedListener(new TextWatcher() {
             @Override
             public void afterTextChanged(Editable s) {
-                tvEtLength.setText(String.valueOf(25 - s.toString().length()));
+                tvEtLength.setText(String.format("%d/%d", s.toString().length(), 25));
 
             }
 
@@ -62,15 +63,14 @@ public class SetGroupTitleDialog extends AlertDialog.Builder {
         else
             setTitle(title);
 
-        setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+        ok.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //pass callback to the activity
+            public void onClick(View view) {
                 mListener.onPositiveClick(etGroupName.getText().toString().trim());
-
             }
         });
-        setNegativeButton(R.string.cancel, null);
+
+//        setNegativeButton(R.string.cancel, null);
 
         //show the dialog
         return super.show();

@@ -90,7 +90,6 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
 
         public void bind(final FireCall fireCall) {
             User user = fireCall.getUser();
-
             if (user != null) {
                 tvUsername.setText(user.getProperUserName());
                 Glide.with(context).load(user.getThumbImg()).into(profileImage);
@@ -150,21 +149,21 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
                     assert outgoingDrawable != null;
                     outgoingDrawable.mutate();
                     DrawableCompat.setTintMode(outgoingDrawable, PorterDuff.Mode.SRC_IN);
-                    DrawableCompat.setTint(outgoingDrawable, context.getResources().getColor(R.color.colorGreen));
+                    DrawableCompat.setTint(outgoingDrawable, ContextCompat.getColor(context, R.color.colorGreen));
                     return outgoingDrawable;
 
                 case FireCallDirection.ANSWERED:
                     assert incomingDrawable != null;
                     incomingDrawable.mutate();
                     DrawableCompat.setTintMode(incomingDrawable, PorterDuff.Mode.SRC_IN);
-                    DrawableCompat.setTint(incomingDrawable, context.getResources().getColor(R.color.colorGreen));
+                    DrawableCompat.setTint(incomingDrawable, ContextCompat.getColor(context, R.color.colorGreen));
                     return incomingDrawable;
 
                 default:
                     assert incomingDrawable != null;
                     incomingDrawable.mutate();
                     DrawableCompat.setTintMode(incomingDrawable, PorterDuff.Mode.SRC_IN);
-                    DrawableCompat.setTint(incomingDrawable, context.getResources().getColor(R.color.red));
+                    DrawableCompat.setTint(incomingDrawable, ContextCompat.getColor(context, R.color.red));
                     return incomingDrawable;
 
 
