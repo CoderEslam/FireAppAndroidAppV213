@@ -42,7 +42,6 @@
         />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-
         android:id="@+id/typing_layout_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

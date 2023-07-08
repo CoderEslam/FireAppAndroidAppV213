@@ -32,18 +32,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="583057fa-3e82-494a-8561-5f2f1c716ec7" name="Default Changelist" comment="FireApp">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/accept_invite_bottom_sheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/accept_invite_bottom_sheet.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_agree_privacy_policy.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_agree_privacy_policy.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_status.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/places_bottomsheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/places_bottomsheet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_authentication.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_authentication.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_places_picker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_places_picker.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_user_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_user_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_enter_phone_number.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_enter_phone_number.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_image_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_image_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_new_status_camera.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_new_status_camera.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile_photo_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_profile_photo_dialog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_security.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_security.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_video_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_video_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/privacy_policy_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/privacy_policy_fragment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/reply_status_bottomsheet.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/reply_status_bottomsheet.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_chats.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_chats.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_contact_picker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_contact_picker.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_day.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_day.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_received_message_video.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_received_message_video.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_received_sticker.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_received_sticker.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_sent_audio.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_sent_audio.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_sent_voice_message.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_sent_voice_message.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_forward.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_forward.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -759,7 +762,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688839659327</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="FireApp">
+      <created>1688850265947</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1688850265947</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="UnknownFeatures">

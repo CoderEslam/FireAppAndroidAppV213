@@ -6,7 +6,6 @@
     android:background="@color/bgColor"
     android:orientation="vertical">
 
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -228,9 +227,10 @@
             android:src="@drawable/arrow_right"
             app:tint="@color/colorPrimary" />
     </LinearLayout>
+
     <View
-        android:background="#E9E8E6"
         android:layout_width="match_parent"
-        android:layout_height="1dp"/>
+        android:layout_height="1dp"
+        android:background="#E9E8E6" />
 
 </LinearLayout>

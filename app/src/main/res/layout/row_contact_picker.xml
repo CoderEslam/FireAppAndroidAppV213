@@ -25,8 +25,11 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerVertical="true"
-                    android:layout_margin="16dp"
-                    android:src="@drawable/user_img_wrapped" />
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:src="@drawable/ic_person" />
 
                 <TextView
                     android:id="@+id/tv_contact_name_pick"
@@ -34,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@id/img_contact_pick"
-                    android:text="John Doe"
+                    android:text="Eslam Ghazy"
                     android:textColor="@color/colorText"
                     android:textStyle="bold" />
 

@@ -62,7 +62,7 @@
                 android:id="@+id/cp"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:layout_gravity="center"
+                android:layout_gravity="start"
                 android:background="@drawable/bg_et_main_color"
                 android:gravity="center"
                 app:ccp_autoDetectLanguage="true"
