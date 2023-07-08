@@ -40,7 +40,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:orientation="horizontal"
+        android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -51,8 +51,8 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_margin="@dimen/fab_margin"
-        android:scaleType="centerInside"
         android:background="@drawable/bg_frame_main_color"
+        android:scaleType="centerInside"
         android:src="@drawable/text_status"
         app:layout_constraintBottom_toTopOf="@+id/open_new_chat_fab"
         app:layout_constraintEnd_toEndOf="@+id/open_new_chat_fab"

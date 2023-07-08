@@ -46,6 +46,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingBottom="8dp"
+            app:trackTint="@color/colorPrimary"
             android:layout_marginRight="8dp" />
     </LinearLayout>
 

@@ -532,6 +532,7 @@
     <string name="groupPlusCross" translatable="false">groupPlusCross</string>
     <string name="genral">Genral</string>
     <string name="advanced">Advanced</string>
+    <string name="enter">Enter</string>
 
     <array name="fab_menu_icons">
         <item>@drawable/add_person</item>

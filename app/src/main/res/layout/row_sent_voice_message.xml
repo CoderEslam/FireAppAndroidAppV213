@@ -9,6 +9,7 @@
 
     <com.devlomi.fireapp.views.backgroundtintlayouts.LinearLayoutWithBackgroundTint
         android:id="@+id/container"
+        android:padding="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="end"
