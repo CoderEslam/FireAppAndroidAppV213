@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.virgilsecurity:ethree:2.0.9@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/10cefc96f246b9d08cf208a2d9a0a7e6/transformed/jetified-ethree-2.0.9/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/10cefc96f246b9d08cf208a2d9a0a7e6/transformed/jetified-ethree-2.0.9/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/cef8fbd12110d3db669b18cd6a234e50/transformed/jetified-ethree-2.0.9/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/cef8fbd12110d3db669b18cd6a234e50/transformed/jetified-ethree-2.0.9/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.virgilsecurity/ethree/2.0.9/68381947a199d782008b37285c29db55356c92ad/ethree-2.0.9-javadoc.jar!/" />

@@ -43,6 +43,19 @@
         android:supportsRtl="false"
         android:theme="@style/SplashScreenTheme"
         tools:replace="android:supportsRtl,android:allowBackup">
+        <activity
+            android:name=".activities.intro.IntroActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <service
             android:name=".services.CompleteSetupService"
@@ -63,7 +76,6 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme"
             android:windowSoftInputMode="adjustResize" />
-
         <activity
             android:name=".activities.LoggedOutActivity"
             android:screenOrientation="portrait" />
@@ -103,11 +115,11 @@
             android:name=".activities.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
-            <intent-filter>
+            <!--<intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".activities.NewChatActivity"
@@ -273,15 +285,13 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="http"
                     android:host="@string/group_invite_host"
-                    android:pathPrefix="/" />
-
+                    android:pathPrefix="/"
+                    android:scheme="http" />
                 <data
-                    android:scheme="https"
-
                     android:host="@string/group_invite_host"
-                    android:pathPrefix="/" />
+                    android:pathPrefix="/"
+                    android:scheme="https" />
             </intent-filter>
         </activity>
         <activity

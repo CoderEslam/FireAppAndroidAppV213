@@ -63,7 +63,12 @@ public class TimeHelper {
             //minutes ago
             if (secondsAgo < hour)
                 //minutes ago
-                return secondsAgo / minute + SEPARATOR + MyApp.context().getResources().getString(R.string.minutes_ago);
+                if ((secondsAgo / minute) == 1 || (secondsAgo / minute) <= 1) {
+                    return secondsAgo / minute + SEPARATOR + MyApp.context().getResources().getString(R.string.minute_ago);
+                } else {
+                    return secondsAgo / minute + SEPARATOR + MyApp.context().getResources().getString(R.string.minutes_ago);
+                }
+//            return secondsAgo / minute + SEPARATOR + MyApp.context().getResources().getString(R.string.minutes_ago);
 
             if (secondsAgo < day) {
                 //hours ago
@@ -79,11 +84,11 @@ public class TimeHelper {
         } else if (now.get(Calendar.DATE) - presenceTime.get(Calendar.DATE) == 1) {
             //yesterday + time AM or PM
             return MyApp.context().getResources().getString(R.string.yesterday_at) + SEPARATOR + DateFormat.format(timeFormat, presenceTime);
-        } else  {
+        } else {
             //days ago
 
             int daysAgo = (int) (secondsAgo / day);
-            if (secondsAgo <= week){
+            if (secondsAgo <= week) {
                 return daysAgo + SEPARATOR + MyApp.context().getResources().getString(R.string.days_ago);/*same week */
             }
 

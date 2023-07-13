@@ -1,15 +1,20 @@
 package com.devlomi.fireapp.activities.main.chats;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
+import android.widget.VideoView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.content.res.AppCompatResources;
@@ -25,14 +30,15 @@ import com.devlomi.fireapp.model.realms.GroupEvent;
 import com.devlomi.fireapp.model.realms.Message;
 import com.devlomi.fireapp.model.realms.User;
 import com.devlomi.fireapp.utils.AdapterHelper;
-import com.devlomi.fireapp.utils.network.FireManager;
 import com.devlomi.fireapp.utils.MessageTypeHelper;
 import com.devlomi.fireapp.utils.RealmHelper;
 import com.devlomi.fireapp.utils.glide.GlideApp;
+import com.devlomi.fireapp.utils.network.FireManager;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Random;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.realm.OrderedRealmCollection;
@@ -59,6 +65,8 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
     HashMap<String, Integer> typingStatHashmap = new HashMap<>();
 
     ChatsAdapterCallback callback;
+
+    private boolean isMute = false;
 
     public interface ChatsAdapterCallback {
         void userProfileClicked(User user);
@@ -87,8 +95,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View row = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_chats, parent, false);
-        return new ChatsHolder(row);
+        return new ChatsHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.row_chats, parent, false));
     }
 
     @Override
@@ -98,9 +105,9 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
         final ChatsHolder mHolder = (ChatsHolder) holder;
 
 
-        if (callback !=null)
-            callback.onBind(holder.getAdapterPosition(),chat);
-
+        if (callback != null) {
+            callback.onBind(holder.getAdapterPosition(), chat);
+        }
         //if other user is typing then show typing layout
         //this will set the state over scrolling
         if (typingStatHashmap.containsValue(chat.getChatId())) {
@@ -123,15 +130,67 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
             mHolder.countUnreadBadge.setVisibility(View.VISIBLE);
         }
 
+        Random rand = new Random();
+        int n = rand.nextInt(50);
+        if (position == 2) {
+            mHolder._ads_.setVisibility(View.VISIBLE);
+            mHolder.image_adv.setVisibility(View.VISIBLE);
+            mHolder.videoView.setVisibility(View.GONE);
+            mHolder.ic_option_.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    PopupMenu popupMenu = new PopupMenu(mHolder.itemView.getContext(), view);
+                    popupMenu.getMenuInflater().inflate(R.menu.menu_adv_option, popupMenu.getMenu());
+                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem menuItem) {
+                            // Toast message on menu item clicked
+                            Toast.makeText(mHolder.itemView.getContext(), "You Clicked " + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
+                            return true;
+                        }
+                    });
+                    // Showing the popup menu
+                    popupMenu.show();
+                }
+            });
+
+            mHolder.ic_volume_.setOnClickListener(new View.OnClickListener() {
+                @SuppressLint("UseCompatLoadingForDrawables")
+                @Override
+                public void onClick(View view) {
+                    if (!isMute) {
+                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_off));
+                        isMute = true;
+                    } else {
+                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_up));
+                        isMute = false;
+                    }
+                }
+            });
+
+            mHolder.image_adv.setImageDrawable(mHolder.itemView.getContext().getDrawable(R.drawable.logo));
+//            mHolder.videoView.setVideoURI(Uri.parse("android.resource://" + mHolder.itemView.getContext().getPackageName() + "/" + R.drawable.logo));
+
+            mHolder.videoView.start();
+
+            // create an object of media controller class
+//            MediaController mediaControls = new MediaController(mHolder.itemView.getContext());
+//            mediaControls.setAnchorView(mHolder.simpleVideoView);
+
+            // set the media controller for video view
+//            mHolder.simpleVideoView.setMediaController(mediaControls);
+        } else {
+            mHolder.videoView.setVisibility(View.GONE);
+        }
 
         keepActionModeItemsSelected(holder.itemView, chat);
 
 
         //set the user name from phonebook
         String name = "";
-        if (user != null)
+        if (user != null) {
             name = user.getProperUserName();
-
+        }
 
         mHolder.tvTitle.setText(name);
 
@@ -299,6 +358,11 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
         public TextView tvTitle, tvLastMessage, timeChats, tvTypingStat, countUnreadBadge;
 
         public ImageView imgReadTagChats;
+        private View _ads_;
+        private VideoView videoView;
+        private ImageView ic_volume_;
+        private ImageView ic_option_;
+        private ImageView image_adv;
 
 
         public ChatsHolder(View itemView) {
@@ -310,7 +374,11 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
             timeChats = itemView.findViewById(R.id.time_chats);
             imgReadTagChats = itemView.findViewById(R.id.img_read_tag_chats);
             countUnreadBadge = itemView.findViewById(R.id.count_unread_badge);
-
+            _ads_ = itemView.findViewById(R.id._ads_);
+            videoView = _ads_.findViewById(R.id.video_adv);
+            ic_volume_ = _ads_.findViewById(R.id.ic_volume_);
+            ic_option_ = _ads_.findViewById(R.id.ic_option_);
+            image_adv = _ads_.findViewById(R.id.image_adv);
             tvTypingStat = itemView.findViewById(R.id.tv_typing_stat);
 
         }

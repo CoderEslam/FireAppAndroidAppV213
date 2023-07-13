@@ -1,13 +1,13 @@
 package com.devlomi.fireapp.activities.main
 
 import android.Manifest.permission.CAMERA
-import android.animation.Animator
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.os.PowerManager
 import android.provider.Settings
+import android.util.Log
 import android.view.ActionMode
 import android.view.Menu
 import android.view.MenuItem
@@ -17,23 +17,17 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
-import androidx.coordinatorlayout.widget.CoordinatorLayout
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.lifecycle.ViewModelProvider
-import androidx.viewpager.widget.ViewPager
 import com.devlomi.fireapp.R
 import com.devlomi.fireapp.activities.*
 import com.devlomi.fireapp.activities.main.calls.CallsFragment
 import com.devlomi.fireapp.activities.main.chats.FragmentChats
 import com.devlomi.fireapp.activities.main.status.StatusFragment
 import com.devlomi.fireapp.activities.settings.SettingsActivity
-import com.devlomi.fireapp.adapters.ViewPagerAdapter
 import com.devlomi.fireapp.common.ViewModelFactory
-import com.devlomi.fireapp.common.extensions.findFragmentByTagForViewPager
 import com.devlomi.fireapp.events.ExitUpdateActivityEvent
 import com.devlomi.fireapp.extensions.observeValueEvent
-import com.devlomi.fireapp.fragments.BaseFragment
 import com.devlomi.fireapp.interfaces.FragmentCallback
 import com.devlomi.fireapp.interfaces.StatusFragmentCallbacks
 import com.devlomi.fireapp.job.DailyBackupJob
@@ -46,13 +40,11 @@ import com.devlomi.fireapp.services.NetworkService
 import com.devlomi.fireapp.utils.*
 import com.devlomi.fireapp.utils.network.FireManager
 import com.devlomi.fireapp.views.dialogs.IgnoreBatteryDialog
-import com.devlomi.fireapp.views.lavafab.Child
-import com.devlomi.fireapp.views.lavafab.LavaFab
 import com.devlomi.fireapp.views.sticker.StickerLoader
 import com.droidninja.imageeditengine.ImageEditor
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.tabs.TabLayout
+import com.google.cloud.translate.TranslateOptions
+import com.google.cloud.translate.Translation
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.PermissionDeniedResponse
@@ -61,10 +53,10 @@ import com.karumi.dexter.listener.PermissionRequest
 import com.karumi.dexter.listener.single.PermissionListener
 import io.reactivex.rxkotlin.addTo
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.greenrobot.eventbus.EventBus
-
-
-
 
 
 class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListener, FragmentCallback,
@@ -117,6 +109,7 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
         supportActionBar?.setDisplayShowHomeEnabled(false)
         supportActionBar?.setDisplayHomeAsUpEnabled(false)
 
+        Task().execute("")
 
         rotationAnimation = FabRotationAnimation(this)
 
@@ -139,8 +132,6 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 //                }
 //            }
 //        }
-
-
 
 
 //        textStatusFab.setOnClickListener {
@@ -516,7 +507,9 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
                 searchItemClicked()
             }
 
-//            R.id.new_group_item -> createGroupClicked()
+            R.id.new_person_item -> {
+                startActivity(Intent(this@MainActivity, NewChatActivity::class.java))
+            }
 
 //            R.id.invite_item -> startActivity(IntentUtils.getShareAppIntent(this@MainActivity))
 
@@ -529,8 +522,6 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
 
         return super.onOptionsItemSelected(item)
     }
-
-
 
 
     private fun searchItemClicked() {

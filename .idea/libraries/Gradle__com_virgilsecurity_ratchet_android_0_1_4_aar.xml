@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: com.virgilsecurity:ratchet-android:0.1.4@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/24694440e13a56d9e1ac70b8985d33f6/transformed/jetified-ratchet-android-0.1.4/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/24694440e13a56d9e1ac70b8985d33f6/transformed/jetified-ratchet-android-0.1.4/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a5b330d1247130c597a595df75c66583/transformed/jetified-ratchet-android-0.1.4/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a5b330d1247130c597a595df75c66583/transformed/jetified-ratchet-android-0.1.4/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.virgilsecurity/ratchet-android/0.1.4/d69f60fd64b6dd43047d11ff9a57498d6956207c/ratchet-android-0.1.4-javadoc.jar!/" />

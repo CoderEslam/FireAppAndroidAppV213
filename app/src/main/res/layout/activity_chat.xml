@@ -43,11 +43,11 @@
                         android:id="@+id/btn_toolbar_back"
                         android:layout_width="20dp"
                         android:layout_height="20dp"
+                        android:layout_marginStart="5dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
                         android:background="@null"
-                        android:paddingLeft="8dp"
-                        android:paddingRight="8dp"
+                        android:padding="5dp"
                         app:srcCompat="@drawable/ic_arrow_back"
                         app:tint="@color/colorPrimary" />
 
@@ -75,7 +75,7 @@
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:hint="Search"
+                    android:hint="@string/search"
                     app:closeIcon="@null"
                     app:iconifiedByDefault="false"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -133,6 +133,7 @@
                     android:layout_marginLeft="4dp"
                     android:layout_marginTop="8dp"
                     android:text="Eslam Ghazy"
+                    android:textColor="#000"
                     android:textSize="18sp"
                     app:layout_constraintStart_toEndOf="@+id/img_and_back_container"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -178,7 +179,7 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-    <include layout="@layout/content_chat" />
+        <include layout="@layout/content_chat" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

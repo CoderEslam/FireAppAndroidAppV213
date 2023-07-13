@@ -22,6 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="56dp"
             android:background="@color/white"
+            app:menu="@menu/menu_main"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="">
             <!--app:layout_scrollFlags="scroll|snap"-->
@@ -130,8 +131,6 @@
         app:layout_constraintVertical_bias="0.0"
         tools:layout_editor_absoluteX="0dp"
         tools:showIn="@layout/activity_main" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

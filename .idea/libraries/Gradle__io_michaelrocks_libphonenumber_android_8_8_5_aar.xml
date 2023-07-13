@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="Gradle: io.michaelrocks:libphonenumber-android:8.8.5@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/938f163c9d25e701057d09aafc4f4b23/transformed/jetified-libphonenumber-android-8.8.5/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/938f163c9d25e701057d09aafc4f4b23/transformed/jetified-libphonenumber-android-8.8.5/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e1af35121612a25ba3a851e83f5e437a/transformed/jetified-libphonenumber-android-8.8.5/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/e1af35121612a25ba3a851e83f5e437a/transformed/jetified-libphonenumber-android-8.8.5/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.michaelrocks/libphonenumber-android/8.8.5/beca50981c2ddaeb1175d0e826ee9b8985689c31/libphonenumber-android-8.8.5-javadoc.jar!/" />

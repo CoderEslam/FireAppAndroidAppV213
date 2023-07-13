@@ -250,6 +250,7 @@
     <string name="share_app_text">Download now %s App for Instant messaging,groups support,Video Calls, and more. </string>
     <string name="no_contacts">No %s Contacts</string>
     <string name="minutes_ago">minutes ago</string>
+    <string name="minute_ago">minute ago</string>
     <string name="hours_ago">hours ago</string>
     <string name="yesterday_at">Yesterday at</string>
     <string name="today_at">Today at</string>
@@ -533,6 +534,13 @@
     <string name="genral">Genral</string>
     <string name="advanced">Advanced</string>
     <string name="enter">Enter</string>
+    <string name="search">Search</string>
+    <string name="next">Next</string>
+    <string name="start">Start</string>
+    <string name="not_interested_in_this_ad">Not interested in this ad</string>
+    <string name="ad_was_inappropriate">Ad was inappropriate</string>
+    <string name="ad_covered_content">Ad covered content</string>
+    <string name="seen_this_ad_multiple_times">Seen this ad multiple times</string>
 
     <array name="fab_menu_icons">
         <item>@drawable/add_person</item>

@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.abdularis:androidbuttonprogress:1.0.2@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6733e36fb7a052ec09efa87f7ea8c960/transformed/jetified-androidbuttonprogress-1.0.2/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/6733e36fb7a052ec09efa87f7ea8c960/transformed/jetified-androidbuttonprogress-1.0.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6733e36fb7a052ec09efa87f7ea8c960/transformed/jetified-androidbuttonprogress-1.0.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6a59b67214a3f38589fc23f3b7911b61/transformed/jetified-androidbuttonprogress-1.0.2/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/6a59b67214a3f38589fc23f3b7911b61/transformed/jetified-androidbuttonprogress-1.0.2/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/6a59b67214a3f38589fc23f3b7911b61/transformed/jetified-androidbuttonprogress-1.0.2/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

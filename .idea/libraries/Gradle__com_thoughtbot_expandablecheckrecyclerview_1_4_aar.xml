@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.thoughtbot:expandablecheckrecyclerview:1.4@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d849d6e01782f22320840e07c831675b/transformed/jetified-expandablecheckrecyclerview-1.4/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/d849d6e01782f22320840e07c831675b/transformed/jetified-expandablecheckrecyclerview-1.4/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d849d6e01782f22320840e07c831675b/transformed/jetified-expandablecheckrecyclerview-1.4/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d28aaa2aafea574230af115641bbe7a0/transformed/jetified-expandablecheckrecyclerview-1.4/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/d28aaa2aafea574230af115641bbe7a0/transformed/jetified-expandablecheckrecyclerview-1.4/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/d28aaa2aafea574230af115641bbe7a0/transformed/jetified-expandablecheckrecyclerview-1.4/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.thoughtbot/expandablecheckrecyclerview/1.4/dd3d23f0bba406d1cdc0614facff01a28eb107ce/expandablecheckrecyclerview-1.4-javadoc.jar!/" />

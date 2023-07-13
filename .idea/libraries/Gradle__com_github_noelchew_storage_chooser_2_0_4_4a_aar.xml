@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.noelchew:storage-chooser:2.0.4.4a@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/722e3c262c621569d3bac46e4ff0716b/transformed/jetified-storage-chooser-2.0.4.4a/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/722e3c262c621569d3bac46e4ff0716b/transformed/jetified-storage-chooser-2.0.4.4a/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/722e3c262c621569d3bac46e4ff0716b/transformed/jetified-storage-chooser-2.0.4.4a/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a417a7c523bcede43fae1cb8471f2c5a/transformed/jetified-storage-chooser-2.0.4.4a/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a417a7c523bcede43fae1cb8471f2c5a/transformed/jetified-storage-chooser-2.0.4.4a/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a417a7c523bcede43fae1cb8471f2c5a/transformed/jetified-storage-chooser-2.0.4.4a/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.noelchew/storage-chooser/2.0.4.4a/d75cee127a4651c61d57c2c2d75ef48131d3335f/storage-chooser-2.0.4.4a-javadoc.jar!/" />

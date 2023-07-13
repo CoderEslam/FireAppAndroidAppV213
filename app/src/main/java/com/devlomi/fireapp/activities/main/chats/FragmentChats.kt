@@ -159,7 +159,9 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
             })
 
         with(lava_fab_bottom_right) {
-            setParentOnClickListener { lava_fab_bottom_right.trigger() }
+            setParentOnClickListener {
+                lava_fab_bottom_right.trigger()
+            }
             setChildOnClickListener(Child.TOP) {
                 startActivity(Intent(requireActivity(), NewChatActivity::class.java))
             }
