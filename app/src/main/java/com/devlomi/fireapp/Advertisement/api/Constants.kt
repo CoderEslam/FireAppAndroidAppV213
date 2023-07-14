@@ -6,17 +6,12 @@ package com.devlomi.fireapp.Advertisement.api
 object Constants {
 
     const val BEARER = "Bearer "
-    const val TOKEN = "${BEARER}7|PZdP2GPNeny6jOl3zqQkhpPi04G9jrNI3Dagaqsl"
+    const val TOKEN = "${BEARER}5|pOEbJH4lQAUwDwGHLy7YjfA1b3mkflT02xiYEF4w"
 
 
-    const val BASE_URL = "https://hennapp.es/api/v1/"
+    const val BASE_URL = "http://172.16.1.98/api/v1/"
 
-    const val IMAGE_BASE_URL = "https://hennapp.es/public/"
-    const val CategoryImages = "category_images/"
-    const val ProviderImages = "provider_images/"
-    const val ServiceImages = "service_images/"
-    const val UsersImages = "users_images/"
-    const val AdvertisementImages = "advertisement_images/"
+
 
 
 }

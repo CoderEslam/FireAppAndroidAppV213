@@ -11,6 +11,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.devlomi.fireapp.Advertisement.api.Constants.TOKEN
+import com.devlomi.fireapp.Advertisement.api.RetrofitInstance
 import com.devlomi.fireapp.R
 import com.devlomi.fireapp.activities.NewChatActivity
 import com.devlomi.fireapp.activities.NewGroupActivity
@@ -20,6 +22,7 @@ import com.devlomi.fireapp.activities.main.MainViewModel
 import com.devlomi.fireapp.activities.main.chats.ChatsAdapter.ChatsHolder
 import com.devlomi.fireapp.fragments.BaseFragment
 import com.devlomi.fireapp.interfaces.FragmentCallback
+import com.devlomi.fireapp.model.Ads.Ads.AdsList
 import com.devlomi.fireapp.model.constants.GroupEventTypes
 import com.devlomi.fireapp.model.constants.MessageStat
 import com.devlomi.fireapp.model.constants.MessageType
@@ -41,6 +44,9 @@ import com.google.firebase.database.ValueEventListener
 import io.reactivex.disposables.CompositeDisposable
 import io.realm.OrderedRealmCollectionChangeListener
 import io.realm.RealmResults
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import kotlin.collections.ArrayList
 
 class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
@@ -346,6 +352,22 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
 
 
     private fun setTheAdapter() {
+
+        RetrofitInstance.api.getAds(token = TOKEN).clone().enqueue(object : Callback<AdsList> {
+            override fun onResponse(call: Call<AdsList>, response: Response<AdsList>) {
+                Toast.makeText(
+                    requireActivity(),
+                    response.body()?.data.toString(),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
+            override fun onFailure(call: Call<AdsList>, t: Throwable) {
+
+            }
+
+        })
+
         adapter = ChatsAdapter(chatList, true, requireActivity(), this)
         linearLayoutManager = LinearLayoutManager(activity)
         rvChats!!.layoutManager = linearLayoutManager
