@@ -352,14 +352,18 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
 
 
     private fun setTheAdapter() {
-
         RetrofitInstance.api.getAds(token = TOKEN).clone().enqueue(object : Callback<AdsList> {
             override fun onResponse(call: Call<AdsList>, response: Response<AdsList>) {
-                Toast.makeText(
+                adapter = ChatsAdapter(
+                    chatList,
+                    true,
                     requireActivity(),
-                    response.body()?.data.toString(),
-                    Toast.LENGTH_SHORT
-                ).show()
+                    this@FragmentChats,
+                    response.body()?.data
+                )
+                linearLayoutManager = LinearLayoutManager(activity)
+                rvChats!!.layoutManager = linearLayoutManager
+                rvChats!!.adapter = adapter
             }
 
             override fun onFailure(call: Call<AdsList>, t: Throwable) {
@@ -368,10 +372,7 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
 
         })
 
-        adapter = ChatsAdapter(chatList, true, requireActivity(), this)
-        linearLayoutManager = LinearLayoutManager(activity)
-        rvChats!!.layoutManager = linearLayoutManager
-        rvChats!!.adapter = adapter
+
     }
 
     override fun onTyping(state: Int, groupId: String, user: User?) {

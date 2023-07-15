@@ -1,10 +1,15 @@
 package com.devlomi.fireapp.activities.main.chats;
 
+import static com.devlomi.fireapp.Advertisement.api.Constants.BASE_URL_VIDEO;
+
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -17,12 +22,14 @@ import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.devlomi.fireapp.R;
+import com.devlomi.fireapp.model.Ads.Ads.AdsModel;
 import com.devlomi.fireapp.model.constants.MessageType;
 import com.devlomi.fireapp.model.constants.TypingStat;
 import com.devlomi.fireapp.model.realms.Chat;
@@ -56,6 +63,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
     //chats list
     List<Chat> originalList;
     List<Chat> chatList;
+    List<AdsModel> adsModelList;
 
     //this list will contain the selected chats when user start selecting chats
     List<Chat> selectedChatForActionMode = new ArrayList<>();
@@ -84,12 +92,13 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
         disposables.dispose();
     }
 
-    public ChatsAdapter(@Nullable OrderedRealmCollection<Chat> data, boolean autoUpdate, Context context, ChatsAdapterCallback callback) {
+    public ChatsAdapter(@Nullable OrderedRealmCollection<Chat> data, boolean autoUpdate, Context context, ChatsAdapterCallback callback, List<AdsModel> adsModelList) {
         super(data, autoUpdate);
         this.originalList = data;
         this.context = context;
         this.callback = callback;
         chatList = data;
+        this.adsModelList = adsModelList;
     }
 
 
@@ -131,11 +140,19 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
         }
 
         Random rand = new Random();
-        int n = rand.nextInt(50);
+//        int n = rand.nextInt(adsModelList.size() - 1);
         if (position == 2) {
             mHolder._ads_.setVisibility(View.VISIBLE);
-            mHolder.image_adv.setVisibility(View.VISIBLE);
-            mHolder.videoView.setVisibility(View.GONE);
+//            mHolder.image_adv.setVisibility(View.VISIBLE);
+//            mHolder.videoView.setVisibility(View.GONE);
+            if (adsModelList.get(0).getMedia().contains(".mp4")) {
+                mHolder.videoView.setVisibility(View.VISIBLE);
+                mHolder.image_adv.setVisibility(View.GONE);
+                mHolder.videoView.setVideoURI(Uri.parse(BASE_URL_VIDEO + adsModelList.get(0).getMedia()));
+            } else {
+                mHolder.videoView.setVisibility(View.GONE);
+                mHolder.image_adv.setVisibility(View.VISIBLE);
+            }
             mHolder.ic_option_.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -153,17 +170,33 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
                     popupMenu.show();
                 }
             });
-
+//            AudioManager audioManager = (AudioManager) holder.itemView.getContext().getSystemService(Context.AUDIO_SERVICE);
             mHolder.ic_volume_.setOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.M)
                 @SuppressLint("UseCompatLoadingForDrawables")
                 @Override
                 public void onClick(View view) {
+                    mHolder.videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                        @Override
+                        public void onPrepared(MediaPlayer mp) {
+                            mp.setVolume(0, 0);
+                        }
+                    });
                     if (!isMute) {
                         mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_off));
+//                        audioManager.adjustVolume(AudioManager.ADJUST_MUTE, AudioManager.FLAG_SHOW_UI);
                         isMute = true;
                     } else {
+//                        mHolder.videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+//                            @Override
+//                            public void onPrepared(MediaPlayer mp) {
+//                                mp.setVolume(0, 100);
+//                            }
+//                        });
                         mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_up));
                         isMute = false;
+//                        audioManager.adjustVolume(AudioManager.ADJUST_UNMUTE, AudioManager.FLAG_SHOW_UI);
+
                     }
                 }
             });

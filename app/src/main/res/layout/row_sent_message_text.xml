@@ -35,7 +35,7 @@
 
             <com.aghajari.emojiview.view.AXEmojiTextView
                 android:id="@+id/tv_message_content"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:autoLink="web"

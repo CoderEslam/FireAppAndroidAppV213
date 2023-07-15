@@ -38,7 +38,7 @@
 
         <include
             layout="@layout/item_reply"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="15dp"
             android:layout_marginLeft="10dp"
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="4dp"
-            android:gravity="right"
+            android:gravity="start"
             android:orientation="horizontal"
 
             >
@@ -85,7 +85,7 @@
                 style="@style/ReceivedMessageTimeTextStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:gravity="right"
+                android:gravity="start"
                 android:paddingRight="4dp"
                 android:text="12:20 AM" />
 

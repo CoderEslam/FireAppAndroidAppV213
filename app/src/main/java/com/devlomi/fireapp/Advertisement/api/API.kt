@@ -17,7 +17,7 @@ interface API {
     ): Call<UserModel>
 
     @Headers("Content-Type: application/json", "Accept: application/json")
-    @GET
+    @GET("ads")
     fun getAds(
         @Header("Authorization") token: String
     ): Call<AdsList>

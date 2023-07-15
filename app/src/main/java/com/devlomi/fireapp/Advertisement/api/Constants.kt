@@ -9,7 +9,8 @@ object Constants {
     const val TOKEN = "${BEARER}5|pOEbJH4lQAUwDwGHLy7YjfA1b3mkflT02xiYEF4w"
 
 
-    const val BASE_URL = "http://172.16.1.98/api/v1/"
+    const val BASE_URL = "https://ringring.perfectsolution.co/api/v1/"
+    const val BASE_URL_VIDEO = "https://ringring.perfectsolution.co/public/ads_media/"
 
 
 
