@@ -74,6 +74,8 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
     private val groupManager = GroupManager()
     override val disposables = CompositeDisposable()
 
+    private lateinit var cld: ConnectionLiveData
+
 
     private val isHasMutedItem: Boolean
         get() {
@@ -157,6 +159,7 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
         listenForLastMessageStat()
         listenForMessagesChanges()
         adViewInitialized(adView)
+        checkNetworkConnection()
 
         mainViewModel.queryTextChange.observe(
             viewLifecycleOwner,
@@ -352,26 +355,15 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
 
 
     private fun setTheAdapter() {
-        RetrofitInstance.api.getAds(token = TOKEN).clone().enqueue(object : Callback<AdsList> {
-            override fun onResponse(call: Call<AdsList>, response: Response<AdsList>) {
-                adapter = ChatsAdapter(
-                    chatList,
-                    true,
-                    requireActivity(),
-                    this@FragmentChats,
-                    response.body()?.data
-                )
-                linearLayoutManager = LinearLayoutManager(activity)
-                rvChats!!.layoutManager = linearLayoutManager
-                rvChats!!.adapter = adapter
-            }
-
-            override fun onFailure(call: Call<AdsList>, t: Throwable) {
-
-            }
-
-        })
-
+        adapter = ChatsAdapter(
+            chatList,
+            true,
+            requireActivity(),
+            this@FragmentChats
+        )
+        linearLayoutManager = LinearLayoutManager(activity)
+        rvChats!!.layoutManager = linearLayoutManager
+        rvChats!!.adapter = adapter
 
     }
 
@@ -455,6 +447,39 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
 
     }
 
+
+    private fun checkNetworkConnection() {
+        cld = ConnectionLiveData(requireActivity().application)
+
+        cld.observe(viewLifecycleOwner) { isConnected ->
+            if (isConnected) {
+                RetrofitInstance.api.getAds(token = TOKEN).clone()
+                    .enqueue(object : Callback<AdsList> {
+                        override fun onResponse(call: Call<AdsList>, response: Response<AdsList>) {
+                            adapter?.let {
+                                it.setAds(
+                                    response.body()?.data
+                                )
+                                chatList?.let { list -> it.notifyItemRangeChanged(0, list.size) }
+                            }
+                        }
+
+                        override fun onFailure(call: Call<AdsList>, t: Throwable) {
+
+                        }
+
+                    })
+            } else {
+                Toast.makeText(
+                    requireActivity(),
+                    getString(R.string.no_internt),
+                    Toast.LENGTH_SHORT
+                ).show()
+                chatList?.let { list -> adapter?.notifyItemRangeChanged(0, list.size) }
+            }
+
+        }
+    }
 
     override fun onClick(chat: Chat, view: View) {
 //        if isInAction mode then select or remove the clicked chat from selectedActionList

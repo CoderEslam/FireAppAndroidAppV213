@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:emojicon="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -61,11 +62,11 @@
                 android:gravity="end"
                 android:minWidth="60dp"
                 android:paddingTop="5dp"
-                android:text="Test"
                 android:textColor="@color/received_message_title_color"
                 android:textColorLink="#8498fc"
                 android:textDirection="anyRtl"
-                app:emojiSize="20sp" />
+                app:emojiSize="20sp"
+                tools:text="TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest" />
 
 
         </LinearLayout>

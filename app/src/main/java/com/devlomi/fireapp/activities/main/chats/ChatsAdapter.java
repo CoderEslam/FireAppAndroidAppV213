@@ -10,6 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -59,6 +60,8 @@ import io.realm.RealmResults;
 //the RealmRecyclerViewAdapter provides autoUpdate feature
 //which will handle changes in list automatically with smooth animations
 public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.ViewHolder> {
+
+    private static final String TAG = "ChatsAdapter";
     private Context context;
     //chats list
     List<Chat> originalList;
@@ -92,15 +95,17 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
         disposables.dispose();
     }
 
-    public ChatsAdapter(@Nullable OrderedRealmCollection<Chat> data, boolean autoUpdate, Context context, ChatsAdapterCallback callback, List<AdsModel> adsModelList) {
+    public ChatsAdapter(@Nullable OrderedRealmCollection<Chat> data, boolean autoUpdate, Context context, ChatsAdapterCallback callback) {
         super(data, autoUpdate);
         this.originalList = data;
         this.context = context;
         this.callback = callback;
         chatList = data;
-        this.adsModelList = adsModelList;
     }
 
+    public void setAds(List<AdsModel> adsModelList) {
+        this.adsModelList = adsModelList;
+    }
 
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -145,13 +150,23 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
             mHolder._ads_.setVisibility(View.VISIBLE);
 //            mHolder.image_adv.setVisibility(View.VISIBLE);
 //            mHolder.videoView.setVisibility(View.GONE);
-            if (adsModelList.get(0).getMedia().contains(".mp4")) {
-                mHolder.videoView.setVisibility(View.VISIBLE);
-                mHolder.image_adv.setVisibility(View.GONE);
-                mHolder.videoView.setVideoURI(Uri.parse(BASE_URL_VIDEO + adsModelList.get(0).getMedia()));
+            if (adsModelList != null) {
+                try {
+                    if (adsModelList.get(0).getMedia().contains(".mp4")) {
+                        mHolder.videoView.setVisibility(View.VISIBLE);
+                        mHolder.image_adv.setVisibility(View.GONE);
+                        mHolder.videoView.setVideoURI(Uri.parse(BASE_URL_VIDEO + adsModelList.get(0).getMedia()));
+                    } else {
+                        mHolder.videoView.setVisibility(View.GONE);
+                        mHolder.image_adv.setVisibility(View.VISIBLE);
+                    }
+                } catch (NullPointerException e) {
+                    Log.e(TAG, "onBindViewHolder: " + e.getMessage());
+                    mHolder._ads_.setVisibility(View.GONE);
+                }
+
             } else {
-                mHolder.videoView.setVisibility(View.GONE);
-                mHolder.image_adv.setVisibility(View.VISIBLE);
+                mHolder._ads_.setVisibility(View.GONE);
             }
             mHolder.ic_option_.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -213,7 +228,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
             // set the media controller for video view
 //            mHolder.simpleVideoView.setMediaController(mediaControls);
         } else {
-            mHolder.videoView.setVisibility(View.GONE);
+            mHolder._ads_.setVisibility(View.GONE);
         }
 
         keepActionModeItemsSelected(holder.itemView, chat);

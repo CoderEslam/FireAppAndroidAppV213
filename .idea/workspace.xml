@@ -32,14 +32,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="583057fa-3e82-494a-8561-5f2f1c716ec7" name="Default Changelist" comment="FireApp">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/ConnectionLiveData.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/Advertisement/api/API.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/Advertisement/api/API.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/Advertisement/api/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/Advertisement/api/Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/chats/ChatsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/chats/ChatsAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/chats/FragmentChats.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/chats/FragmentChats.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/Ads/SessionManger.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/Ads/SessionManger.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_adv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_adv.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_received_message_text.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_received_message_text.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_sent_message_text.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_sent_message_text.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,12 +103,12 @@
       <list>
         <option value="Kotlin File" />
         <option value="resourceFile" />
-        <option value="Kotlin Class" />
         <option value="Class" />
         <option value="layoutResourceFile" />
         <option value="Kotlin Data Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin Enum" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -150,6 +152,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.3.1/45a346a05e7ff27a01c59452379c5939cbb53c03/appcompat-1.3.1-sources.jar!/androidx/appcompat/widget/Toolbar.java_SELECTED" value="Toolbar" />
+    <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/com.aghajari.emojiview/AXEmojiView/1.3.0/1556815146a34c9468b8605f4dc954560f105ed5/AXEmojiView-1.3.0-sources.jar!/com/aghajari/emojiview/view/AXEmojiTextView.java_SELECTED" value="AXEmojiTextView" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/com.devlomi/circularstatusview/1.0.1/5cc217467c0fe441c01c66280caefda84a54003f/circularstatusview-1.0.1-sources.jar!/com/devlomi/circularstatusview/CircularStatusView.java_SELECTED" value="CircularStatusView" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/com.github.abdularis/androidbuttonprogress/1.0.2/560131e8dc6b6ce7e9a9c6306c8c21ca89345869/androidbuttonprogress-1.0.2-sources.jar!/com/github/abdularis/buttonprogress/DownloadButtonProgress.java_SELECTED" value="DownloadButtonProgress" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/de.hdodenhof/circleimageview/3.0.0/78063c6cf034f24292cf05a324e69091a58569cf/circleimageview-3.0.0-sources.jar!/de/hdodenhof/circleimageview/CircleImageView.java_SELECTED" value="CircleImageView" />

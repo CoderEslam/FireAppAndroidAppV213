@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
@@ -13,39 +14,40 @@
         android:layout_gravity="end"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
-        android:padding="10dp"
         android:background="@drawable/sent__message_"
         android:orientation="vertical"
+        android:padding="10dp"
         app:linearBgTintColor="@color/sent_message_background_color">
 
-        <include layout="@layout/item_reply"
-            android:layout_width="wrap_content"
+        <include
+            layout="@layout/item_reply"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginRight="10dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginTop="5dp"/>
+            android:layout_marginRight="10dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
             android:orientation="horizontal"
-            android:paddingLeft="4dp"
-            android:layout_marginRight="10dp">
+            android:paddingLeft="4dp">
 
 
             <com.aghajari.emojiview.view.AXEmojiTextView
                 android:id="@+id/tv_message_content"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="2dp"
                 android:autoLink="web"
                 android:minWidth="60dp"
                 android:paddingTop="5dp"
-                android:text="Test"
                 android:textColor="@color/sent_message_title_color"
                 android:textColorLink="#8498fc"
                 android:textDirection="anyRtl"
-                app:emojiSize="20sp" />
+                app:emojiSize="20sp"
+                tools:text="TestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTestTest" />
 
 
         </LinearLayout>

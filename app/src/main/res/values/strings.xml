@@ -541,6 +541,7 @@
     <string name="ad_was_inappropriate">Ad was inappropriate</string>
     <string name="ad_covered_content">Ad covered content</string>
     <string name="seen_this_ad_multiple_times">Seen this ad multiple times</string>
+    <string name="no_internt">you don\'t have an internet connection</string>
 
     <array name="fab_menu_icons">
         <item>@drawable/add_person</item>
