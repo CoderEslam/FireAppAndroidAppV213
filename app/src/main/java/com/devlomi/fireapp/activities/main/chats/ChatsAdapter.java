@@ -2,14 +2,12 @@ package com.devlomi.fireapp.activities.main.chats;
 
 import static com.devlomi.fireapp.Advertisement.api.Constants.BASE_URL_VIDEO;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
 import android.net.Uri;
-import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -19,16 +17,15 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import android.widget.VideoView;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.devlomi.fireapp.R;
 import com.devlomi.fireapp.model.Ads.Ads.AdsModel;
 import com.devlomi.fireapp.model.constants.MessageType;
@@ -46,7 +43,6 @@ import com.devlomi.fireapp.utils.network.FireManager;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Random;
 
 import io.reactivex.disposables.CompositeDisposable;
 import io.realm.OrderedRealmCollection;
@@ -66,7 +62,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
     //chats list
     List<Chat> originalList;
     List<Chat> chatList;
-    List<AdsModel> adsModelList;
+    private List<AdsModel> adsModelList;
 
     //this list will contain the selected chats when user start selecting chats
     List<Chat> selectedChatForActionMode = new ArrayList<>();
@@ -144,12 +140,21 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
             mHolder.countUnreadBadge.setVisibility(View.VISIBLE);
         }
 
-        Random rand = new Random();
-//        int n = rand.nextInt(adsModelList.size() - 1);
         if (position == 2) {
+            mHolder.videoView.setOnPreparedListener(mp -> {
+//                mp.setVolume(0, 0);
+                mp.setLooping(false);
+//                Log.e(TAG, "onBindViewHolder: " + mp.getDuration() + " -> " + mHolder.videoView.getCurrentPosition());
+//                mp.getDuration();
+//                mHolder.videoView.getCurrentPosition();
+            });
+            mHolder.videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    Log.e(TAG, "onBindViewHolder: " + mediaPlayer.getDuration() + " -> " + mHolder.videoView.getCurrentPosition());
+                }
+            });
             mHolder._ads_.setVisibility(View.VISIBLE);
-//            mHolder.image_adv.setVisibility(View.VISIBLE);
-//            mHolder.videoView.setVisibility(View.GONE);
             if (adsModelList != null) {
                 try {
                     if (adsModelList.get(0).getMedia().contains(".mp4")) {
@@ -159,6 +164,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
                     } else {
                         mHolder.videoView.setVisibility(View.GONE);
                         mHolder.image_adv.setVisibility(View.VISIBLE);
+                        Glide.with(mHolder.itemView.getContext()).load(BASE_URL_VIDEO + adsModelList.get(0).getMedia()).into(mHolder.image_adv);
                     }
                 } catch (NullPointerException e) {
                     Log.e(TAG, "onBindViewHolder: " + e.getMessage());
@@ -177,7 +183,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
                         @Override
                         public boolean onMenuItemClick(MenuItem menuItem) {
                             // Toast message on menu item clicked
-                            Toast.makeText(mHolder.itemView.getContext(), "You Clicked " + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
+
                             return true;
                         }
                     });
@@ -186,7 +192,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
                 }
             });
 //            AudioManager audioManager = (AudioManager) holder.itemView.getContext().getSystemService(Context.AUDIO_SERVICE);
-            mHolder.ic_volume_.setOnClickListener(new View.OnClickListener() {
+            /*mHolder.ic_volume_.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.M)
                 @SuppressLint("UseCompatLoadingForDrawables")
                 @Override
@@ -198,9 +204,9 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
                         }
                     });
                     if (!isMute) {
-                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_off));
+//                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_off));
 //                        audioManager.adjustVolume(AudioManager.ADJUST_MUTE, AudioManager.FLAG_SHOW_UI);
-                        isMute = true;
+//                        isMute = true;
                     } else {
 //                        mHolder.videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
 //                            @Override
@@ -208,13 +214,13 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
 //                                mp.setVolume(0, 100);
 //                            }
 //                        });
-                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_up));
-                        isMute = false;
+//                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_up));
+//                        isMute = false;
 //                        audioManager.adjustVolume(AudioManager.ADJUST_UNMUTE, AudioManager.FLAG_SHOW_UI);
 
                     }
                 }
-            });
+            });*/
 
             mHolder.image_adv.setImageDrawable(mHolder.itemView.getContext().getDrawable(R.drawable.logo));
 //            mHolder.videoView.setVideoURI(Uri.parse("android.resource://" + mHolder.itemView.getContext().getPackageName() + "/" + R.drawable.logo));
@@ -229,6 +235,8 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
 //            mHolder.simpleVideoView.setMediaController(mediaControls);
         } else {
             mHolder._ads_.setVisibility(View.GONE);
+            mHolder.videoView.setVisibility(View.GONE);
+            mHolder.image_adv.setVisibility(View.GONE);
         }
 
         keepActionModeItemsSelected(holder.itemView, chat);
@@ -408,10 +416,9 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
         public ImageView imgReadTagChats;
         private View _ads_;
         private VideoView videoView;
-        private ImageView ic_volume_;
+        //        private ImageView ic_volume_;
         private ImageView ic_option_;
         private ImageView image_adv;
-
 
         public ChatsHolder(View itemView) {
             super(itemView);
@@ -424,7 +431,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
             countUnreadBadge = itemView.findViewById(R.id.count_unread_badge);
             _ads_ = itemView.findViewById(R.id._ads_);
             videoView = _ads_.findViewById(R.id.video_adv);
-            ic_volume_ = _ads_.findViewById(R.id.ic_volume_);
+//            ic_volume_ = _ads_.findViewById(R.id.ic_volume_);
             ic_option_ = _ads_.findViewById(R.id.ic_option_);
             image_adv = _ads_.findViewById(R.id.image_adv);
             tvTypingStat = itemView.findViewById(R.id.tv_typing_stat);

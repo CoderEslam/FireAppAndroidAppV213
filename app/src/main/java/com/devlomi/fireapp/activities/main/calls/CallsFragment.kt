@@ -5,17 +5,22 @@ import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.devlomi.fireapp.Advertisement.api.Constants
+import com.devlomi.fireapp.Advertisement.api.RetrofitInstance
 import com.devlomi.fireapp.R
 import com.devlomi.fireapp.activities.NewCallActivity
 import com.devlomi.fireapp.activities.main.MainViewModel
 import com.devlomi.fireapp.adapters.CallsAdapter
 import com.devlomi.fireapp.fragments.BaseFragment
 import com.devlomi.fireapp.interfaces.FragmentCallback
+import com.devlomi.fireapp.model.Ads.Ads.AdsList
 import com.devlomi.fireapp.model.realms.FireCall
+import com.devlomi.fireapp.utils.ConnectionLiveData
 import com.devlomi.fireapp.utils.PerformCall
 import com.devlomi.fireapp.utils.RealmHelper
 import com.devlomi.fireapp.utils.network.FireManager
@@ -24,6 +29,9 @@ import com.google.android.gms.ads.AdView
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import io.realm.RealmResults
 import kotlinx.android.synthetic.main.fragment_calls.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.util.*
 
 class CallsFragment : BaseFragment(), ActionMode.Callback, CallsAdapter.OnClickListener {
@@ -36,6 +44,7 @@ class CallsFragment : BaseFragment(), ActionMode.Callback, CallsAdapter.OnClickL
     var listener: FragmentCallback? = null
     var actionMode: ActionMode? = null
     val fireManager = FireManager()
+    private lateinit var cld: ConnectionLiveData
 
     val viewModel: MainViewModel by activityViewModels()
     override fun showAds(): Boolean {
@@ -66,6 +75,7 @@ class CallsFragment : BaseFragment(), ActionMode.Callback, CallsAdapter.OnClickL
         open_new_call_fab = view.findViewById(R.id.open_new_call_fab)
         adViewInitialized(adView)
         initAdapter()
+        checkNetworkConnection()
 
         viewModel.queryTextChange.observe(
             viewLifecycleOwner,
@@ -207,4 +217,41 @@ class CallsFragment : BaseFragment(), ActionMode.Callback, CallsAdapter.OnClickL
             itemAddedToActionList(selectedCircle, itemView, fireCall)
         }
     }
+
+    private fun checkNetworkConnection() {
+        cld = ConnectionLiveData(requireActivity().application)
+        cld.observe(viewLifecycleOwner) { isConnected ->
+            if (isConnected) {
+                RetrofitInstance.api.getAds(token = Constants.TOKEN).clone()
+                    .enqueue(object : Callback<AdsList> {
+                        override fun onResponse(call: Call<AdsList>, response: Response<AdsList>) {
+                            adapter.let {
+                                it.setAds(
+                                    response.body()?.data
+                                )
+                                fireCallList?.let { list ->
+                                    it.notifyItemRangeChanged(
+                                        0,
+                                        list.size
+                                    )
+                                }
+                            }
+                        }
+                        override fun onFailure(call: Call<AdsList>, t: Throwable) {
+
+                        }
+
+                    })
+            } else {
+                Toast.makeText(
+                    requireActivity(),
+                    getString(R.string.no_internt),
+                    Toast.LENGTH_SHORT
+                ).show()
+                fireCallList?.let { list -> adapter.notifyItemRangeChanged(0, list.size) }
+            }
+
+        }
+    }
+
 }

@@ -143,7 +143,7 @@ class Parent(override val center: PointF, override val radius: Float) : LavaView
                 calculatePoints(it.animatedValue as Float)
             }
             addListener(object : AnimatorListenerAdapter() {
-                override fun onAnimationEnd(animation: Animator?) {
+                override fun onAnimationEnd(animation: Animator) {
                     isAnimated = false
                 }
             })

@@ -32,7 +32,7 @@ interface PlacesWebService {
             val requestInterceptor = Interceptor { chain ->
 
                 val url = chain.request()
-                        .url()
+                    .url
                         .newBuilder()
                         .addQueryParameter("client_id", CLIENT_ID)
                         .addQueryParameter("client_secret", CLIENT_SECRET)

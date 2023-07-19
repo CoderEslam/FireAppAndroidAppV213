@@ -1,14 +1,22 @@
 package com.devlomi.fireapp.adapters;
 
+import static com.devlomi.fireapp.Advertisement.api.Constants.BASE_URL_VIDEO;
+
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.PopupMenu;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,6 +26,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.devlomi.fireapp.R;
+import com.devlomi.fireapp.model.Ads.Ads.AdsModel;
 import com.devlomi.fireapp.model.constants.FireCallDirection;
 import com.devlomi.fireapp.model.realms.FireCall;
 import com.devlomi.fireapp.model.realms.User;
@@ -39,6 +48,9 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
     private List<FireCall> selectedItemForActionMode;
     private Context context;
     private OnClickListener onPhoneCallClick;
+    private List<AdsModel> adsModelList;
+
+    private static final String TAG = "CallsAdapter";
 
     public CallsAdapter(@Nullable OrderedRealmCollection<FireCall> data,
                         List<FireCall> selectedItemForActionMode, Context context, OnClickListener onPhoneCallClick) {
@@ -50,6 +62,9 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
         this.onPhoneCallClick = onPhoneCallClick;
     }
 
+    public void setAds(List<AdsModel> adsModelList) {
+        this.adsModelList = adsModelList;
+    }
 
     @NonNull
     @Override
@@ -62,6 +77,103 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
     @Override
     public void onBindViewHolder(@NonNull PhoneCallHolder holder, int position) {
         holder.bind(fireCallList.get(position));
+        if (position == 2) {
+            holder.videoView.setOnPreparedListener(mp -> {
+//                mp.setVolume(0, 0);
+                mp.setLooping(false);
+//                Log.e(TAG, "onBindViewHolder: " + mp.getDuration() + " -> " + mHolder.videoView.getCurrentPosition());
+//                mp.getDuration();
+//                mHolder.videoView.getCurrentPosition();
+            });
+            holder.videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+                @Override
+                public void onCompletion(MediaPlayer mediaPlayer) {
+                    Log.e(TAG, "onBindViewHolder: " + mediaPlayer.getDuration() + " -> " + holder.videoView.getCurrentPosition());
+                }
+            });
+            holder._ads_.setVisibility(View.VISIBLE);
+            if (adsModelList != null) {
+                try {
+                    if (adsModelList.get(0).getMedia().contains(".mp4")) {
+                        holder.videoView.setVisibility(View.VISIBLE);
+                        holder.image_adv.setVisibility(View.GONE);
+                        holder.videoView.setVideoURI(Uri.parse(BASE_URL_VIDEO + adsModelList.get(0).getMedia()));
+                    } else {
+                        holder.videoView.setVisibility(View.GONE);
+                        holder.image_adv.setVisibility(View.VISIBLE);
+                        Glide.with(holder.itemView.getContext()).load(BASE_URL_VIDEO + adsModelList.get(0).getMedia()).into(holder.image_adv);
+                    }
+                } catch (NullPointerException e) {
+                    Log.e(TAG, "onBindViewHolder: " + e.getMessage());
+                    holder._ads_.setVisibility(View.GONE);
+                }
+
+            } else {
+                holder._ads_.setVisibility(View.GONE);
+            }
+            holder.ic_option_.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    PopupMenu popupMenu = new PopupMenu(holder.itemView.getContext(), view);
+                    popupMenu.getMenuInflater().inflate(R.menu.menu_adv_option, popupMenu.getMenu());
+                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                        @Override
+                        public boolean onMenuItemClick(MenuItem menuItem) {
+                            // Toast message on menu item clicked
+                            return true;
+                        }
+                    });
+                    // Showing the popup menu
+                    popupMenu.show();
+                }
+            });
+//            AudioManager audioManager = (AudioManager) holder.itemView.getContext().getSystemService(Context.AUDIO_SERVICE);
+            /*mHolder.ic_volume_.setOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.M)
+                @SuppressLint("UseCompatLoadingForDrawables")
+                @Override
+                public void onClick(View view) {
+                    mHolder.videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+                        @Override
+                        public void onPrepared(MediaPlayer mp) {
+                            mp.setVolume(0, 0);
+                        }
+                    });
+                    if (!isMute) {
+//                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_off));
+//                        audioManager.adjustVolume(AudioManager.ADJUST_MUTE, AudioManager.FLAG_SHOW_UI);
+//                        isMute = true;
+                    } else {
+//                        mHolder.videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+//                            @Override
+//                            public void onPrepared(MediaPlayer mp) {
+//                                mp.setVolume(0, 100);
+//                            }
+//                        });
+//                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_up));
+//                        isMute = false;
+//                        audioManager.adjustVolume(AudioManager.ADJUST_UNMUTE, AudioManager.FLAG_SHOW_UI);
+
+                    }
+                }
+            });*/
+
+            holder.image_adv.setImageDrawable(holder.itemView.getContext().getDrawable(R.drawable.logo));
+//            mHolder.videoView.setVideoURI(Uri.parse("android.resource://" + mHolder.itemView.getContext().getPackageName() + "/" + R.drawable.logo));
+
+            holder.videoView.start();
+
+            // create an object of media controller class
+//            MediaController mediaControls = new MediaController(mHolder.itemView.getContext());
+//            mediaControls.setAnchorView(mHolder.simpleVideoView);
+
+            // set the media controller for video view
+//            mHolder.simpleVideoView.setMediaController(mediaControls);
+        } else {
+            holder._ads_.setVisibility(View.GONE);
+            holder.videoView.setVisibility(View.GONE);
+            holder.image_adv.setVisibility(View.GONE);
+        }
     }
 
     @Override
@@ -76,7 +188,10 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
         private ImageView callType;
         private ImageButton btnCall;
         private HidelyImageView imgSelected;
-
+        private View _ads_;
+        private VideoView videoView;
+        private ImageView ic_option_;
+        private ImageView image_adv;
 
         public PhoneCallHolder(View itemView) {
             super(itemView);
@@ -86,6 +201,10 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
             callType = itemView.findViewById(R.id.call_type);
             btnCall = itemView.findViewById(R.id.btn_call);
             imgSelected = itemView.findViewById(R.id.img_selected);
+            _ads_ = itemView.findViewById(R.id._ads_);
+            videoView = _ads_.findViewById(R.id.video_adv);
+            ic_option_ = _ads_.findViewById(R.id.ic_option_);
+            image_adv = _ads_.findViewById(R.id.image_adv);
         }
 
         public void bind(final FireCall fireCall) {
@@ -135,6 +254,8 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
                         onPhoneCallClick.onIconButtonClick(view, fireCall);
                 }
             });
+
+
 
 
         }

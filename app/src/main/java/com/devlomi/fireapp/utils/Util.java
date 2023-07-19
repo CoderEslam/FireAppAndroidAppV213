@@ -13,6 +13,7 @@ import android.view.View;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.IOException;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
@@ -103,7 +104,11 @@ public class Util {
             e.printStackTrace();
             return 0;
         } finally {
-            retriever.release();
+            try {
+                retriever.release();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
 

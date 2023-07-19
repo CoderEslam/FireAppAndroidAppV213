@@ -6,7 +6,6 @@
     android:layout_gravity="center_horizontal"
     android:background="#F19898">
 
-
     <ImageView
         android:id="@+id/image_adv"
         android:layout_width="match_parent"
@@ -29,18 +28,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-    <androidx.media3.ui.PlayerView
-        android:id="@+id/player_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:show_buffering="when_playing"
-        app:show_shuffle_button="true" />
-
-    <ImageView
+    <!--<ImageView
         android:id="@+id/ic_volume_"
         android:layout_width="20dp"
         android:layout_height="20dp"
@@ -48,7 +36,7 @@
         android:layout_marginBottom="8dp"
         android:src="@drawable/ic_volume_up"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />-->
 
     <ImageView
         android:id="@+id/ic_option_"
