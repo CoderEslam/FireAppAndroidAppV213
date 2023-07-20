@@ -1,0 +1,178 @@
+package com.devlomi.fireapp.views.videoView.fallback.audio
+
+import androidx.annotation.IntRange
+import androidx.media3.common.*
+import androidx.media3.exoplayer.drm.DrmSessionManagerProvider
+import androidx.media3.exoplayer.source.TrackGroupArray
+import com.devlomi.fireapp.views.videoView.core.audio.AudioPlayerApi
+import com.devlomi.fireapp.views.videoView.core.audio.MediaItem
+import com.devlomi.fireapp.views.videoView.nmp.config.PlayerConfig
+import com.devlomi.fireapp.views.videoView.nmp.manager.window.WindowInfo
+import com.devlomi.fireapp.views.videoView.core.ListenerMux
+import com.devlomi.fireapp.views.videoView.core.renderer.RendererType
+import com.devlomi.fireapp.views.videoView.fallback.FallbackMediaPlayer
+import com.devlomi.fireapp.views.videoView.fallback.FallbackMediaPlayerImpl
+
+/**
+ * A simple [AudioPlayerApi] implementation that uses the fallback (system) MediaPlayer
+ * to add integration with the [ListenerMux] and to mitigate state errors.
+ */
+class NativeAudioPlayer(private val config: PlayerConfig) : AudioPlayerApi {
+  private val mediaPlayer: FallbackMediaPlayer by lazy {
+    FallbackMediaPlayerImpl(config.context).apply {
+      setAudioAttributes(getAudioAttributes(C.USAGE_MEDIA, C.AUDIO_CONTENT_TYPE_MUSIC))
+    }
+  }
+
+  private var _listenerMux: ListenerMux? = null
+
+  override val bufferedPercent = mediaPlayer.bufferedPercent
+
+  override var volume: Float
+    get() = mediaPlayer.volume
+    set(value) {
+      mediaPlayer.volume = value
+    }
+
+  override val playerConfig: PlayerConfig
+    get() = config
+
+  override val isPlaying: Boolean
+    get() = mediaPlayer.playing
+
+  override val duration: Long
+    get() = mediaPlayer.duration
+
+  override val currentPosition: Long
+    get() = mediaPlayer.currentPosition
+
+  override val windowInfo: WindowInfo?
+    get() = null
+
+  override val timeline: Timeline
+    get() = mediaPlayer.timeline
+
+  override val audioSessionId: Int
+    get() = mediaPlayer.audioSessionId
+
+  override val playbackSpeed: Float
+    get() = mediaPlayer.playbackSpeed
+
+  override val playbackPitch: Float
+    get() = mediaPlayer.playbackPitch
+
+  override val availableTracks: Map<RendererType, TrackGroupArray>?
+    get() = null
+
+  override var drmSessionManagerProvider: DrmSessionManagerProvider?
+    get() = null
+    set(_) {}
+
+  override fun setMedia(mediaItem: MediaItem?) {
+    mediaPlayer.setMedia(mediaItem?.uri)
+
+    //Makes sure the listeners get the onPrepared callback
+    _listenerMux?.setNotifiedPrepared(false)
+    _listenerMux?.setNotifiedCompleted(false)
+  }
+
+  override fun reset() {
+    mediaPlayer.reset()
+  }
+
+  override fun seekTo(@IntRange(from = 0) milliseconds: Long) {
+    mediaPlayer.seekTo(milliseconds)
+  }
+
+  override fun start() {
+    mediaPlayer.start()
+    _listenerMux?.setNotifiedCompleted(false)
+  }
+
+  override fun pause() {
+    mediaPlayer.pause()
+  }
+
+  override fun stop() {
+    mediaPlayer.stop()
+  }
+
+  override fun restart(): Boolean {
+    if (!mediaPlayer.restart()) {
+      return false
+    }
+
+    //Makes sure the listeners get the onPrepared callback
+    _listenerMux?.setNotifiedPrepared(false)
+    _listenerMux?.setNotifiedCompleted(false)
+
+    return true
+  }
+
+  override fun release() {
+    mediaPlayer.release()
+  }
+
+  override fun setPlaybackSpeed(speed: Float): Boolean {
+    mediaPlayer.playbackSpeed = speed
+    return true
+  }
+
+  override fun setPlaybackPitch(pitch: Float): Boolean {
+    mediaPlayer.playbackPitch = pitch
+    return true
+  }
+
+  override fun setAudioAttributes(attributes: AudioAttributes) {
+    mediaPlayer.setAudioAttributes(attributes)
+  }
+
+  override fun setWakeLevel(levelAndFlags: Int) {
+    mediaPlayer.setWakeLevel(levelAndFlags)
+  }
+
+  override fun trackSelectionAvailable(): Boolean {
+    return false
+  }
+
+  override fun setTrackSelectionParameters(parameters: TrackSelectionParameters) {
+    // Not supported
+  }
+
+  override fun setSelectedTrack(type: RendererType, groupIndex: Int, trackIndex: Int) {
+    // Not supported
+  }
+
+  override fun getSelectedTrackIndex(type: RendererType, groupIndex: Int): Int {
+    return -1
+  }
+
+  override fun clearSelectedTracks(type: RendererType) {
+    // Not supported
+  }
+
+  override fun setRendererEnabled(type: RendererType, enabled: Boolean) {
+    // Not supported
+  }
+
+  override fun isRendererEnabled(type: RendererType): Boolean {
+    return false
+  }
+
+  override fun setListenerMux(listenerMux: ListenerMux) {
+    _listenerMux = listenerMux
+    mediaPlayer.setListener(listenerMux)
+  }
+
+  override fun setRepeatMode(@Player.RepeatMode repeatMode: Int) {
+    // Purposefully left blank
+  }
+
+  @Suppress("SameParameterValue")
+  private fun getAudioAttributes(@C.AudioUsage usage: Int, @C.AudioContentType contentType: Int): AudioAttributes {
+    return AudioAttributes.Builder()
+      .setUsage(usage)
+      .setContentType(contentType)
+      .build()
+  }
+}

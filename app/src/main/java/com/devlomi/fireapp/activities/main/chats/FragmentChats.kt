@@ -76,7 +76,6 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
 
     private lateinit var cld: ConnectionLiveData
 
-
     private val isHasMutedItem: Boolean
         get() {
             val selectedItems = selectedChats
@@ -450,7 +449,6 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
 
     private fun checkNetworkConnection() {
         cld = ConnectionLiveData(requireActivity().application)
-
         cld.observe(viewLifecycleOwner) { isConnected ->
             if (isConnected) {
                 RetrofitInstance.api.getAds(token = TOKEN).clone()

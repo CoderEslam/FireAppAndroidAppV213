@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: androidx.media3:media3-datasource-okhttp:1.0.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/5c3b8fb97205e383f245b4f4b3053fd4/transformed/jetified-media3-datasource-okhttp-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/5c3b8fb97205e383f245b4f4b3053fd4/transformed/jetified-media3-datasource-okhttp-1.0.1/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/androidx.media3/media3-datasource-okhttp/1.0.1/f7796b0ea7720b6e34738a648ae8c1ac80e81142/media3-datasource-okhttp-1.0.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

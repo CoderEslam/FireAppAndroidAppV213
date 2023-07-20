@@ -32,33 +32,147 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="583057fa-3e82-494a-8561-5f2f1c716ec7" name="Default Changelist" comment="FireApp">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_experimental_1_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media3_media3_common_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media3_media3_database_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media3_media3_datasource_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media3_media3_datasource_okhttp_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media3_media3_decoder_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media3_media3_exoplayer_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media3_media3_exoplayer_dash_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media3_media3_exoplayer_hls_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media3_media3_extractor_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media3_media3_ui_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_6_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_2_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_bjoernpetersen_m3u_parser_1_3_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_4_9_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_okio_okio_2_8_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_android_extensions_runtime_1_6_21.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_6_21.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_6_21.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_5_31.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_5_31.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk8_1_6_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_slf4j_slf4j_api_1_8_0_beta4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/libs/library-release.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/AudioPlayer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/AnalyticsDelegate.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/ListenerMux.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/audio/AudioPlayerApi.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/audio/ExoAudioPlayer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/audio/MediaItem.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/listener/CaptionListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/listener/ExoPlayerListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/listener/MetadataListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/listener/VideoSizeListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/renderer/PlayerRendererFactory.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/renderer/RendererType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/renderer/provider/AudioRenderProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/renderer/provider/CaptionRenderProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/renderer/provider/MetadataRenderProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/renderer/provider/RenderProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/renderer/provider/VideoRenderProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/source/MediaSourceProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/source/builder/DashMediaSourceBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/source/builder/DefaultMediaSourceBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/source/builder/HlsMediaSourceBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/source/builder/MediaSourceBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/source/builder/SsMediaSourceBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/source/data/DataSourceFactoryProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/source/data/DefaultDataSourceFactoryProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/state/PlaybackState.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/state/PlaybackStateListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/video/ExoVideoPlayer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/video/VideoPlayerApi.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/video/layout/AspectRatioLayout.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/video/scale/MatrixManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/video/scale/ScaleType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/video/surface/BaseSurfaceEnvelope.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/video/surface/SurfaceEnvelope.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/video/surface/SurfaceViewSurfaceEnvelope.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/core/video/surface/TextureViewSurfaceEnvelope.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/fallback/FallbackMediaPlayer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/fallback/FallbackMediaPlayerImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/fallback/FallbackTimeline.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/fallback/audio/NativeAudioPlayer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/fallback/exception/NativeMediaPlaybackException.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/fallback/video/NativeVideoPlayer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/listener/OnBufferUpdateListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/listener/OnCompletionListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/listener/OnErrorListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/listener/OnPreparedListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/listener/OnSeekCompletionListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/listener/OnTimelineChangedListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/listener/OnVideoSizeChangedListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/DelegatedRenderListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/ExoMediaPlayer.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/ExoMediaPlayerImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/config/DefaultPlayerConfigProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/config/PlayerConfig.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/config/PlayerConfigBuilder.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/config/PlayerConfigProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/manager/StateStore.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/manager/UserAgentProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/manager/WakeManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/manager/track/RendererTrackInfo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/manager/track/TrackManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/nmp/manager/window/WindowInfo.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/listener/VideoControlsButtonListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/listener/VideoControlsSeekListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/listener/VideoControlsVisibilityListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/widget/VideoView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/widget/attr/VideoViewAttributeParser.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/widget/attr/VideoViewAttributes.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/widget/controls/DefaultVideoControls.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/widget/controls/VideoControls.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/widget/controls/VideoControlsMobile.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/widget/controls/VideoControlsProvider.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/widget/controls/VideoControlsTv.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/unified/AudioPlayerWrapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/unified/VideoViewWrapper.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/unified/ext/PlayerExt.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/util/FallbackManager.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/util/LongExtensions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/util/Repeater.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/util/ResourceExtensions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/util/StopWatch.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/util/UriExtensions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/util/view/DelegatedOnKeyListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/util/view/TvSeekBar.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/videoView/util/view/UnhandledMediaKeyLogger.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/color/exomedia_controls_button_foreground.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/exomedia_controls_button_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/exomedia_ic_fast_forward_white.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/exomedia_ic_fullscreen_white_24dp.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/exomedia_ic_pause_white.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/exomedia_ic_play_arrow_white.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/exomedia_ic_rewind_white.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/exomedia_ic_skip_next_white.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/exomedia_ic_skip_previous_white.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/exomedia_controls_mobile.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/exomedia_controls_tv.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/exomedia_surface_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/exomedia_texture_view.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/exomedia_video_view_layout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.androidTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.unitTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cameraView/FireAppAndroidAppV213.cameraView.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cameraView/FireAppAndroidAppV213.cameraView.androidTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cameraView/FireAppAndroidAppV213.cameraView.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cameraView/FireAppAndroidAppV213.cameraView.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cameraView/FireAppAndroidAppV213.cameraView.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cameraView/FireAppAndroidAppV213.cameraView.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/cameraView/FireAppAndroidAppV213.cameraView.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/cameraView/FireAppAndroidAppV213.cameraView.unitTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireAppAndroidAppV213.imageeditengine.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireAppAndroidAppV213.imageeditengine.androidTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireAppAndroidAppV213.imageeditengine.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireAppAndroidAppV213.imageeditengine.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireAppAndroidAppV213.imageeditengine.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireAppAndroidAppV213.imageeditengine.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireAppAndroidAppV213.imageeditengine.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/imageeditengine/FireAppAndroidAppV213.imageeditengine.unitTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireAppAndroidAppV213.stories-progress-view.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireAppAndroidAppV213.stories-progress-view.androidTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireAppAndroidAppV213.stories-progress-view.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireAppAndroidAppV213.stories-progress-view.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireAppAndroidAppV213.stories-progress-view.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireAppAndroidAppV213.stories-progress-view.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireAppAndroidAppV213.stories-progress-view.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/stories-progress-view/FireAppAndroidAppV213.stories-progress-view.unitTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/calls/CallsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/calls/CallsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/chats/ChatsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/chats/ChatsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/chats/FragmentChats.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/chats/FragmentChats.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/status/StatusFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/status/StatusFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/CallsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/CallsAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/placespicker/PlacesWebService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/placespicker/PlacesWebService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/Util.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/Util.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/lavafab/Parent.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/views/lavafab/Parent.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/ConnectionLiveData.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/ConnectionLiveData.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_status.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_status.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_adv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_adv.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/row_call.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/row_call.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/attrs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +182,7 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[9ec70f68]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -168,6 +282,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.3.1/45a346a05e7ff27a01c59452379c5939cbb53c03/appcompat-1.3.1-sources.jar!/androidx/appcompat/widget/Toolbar.java_SELECTED" value="Toolbar" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/androidx.media3/media3-ui/1.0.1/58dfb74ccf699d45f4868a51c389c6fa5e68d2da/media3-ui-1.0.1-sources.jar!/androidx/media3/ui/PlayerView.java_SELECTED" value="PlayerView" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/com.aghajari.emojiview/AXEmojiView/1.3.0/1556815146a34c9468b8605f4dc954560f105ed5/AXEmojiView-1.3.0-sources.jar!/com/aghajari/emojiview/view/AXEmojiTextView.java_SELECTED" value="AXEmojiTextView" />
@@ -181,10 +296,16 @@
     <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/circlemenu/CircleMenu.kt_SELECTED" value="CircleMenu" />
     <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/circlemenu/CircleMenuButton.kt_SELECTED" value="CircleMenuButton" />
     <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/lavafab/LavaFab.kt_SELECTED" value="LavaFab" />
+    <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/videoView/core/video/layout/AspectRatioLayout.kt_SELECTED" value="AspectRatioLayout" />
+    <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/widget/VideoView.kt_SELECTED" value="VideoView" />
+    <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/widget/controls/DefaultVideoControls.kt_SELECTED" value="DefaultVideoControls" />
+    <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/widget/controls/VideoControlsMobile.kt_SELECTED" value="VideoControlsMobile" />
+    <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/videoView/ui/widget/controls/VideoControlsTv.kt_SELECTED" value="VideoControlsTv" />
+    <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/videoView/util/view/TvSeekBar.kt_SELECTED" value="TvSeekBar" />
     <property name="android-custom-viewC:/Users/eslam/StudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/lavafab/LavaFab.kt_SELECTED" value="LavaFab" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../HennaApp" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="PsdUISettings">
@@ -196,11 +317,11 @@
       <recent name="com.devlomi.fireapp.activities" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\menu" />
-      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\navigation" />
-      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\raw" />
-      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\java\com\devlomi\fireapp\Advertisement" />
-      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\drawable-mdpi" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\layout" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\drawable" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\java\com\devlomi\fireapp\views\videoView" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\lib" />
     </key>
     <key name="android.template.-59966983">
       <recent name="com.devlomi.fireapp.activities" />
@@ -810,7 +931,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689714156335</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="FireApp">
+      <created>1689797704734</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1689797704734</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="UnknownFeatures">

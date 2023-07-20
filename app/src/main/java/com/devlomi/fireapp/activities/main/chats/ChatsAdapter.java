@@ -2,12 +2,13 @@ package com.devlomi.fireapp.activities.main.chats;
 
 import static com.devlomi.fireapp.Advertisement.api.Constants.BASE_URL_VIDEO;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -17,9 +18,9 @@ import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
@@ -39,6 +40,8 @@ import com.devlomi.fireapp.utils.MessageTypeHelper;
 import com.devlomi.fireapp.utils.RealmHelper;
 import com.devlomi.fireapp.utils.glide.GlideApp;
 import com.devlomi.fireapp.utils.network.FireManager;
+import com.devlomi.fireapp.views.videoView.listener.OnPreparedListener;
+import com.devlomi.fireapp.views.videoView.ui.widget.VideoView;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -141,7 +144,8 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
         }
 
         if (position == 2) {
-            mHolder.videoView.setOnPreparedListener(mp -> {
+//            mHolder.videoView.setVolume(0);
+/*            mHolder.videoView.setOnPreparedListener(mp -> {
 //                mp.setVolume(0, 0);
                 mp.setLooping(false);
 //                Log.e(TAG, "onBindViewHolder: " + mp.getDuration() + " -> " + mHolder.videoView.getCurrentPosition());
@@ -153,14 +157,15 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
                 public void onCompletion(MediaPlayer mediaPlayer) {
                     Log.e(TAG, "onBindViewHolder: " + mediaPlayer.getDuration() + " -> " + mHolder.videoView.getCurrentPosition());
                 }
-            });
+            });*/
             mHolder._ads_.setVisibility(View.VISIBLE);
             if (adsModelList != null) {
                 try {
                     if (adsModelList.get(0).getMedia().contains(".mp4")) {
                         mHolder.videoView.setVisibility(View.VISIBLE);
-                        mHolder.image_adv.setVisibility(View.GONE);
-                        mHolder.videoView.setVideoURI(Uri.parse(BASE_URL_VIDEO + adsModelList.get(0).getMedia()));
+                        mHolder.videoView.setMedia(Uri.parse(BASE_URL_VIDEO + adsModelList.get(0).getMedia()));
+//                        mHolder.image_adv.setVisibility(View.GONE);
+//                        mHolder.videoView.setVideoURI(Uri.parse(BASE_URL_VIDEO + adsModelList.get(0).getMedia()));
                     } else {
                         mHolder.videoView.setVisibility(View.GONE);
                         mHolder.image_adv.setVisibility(View.VISIBLE);
@@ -192,35 +197,25 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
                 }
             });
 //            AudioManager audioManager = (AudioManager) holder.itemView.getContext().getSystemService(Context.AUDIO_SERVICE);
-            /*mHolder.ic_volume_.setOnClickListener(new View.OnClickListener() {
+            mHolder.ic_volume_.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.M)
                 @SuppressLint("UseCompatLoadingForDrawables")
                 @Override
                 public void onClick(View view) {
-                    mHolder.videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                        @Override
-                        public void onPrepared(MediaPlayer mp) {
-                            mp.setVolume(0, 0);
-                        }
-                    });
                     if (!isMute) {
-//                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_off));
+                        mHolder.videoView.setVolume(0);
+                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_off));
 //                        audioManager.adjustVolume(AudioManager.ADJUST_MUTE, AudioManager.FLAG_SHOW_UI);
-//                        isMute = true;
+                        isMute = true;
                     } else {
-//                        mHolder.videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-//                            @Override
-//                            public void onPrepared(MediaPlayer mp) {
-//                                mp.setVolume(0, 100);
-//                            }
-//                        });
-//                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_up));
-//                        isMute = false;
+                        mHolder.videoView.setVolume(100);
+                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_up));
+                        isMute = false;
 //                        audioManager.adjustVolume(AudioManager.ADJUST_UNMUTE, AudioManager.FLAG_SHOW_UI);
 
                     }
                 }
-            });*/
+            });
 
             mHolder.image_adv.setImageDrawable(mHolder.itemView.getContext().getDrawable(R.drawable.logo));
 //            mHolder.videoView.setVideoURI(Uri.parse("android.resource://" + mHolder.itemView.getContext().getPackageName() + "/" + R.drawable.logo));
@@ -407,7 +402,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
     }
 
 
-    public class ChatsHolder extends RecyclerView.ViewHolder {
+    public class ChatsHolder extends RecyclerView.ViewHolder implements OnPreparedListener {
         private RelativeLayout rlltBody;
         private ImageView userProfile;
 
@@ -416,7 +411,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
         public ImageView imgReadTagChats;
         private View _ads_;
         private VideoView videoView;
-        //        private ImageView ic_volume_;
+        private ImageView ic_volume_;
         private ImageView ic_option_;
         private ImageView image_adv;
 
@@ -431,11 +426,15 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
             countUnreadBadge = itemView.findViewById(R.id.count_unread_badge);
             _ads_ = itemView.findViewById(R.id._ads_);
             videoView = _ads_.findViewById(R.id.video_adv);
-//            ic_volume_ = _ads_.findViewById(R.id.ic_volume_);
+            ic_volume_ = _ads_.findViewById(R.id.ic_volume_);
             ic_option_ = _ads_.findViewById(R.id.ic_option_);
             image_adv = _ads_.findViewById(R.id.image_adv);
             tvTypingStat = itemView.findViewById(R.id.tv_typing_stat);
+        }
 
+        @Override
+        public void onPrepared() {
+            videoView.start();
         }
     }
 

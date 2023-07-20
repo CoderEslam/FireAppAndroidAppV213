@@ -5,34 +5,39 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.activityViewModels
-
-import androidx.recyclerview.widget.LinearLayoutManager
-
 import com.bumptech.glide.Glide
 import com.cjt2325.cameralibrary.ResultCodes
 import com.devlomi.circularstatusview.CircularStatusView
+import com.devlomi.fireapp.Advertisement.api.Constants
+import com.devlomi.fireapp.Advertisement.api.Constants.BASE_URL_VIDEO
+import com.devlomi.fireapp.Advertisement.api.RetrofitInstance
 import com.devlomi.fireapp.R
-import com.devlomi.fireapp.activities.*
+import com.devlomi.fireapp.activities.CameraActivity
+import com.devlomi.fireapp.activities.MyStatusActivity
+import com.devlomi.fireapp.activities.TextStatusActivity
+import com.devlomi.fireapp.activities.ViewStatusActivity
 import com.devlomi.fireapp.activities.main.MainActivity.Companion.CAMERA_REQUEST
 import com.devlomi.fireapp.activities.main.MainActivity.Companion.REQUEST_CODE_TEXT_STATUS
 import com.devlomi.fireapp.activities.main.MainViewModel
+import com.devlomi.fireapp.activities.main.chats.ChatsAdapter
 import com.devlomi.fireapp.activities.main.status.StatusFragmentEvent.OnActivityResultEvent
 import com.devlomi.fireapp.activities.main.status.StatusFragmentEvent.StatusInsertedEvent
 import com.devlomi.fireapp.adapters.StatusAdapter
 import com.devlomi.fireapp.fragments.BaseFragment
 import com.devlomi.fireapp.interfaces.StatusFragmentCallbacks
-import com.devlomi.fireapp.model.realms.TextStatus
+import com.devlomi.fireapp.model.Ads.Ads.AdsList
 import com.devlomi.fireapp.model.constants.MessageType
 import com.devlomi.fireapp.model.constants.StatusType
+import com.devlomi.fireapp.model.realms.TextStatus
 import com.devlomi.fireapp.model.realms.UserStatuses
 import com.devlomi.fireapp.utils.*
 import com.devlomi.fireapp.utils.mediastore.MediaStoreFileInfo
@@ -54,9 +59,13 @@ import com.zhihu.matisse.Matisse
 import io.reactivex.rxkotlin.addTo
 import io.realm.RealmResults
 import kotlinx.android.synthetic.main.fragment_status.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.File
 import java.util.*
 import java.util.concurrent.TimeUnit
+import com.devlomi.fireapp.views.videoView.ui.widget.VideoView
 
 
 class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
@@ -82,7 +91,14 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
     private lateinit var rowStatusContainer: ConstraintLayout
     private lateinit var textStatusFab: ImageView
     private lateinit var fab: FloatingActionButton
+    private lateinit var _ads_: View
+    private lateinit var ic_option_: ImageView
+    private lateinit var image_adv: ImageView
+    private lateinit var videoView: VideoView
 
+    private lateinit var cld: ConnectionLiveData
+
+    private val TAG = "StatusFragment"
 
     private val viewModel: MainViewModel by activityViewModels()
     override fun showAds(): Boolean {
@@ -114,9 +130,14 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
         profileImage = view.findViewById(R.id.profile_image)
         textStatusFab = view.findViewById(R.id.text_status_fab)
         fab = view.findViewById(R.id.open_new_chat_fab)
-
+        _ads_ = view.findViewById(R.id._ads_)
+        videoView = _ads_.findViewById(R.id.video_adv)
+        ic_option_ = _ads_.findViewById(R.id.ic_option_)
+        image_adv = _ads_.findViewById(R.id.image_adv)
         adView = ad_view
         adViewInitialized(adView)
+
+        checkNetworkConnection()
 
         MAX_STATUS_VIDEO_TIME = resources.getInteger(R.integer.max_status_video_time)
         btnViewMyStatuses.setOnClickListener(View.OnClickListener {
@@ -540,6 +561,52 @@ class StatusFragment : BaseFragment(), StatusAdapter.OnClickListener {
             }, { throwable ->
 
             }).addTo(disposables)
+
+        }
+    }
+
+    private fun checkNetworkConnection() {
+        cld = ConnectionLiveData(requireActivity().application)
+
+        cld.observe(viewLifecycleOwner) { isConnected ->
+            if (isConnected) {
+                RetrofitInstance.api.getAds(token = Constants.TOKEN).clone()
+                    .enqueue(object : Callback<AdsList> {
+                        override fun onResponse(call: Call<AdsList>, response: Response<AdsList>) {
+
+                            if (response.body()?.data != null) {
+                                try {
+                                    if (!response.body()?.data!![0].media.contains(".mp4")) {
+                                        _ads_.visibility = View.VISIBLE
+                                        videoView.visibility = View.GONE
+                                        image_adv.visibility = View.VISIBLE
+                                        Glide.with(MyApp.context())
+                                            .load(BASE_URL_VIDEO + response.body()?.data!![0].media)
+                                            .into(image_adv)
+                                    }
+                                } catch (e: NullPointerException) {
+                                    Log.e(TAG, "onBindViewHolder: " + e.message)
+                                    _ads_.visibility = View.GONE
+                                }
+                            } else {
+                                _ads_.visibility = View.GONE
+                            }
+
+
+                        }
+
+                        override fun onFailure(call: Call<AdsList>, t: Throwable) {
+
+                        }
+
+                    })
+            } else {
+                Toast.makeText(
+                    requireActivity(),
+                    getString(R.string.no_internt),
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
 
         }
     }

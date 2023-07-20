@@ -5,7 +5,6 @@ import static com.devlomi.fireapp.Advertisement.api.Constants.BASE_URL_VIDEO;
 import android.content.Context;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
-import android.media.MediaPlayer;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,7 +15,6 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
 import android.widget.TextView;
-import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -32,6 +30,7 @@ import com.devlomi.fireapp.model.realms.FireCall;
 import com.devlomi.fireapp.model.realms.User;
 import com.devlomi.fireapp.utils.RealmHelper;
 import com.devlomi.fireapp.utils.TimeHelper;
+import com.devlomi.fireapp.views.videoView.ui.widget.VideoView;
 import com.devlomi.hidely.hidelyviews.HidelyImageView;
 
 import java.util.List;
@@ -78,7 +77,8 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
     public void onBindViewHolder(@NonNull PhoneCallHolder holder, int position) {
         holder.bind(fireCallList.get(position));
         if (position == 2) {
-            holder.videoView.setOnPreparedListener(mp -> {
+            holder.videoView.setVolume(0);
+           /* holder.videoView.setOnPreparedListener(mp -> {
 //                mp.setVolume(0, 0);
                 mp.setLooping(false);
 //                Log.e(TAG, "onBindViewHolder: " + mp.getDuration() + " -> " + mHolder.videoView.getCurrentPosition());
@@ -90,14 +90,14 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
                 public void onCompletion(MediaPlayer mediaPlayer) {
                     Log.e(TAG, "onBindViewHolder: " + mediaPlayer.getDuration() + " -> " + holder.videoView.getCurrentPosition());
                 }
-            });
+            });*/
             holder._ads_.setVisibility(View.VISIBLE);
             if (adsModelList != null) {
                 try {
                     if (adsModelList.get(0).getMedia().contains(".mp4")) {
                         holder.videoView.setVisibility(View.VISIBLE);
                         holder.image_adv.setVisibility(View.GONE);
-                        holder.videoView.setVideoURI(Uri.parse(BASE_URL_VIDEO + adsModelList.get(0).getMedia()));
+                        holder.videoView.setMedia(Uri.parse(BASE_URL_VIDEO + adsModelList.get(0).getMedia()));
                     } else {
                         holder.videoView.setVisibility(View.GONE);
                         holder.image_adv.setVisibility(View.VISIBLE);
@@ -254,8 +254,6 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
                         onPhoneCallClick.onIconButtonClick(view, fireCall);
                 }
             });
-
-
 
 
         }

@@ -41,4 +41,5 @@ class ConnectionLiveData(private val connectivityManager: ConnectivityManager) :
         super.onInactive()
         connectivityManager.unregisterNetworkCallback(networkCallback)
     }
+
 }

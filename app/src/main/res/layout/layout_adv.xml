@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="220dp"
     android:layout_gravity="center_horizontal"
-    android:background="#F19898">
+    android:background="#00000000">
 
     <ImageView
         android:id="@+id/image_adv"
@@ -16,8 +16,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <com.devlomi.fireapp.views.videoView.ui.widget.VideoView
+        android:id="@+id/video_adv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <VideoView
+    <!--<VideoView
         android:id="@+id/video_adv"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,10 +33,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />-->
 
 
-    <!--<ImageView
+    <ImageView
         android:id="@+id/ic_volume_"
         android:layout_width="20dp"
         android:layout_height="20dp"
@@ -36,7 +44,8 @@
         android:layout_marginBottom="8dp"
         android:src="@drawable/ic_volume_up"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />-->
+        app:layout_constraintStart_toStartOf="parent" />
+
 
     <ImageView
         android:id="@+id/ic_option_"
