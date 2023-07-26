@@ -456,7 +456,7 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
                         override fun onResponse(call: Call<AdsList>, response: Response<AdsList>) {
                             adapter?.let {
                                 it.setAds(
-                                    response.body()?.data
+                                    response.body()?.data?.get(0) ?: null
                                 )
                                 chatList?.let { list -> it.notifyItemRangeChanged(0, list.size) }
                             }
@@ -579,6 +579,10 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
 
             }
         }
+    }
+
+    override fun feedback(title: String?) {
+        Toast.makeText(requireActivity(), title, Toast.LENGTH_LONG).show()
     }
 
     override fun onCreateActionMode(actionMode: ActionMode, menu: Menu): Boolean {

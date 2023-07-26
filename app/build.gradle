@@ -28,11 +28,11 @@ android {
 
         resValue 'string', "group_invite_host", "join.ringring.pro"
 
-        resValue 'string', "update_app_link", "http://devlomi.com/"
+        resValue 'string', "update_app_link", "https://www.perfectsolution.co/"
 
         resValue 'string', "twitter_account", ""
-        resValue 'string', "website", "http://devlomi.com/"
-        resValue 'string', "email", ""
+        resValue 'string', "website", "https://www.perfectsolution.co/"
+        resValue 'string', "email", "eslamghazy858@gmail.com"
 
         resValue 'string', "agora_app_id", "9fe342b9af774820ad4495e9744a2ccc"
 

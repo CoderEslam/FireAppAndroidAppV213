@@ -19,6 +19,7 @@
             android:background="@color/white"
             app:contentInsetLeft="0dp"
             app:contentInsetStart="0dp"
+            android:theme="@style/ThemeOverlay.SearchView"
             app:menu="@menu/menu_chat"
             app:popupTheme="@style/AppTheme.NoActionBar.PopupOverlay">
 
@@ -77,6 +78,7 @@
                     android:layout_centerVertical="true"
                     android:hint="@string/search"
                     app:closeIcon="@null"
+                    style="@style/SearchViewStyle"
                     app:iconifiedByDefault="false"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/down_arrow_search_toolbar"

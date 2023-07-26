@@ -26,21 +26,11 @@ public class FCMRegistrationService extends IntentService {
 
             String newToken = intent.getStringExtra(IntentUtils.FCM_TOKEN);
 
-            new FCMTokenSaver(new FCMTokenSaver.OnComplete() {
-                @Override
-                public void onComplete(boolean isSuccess) {
-                    stopSelf();
-                }
-            }).saveTokenToFirebase(newToken);
+            new FCMTokenSaver(isSuccess -> stopSelf()).saveTokenToFirebase(newToken);
         } else {
             // if token_sent value is false then use method sendTokenToServer to send token to server
             if (!SharedPreferencesManager.isTokenSaved()) {
-                new FCMTokenSaver(new FCMTokenSaver.OnComplete() {
-                    @Override
-                    public void onComplete(boolean isSuccess) {
-                        stopSelf();
-                    }
-                }).saveTokenToFirebase(null);
+                new FCMTokenSaver(isSuccess -> stopSelf()).saveTokenToFirebase(null);
 
 
             }

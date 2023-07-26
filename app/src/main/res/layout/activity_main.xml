@@ -23,6 +23,7 @@
             android:layout_height="56dp"
             android:background="@color/white"
             app:menu="@menu/menu_main"
+            android:theme="@style/ThemeOverlay.SearchView"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             app:title="">
             <!--app:layout_scrollFlags="scroll|snap"-->

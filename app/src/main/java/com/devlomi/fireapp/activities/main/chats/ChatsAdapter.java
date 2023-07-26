@@ -2,13 +2,11 @@ package com.devlomi.fireapp.activities.main.chats;
 
 import static com.devlomi.fireapp.Advertisement.api.Constants.BASE_URL_VIDEO;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.Build;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -20,7 +18,6 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.content.ContextCompat;
 import androidx.core.graphics.drawable.DrawableCompat;
@@ -65,7 +62,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
     //chats list
     List<Chat> originalList;
     List<Chat> chatList;
-    private List<AdsModel> adsModelList;
+    private AdsModel adsModel;
 
     //this list will contain the selected chats when user start selecting chats
     List<Chat> selectedChatForActionMode = new ArrayList<>();
@@ -86,6 +83,8 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
         void onLongClick(Chat chat, View itemView);
 
         void onBind(int pos, Chat chat);
+
+        void feedback(String title);
     }
 
     private CompositeDisposable disposables = new CompositeDisposable();
@@ -102,8 +101,8 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
         chatList = data;
     }
 
-    public void setAds(List<AdsModel> adsModelList) {
-        this.adsModelList = adsModelList;
+    public void setAds(AdsModel adsModel) {
+        this.adsModel = adsModel;
     }
 
     @Override
@@ -129,11 +128,10 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
             mHolder.countUnreadBadge.setVisibility(View.GONE);
 
             int stat = typingStatHashmap.get(chat.getChatId());
-            if (stat == TypingStat.TYPING)
-                if (stat == TypingStat.TYPING)
-                    mHolder.tvTypingStat.setText(context.getResources().getString(R.string.typing));
-                else if (stat == TypingStat.RECORDING)
-                    mHolder.tvTypingStat.setText(context.getResources().getString(R.string.recording));
+            if (stat == TypingStat.TYPING) if (stat == TypingStat.TYPING)
+                mHolder.tvTypingStat.setText(context.getResources().getString(R.string.typing));
+            else if (stat == TypingStat.RECORDING)
+                mHolder.tvTypingStat.setText(context.getResources().getString(R.string.recording));
 
 
             //otherwise set default state and show last message layout
@@ -144,90 +142,11 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
         }
 
         if (position == 2) {
-//            mHolder.videoView.setVolume(0);
-/*            mHolder.videoView.setOnPreparedListener(mp -> {
-//                mp.setVolume(0, 0);
-                mp.setLooping(false);
-//                Log.e(TAG, "onBindViewHolder: " + mp.getDuration() + " -> " + mHolder.videoView.getCurrentPosition());
-//                mp.getDuration();
-//                mHolder.videoView.getCurrentPosition();
-            });
-            mHolder.videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                @Override
-                public void onCompletion(MediaPlayer mediaPlayer) {
-                    Log.e(TAG, "onBindViewHolder: " + mediaPlayer.getDuration() + " -> " + mHolder.videoView.getCurrentPosition());
-                }
-            });*/
-            mHolder._ads_.setVisibility(View.VISIBLE);
-            if (adsModelList != null) {
-                try {
-                    if (adsModelList.get(0).getMedia().contains(".mp4")) {
-                        mHolder.videoView.setVisibility(View.VISIBLE);
-                        mHolder.videoView.setMedia(Uri.parse(BASE_URL_VIDEO + adsModelList.get(0).getMedia()));
-//                        mHolder.image_adv.setVisibility(View.GONE);
-//                        mHolder.videoView.setVideoURI(Uri.parse(BASE_URL_VIDEO + adsModelList.get(0).getMedia()));
-                    } else {
-                        mHolder.videoView.setVisibility(View.GONE);
-                        mHolder.image_adv.setVisibility(View.VISIBLE);
-                        Glide.with(mHolder.itemView.getContext()).load(BASE_URL_VIDEO + adsModelList.get(0).getMedia()).into(mHolder.image_adv);
-                    }
-                } catch (NullPointerException e) {
-                    Log.e(TAG, "onBindViewHolder: " + e.getMessage());
-                    mHolder._ads_.setVisibility(View.GONE);
-                }
-
-            } else {
-                mHolder._ads_.setVisibility(View.GONE);
-            }
-            mHolder.ic_option_.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    PopupMenu popupMenu = new PopupMenu(mHolder.itemView.getContext(), view);
-                    popupMenu.getMenuInflater().inflate(R.menu.menu_adv_option, popupMenu.getMenu());
-                    popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                        @Override
-                        public boolean onMenuItemClick(MenuItem menuItem) {
-                            // Toast message on menu item clicked
-
-                            return true;
-                        }
-                    });
-                    // Showing the popup menu
-                    popupMenu.show();
-                }
-            });
-//            AudioManager audioManager = (AudioManager) holder.itemView.getContext().getSystemService(Context.AUDIO_SERVICE);
-            mHolder.ic_volume_.setOnClickListener(new View.OnClickListener() {
-                @RequiresApi(api = Build.VERSION_CODES.M)
-                @SuppressLint("UseCompatLoadingForDrawables")
-                @Override
-                public void onClick(View view) {
-                    if (!isMute) {
-                        mHolder.videoView.setVolume(0);
-                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_off));
-//                        audioManager.adjustVolume(AudioManager.ADJUST_MUTE, AudioManager.FLAG_SHOW_UI);
-                        isMute = true;
-                    } else {
-                        mHolder.videoView.setVolume(100);
-                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_up));
-                        isMute = false;
-//                        audioManager.adjustVolume(AudioManager.ADJUST_UNMUTE, AudioManager.FLAG_SHOW_UI);
-
-                    }
-                }
-            });
-
-            mHolder.image_adv.setImageDrawable(mHolder.itemView.getContext().getDrawable(R.drawable.logo));
-//            mHolder.videoView.setVideoURI(Uri.parse("android.resource://" + mHolder.itemView.getContext().getPackageName() + "/" + R.drawable.logo));
-
-            mHolder.videoView.start();
-
-            // create an object of media controller class
-//            MediaController mediaControls = new MediaController(mHolder.itemView.getContext());
-//            mediaControls.setAnchorView(mHolder.simpleVideoView);
-
-            // set the media controller for video view
-//            mHolder.simpleVideoView.setMediaController(mediaControls);
+            runAds(mHolder);
+        } else if (position == 1 && chatList.size() == 1) {
+            runAds(mHolder);
+        } else if (position == 0 && chatList.size() == 0) {
+            runAds(mHolder);
         } else {
             mHolder._ads_.setVisibility(View.GONE);
             mHolder.videoView.setVisibility(View.GONE);
@@ -255,11 +174,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
 
             final String content = message.getContent();
             //if it's a TextMessage
-            if (message.isTextMessage()
-                    || message.getType() == MessageType.GROUP_EVENT
-                    || MessageType.isDeletedMessage(message.getType())
-                    || message.isStickerType()
-            ) {
+            if (message.isTextMessage() || message.getType() == MessageType.GROUP_EVENT || MessageType.isDeletedMessage(message.getType()) || message.isStickerType()) {
                 //set group event text
                 if (message.getType() == MessageType.GROUP_EVENT) {
                     String groupEvent = GroupEvent.extractString(message.getContent(), user.getGroup().getUsers());
@@ -310,8 +225,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
         int unreadCount = chat.getUnReadCount();
 
         //if there are unread messages hide the unread count badge
-        if (unreadCount == 0)
-            mHolder.countUnreadBadge.setVisibility(View.GONE);
+        if (unreadCount == 0) mHolder.countUnreadBadge.setVisibility(View.GONE);
             //otherwise show it and set the unread count
         else {
             mHolder.countUnreadBadge.setVisibility(View.VISIBLE);
@@ -440,10 +354,8 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
 
 
     private void loadUserPhoto(final User user, final ImageView imageView) {
-        if (user == null)
-            return;
-        if (user.getUid() == null)
-            return;
+        if (user == null) return;
+        if (user.getUid() == null) return;
 
         if (user.isBroadcastBool())
             imageView.setImageDrawable(AppCompatResources.getDrawable(context, R.drawable.ic_broadcast_with_bg));
@@ -518,5 +430,59 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
 
         notifyDataSetChanged();
     }
+
+    private void runAds(ChatsHolder mHolder) {
+//        mHolder.videoView.setVolume(0);
+        mHolder._ads_.setVisibility(View.VISIBLE);
+//        Log.e(TAG, "runAds: " + adsModel.toString());
+        if (adsModel != null) {
+            try {
+
+                if (adsModel.getMedia().contains(".mp4") || adsModel.getMedia().contains(".mov") || adsModel.getMedia().contains(".wmv") || adsModel.getMedia().contains(".avi") || adsModel.getMedia().contains(".mkv") || adsModel.getMedia().contains(".webm") || adsModel.getMedia().contains(".avchd")) {
+                    mHolder.videoView.setVisibility(View.VISIBLE);
+                    mHolder.videoView.setMedia(Uri.parse(BASE_URL_VIDEO + adsModel.getMedia()));
+                } else {
+                    mHolder.videoView.setVisibility(View.GONE);
+                    mHolder.image_adv.setVisibility(View.VISIBLE);
+                    Glide.with(mHolder.itemView.getContext()).load(BASE_URL_VIDEO + adsModel.getMedia()).into(mHolder.image_adv);
+                }
+            } catch (NullPointerException e) {
+                Log.e(TAG, "onBindViewHolder: " + e.getMessage());
+                mHolder._ads_.setVisibility(View.GONE);
+            }
+
+        } else {
+            mHolder._ads_.setVisibility(View.GONE);
+        }
+        mHolder.ic_option_.setOnClickListener(view -> {
+            PopupMenu popupMenu = new PopupMenu(mHolder.itemView.getContext(), view);
+            popupMenu.getMenuInflater().inflate(R.menu.menu_adv_option, popupMenu.getMenu());
+            popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+                @Override
+                public boolean onMenuItemClick(MenuItem menuItem) {
+                    // Toast message on menu item clicked
+                    callback.feedback(menuItem.getTitle().toString());
+                    return true;
+                }
+            });
+            // Showing the popup menu
+            popupMenu.show();
+        });
+        mHolder.ic_volume_.setOnClickListener(view -> {
+            if (!isMute) {
+                mHolder.videoView.setVolume(0);
+                mHolder.ic_volume_.setImageDrawable(ContextCompat.getDrawable(mHolder.itemView.getContext(), R.drawable.ic_volume_off));
+                isMute = true;
+            } else {
+                mHolder.videoView.setVolume(100);
+                mHolder.ic_volume_.setImageDrawable(ContextCompat.getDrawable(mHolder.itemView.getContext(), R.drawable.ic_volume_up));
+                isMute = false;
+            }
+        });
+        mHolder.image_adv.setImageDrawable(ContextCompat.getDrawable(mHolder.itemView.getContext(), R.drawable.logo));
+
+        mHolder.videoView.start();
+    }
+
 
 }
