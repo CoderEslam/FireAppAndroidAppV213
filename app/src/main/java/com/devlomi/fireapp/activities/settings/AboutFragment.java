@@ -85,6 +85,10 @@ public class AboutFragment extends PreferenceFragmentCompat implements View.OnCl
                 intent = IntentUtils.getOpenWebsiteIntent(MyApp.context().getString(R.string.website));
                 break;
 
+            case R.id.facebook_btn:
+                intent = IntentUtils.getOpenWebsiteIntent(MyApp.context().getString(R.string.facebook_account));
+                break;
+
             case R.id.twitter_btn:
                 intent = IntentUtils.getOpenTwitterIntent();
                 break;

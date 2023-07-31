@@ -307,7 +307,7 @@ public class UserDetailsActivity extends BaseActivity implements ParticipantsAda
             getDisposables().add(getFireManager().fetchUserStatus(userId).subscribe(newStatus -> {
                 if (newStatus != null)
                     tvStatusDetails.setText(newStatus);
-            },throwable -> {
+            }, throwable -> {
 
             }));
     }
@@ -328,7 +328,7 @@ public class UserDetailsActivity extends BaseActivity implements ParticipantsAda
                     e.printStackTrace();
                 }
 
-            },throwable -> {
+            }, throwable -> {
 
             }));
     }
@@ -354,17 +354,14 @@ public class UserDetailsActivity extends BaseActivity implements ParticipantsAda
 
     private void exitGroup() {
         if (!user.getGroup().isActive()) {
-
             AlertDialog.Builder dialog = new AlertDialog.Builder(this);
             dialog.setTitle(R.string.confirmation)
                     .setMessage(R.string.delete_group_confirmation)
                     .setNegativeButton(R.string.cancel, null)
-                    .setPositiveButton(R.string.yes, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialogInterface, int i) {
-                            RealmHelper.getInstance().deleteChat(user.getUid());
-                            startMainActivityAndFinish();
-                        }
+                    .setPositiveButton(R.string.yes, (dialogInterface, i) -> {
+                        RealmHelper.getInstance().deleteChat(user.getUid());
+                        startMainActivityAndFinish();
+                        dialogInterface.dismiss();
                     }).show();
 
         } else {

@@ -24,15 +24,18 @@ android {
         resValue 'string', "app_name", "RingRing"
         resValue 'string', "app_folder_name", "RingRing"
 
-        resValue 'string', "privacy_policy_link", "http://devlomi.com/fireapp_privacy_policy.html"
+        resValue 'string', "privacy_policy_link", "https://www.perfectsolution.co/"//"http://devlomi.com/fireapp_privacy_policy.html"
 
         resValue 'string', "group_invite_host", "join.ringring.pro"
 
         resValue 'string', "update_app_link", "https://www.perfectsolution.co/"
 
-        resValue 'string', "twitter_account", ""
+        resValue 'string', "linkedin_account", "https://www.linkedin.com/company/perfect-solution-llc-/"
+
+        resValue 'string', "facebook_account", "https://www.facebook.com/PSOutsourcing?fref=ts"
+
         resValue 'string', "website", "https://www.perfectsolution.co/"
-        resValue 'string', "email", "eslamghazy858@gmail.com"
+        resValue 'string', "email", "business@perfectsolution.co"
 
         resValue 'string', "agora_app_id", "9fe342b9af774820ad4495e9744a2ccc"
 
@@ -245,6 +248,17 @@ dependencies {
     implementation "androidx.media3:media3-exoplayer-smoothstreaming:1.0.1"
 
 //    implementation(files("libs\\library-release.aar"))
+    implementation(files("libs\\pix-release.aar"))
+
+    // CameraX core library using camera2 implementation
+    implementation("androidx.camera:camera-camera2:1.1.0-alpha05")
+    // CameraX Lifecycle Library
+    implementation("androidx.camera:camera-lifecycle:1.1.0-alpha05")
+    // CameraX View class
+    implementation("androidx.camera:camera-view:1.0.0-alpha25")
+    // If you want to additionally use the CameraX Extensions library
+    implementation("androidx.camera:camera-extensions:1.0.0-alpha25")
+    implementation("com.google.android.material:material:1.4.0")
 
 }
 

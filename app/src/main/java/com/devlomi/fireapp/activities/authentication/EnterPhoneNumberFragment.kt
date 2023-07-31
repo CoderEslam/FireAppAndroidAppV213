@@ -1,34 +1,37 @@
 package com.devlomi.fireapp.activities.authentication
 
 import android.app.AlertDialog
-import android.content.Context
 import android.os.Bundle
-import android.telephony.PhoneNumberUtils
 import android.text.TextUtils
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.inputmethod.EditorInfo
-import androidx.core.os.bundleOf
-import androidx.core.widget.doOnTextChanged
-import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation
 import com.devlomi.fireapp.R
-import com.devlomi.fireapp.utils.IntentUtils
+import com.devlomi.fireapp.api.Constants.PhoneAlreadyTaken
+import com.devlomi.fireapp.api.RetrofitInstance
+import com.devlomi.fireapp.model.API.Login.CallbackLogin
+import com.devlomi.fireapp.model.API.Login.LoginPhone
+import com.devlomi.fireapp.model.Ads.SessionManger.setID
+import com.devlomi.fireapp.model.Ads.SessionManger.setPhone
+import com.devlomi.fireapp.model.Ads.SessionManger.setToken
 import com.devlomi.fireapp.utils.MyApp
 import com.devlomi.fireapp.utils.NetworkHelper
 import com.devlomi.fireapp.utils.Util
-import io.michaelrocks.libphonenumber.android.PhoneNumberUtil
 import kotlinx.android.synthetic.main.fragment_enter_phone_number.*
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class EnterPhoneNumberFragment : BaseAuthFragment() {
 
+    private val TAG = "EnterPhoneNumberFragmen"
 
-
-
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_enter_phone_number, container, false)
     }
@@ -52,21 +55,33 @@ class EnterPhoneNumberFragment : BaseAuthFragment() {
 
 
             AlertDialog.Builder(requireActivity()).apply {
-                val message = requireActivity().getString(R.string.enter_phone_confirmation_message, fullNumber)
+                val message = requireActivity().getString(
+                    R.string.enter_phone_confirmation_message,
+                    fullNumber
+                )
                 setMessage(message)
                 setNegativeButton(R.string.edit, null)
                 setPositiveButton(R.string.ok) { _, _ ->
                     //check for internet connection
                     if (NetworkHelper.isConnected(MyApp.context())) {
 
-                        if (TextUtils.isEmpty(et_number.text) || TextUtils.isDigitsOnly(et_number.text).not())
-                            Util.showSnackbar(requireActivity(), requireActivity().getString(R.string.enter_correct_number))
+                        if (TextUtils.isEmpty(et_number.text) || TextUtils.isDigitsOnly(et_number.text)
+                                .not()
+                        )
+                            Util.showSnackbar(
+                                requireActivity(),
+                                requireActivity().getString(R.string.enter_correct_number)
+                            )
                         else {
-                            callbacks?.verifyPhoneNumber(number,cp.selectedCountryNameCode)
+                            callbacks?.verifyPhoneNumber(number, cp.selectedCountryNameCode)
+                            loginOrRegister(fullNumber)
                         }
 
                     } else {
-                        Util.showSnackbar(requireActivity(), requireActivity().getString(R.string.no_internet_connection))
+                        Util.showSnackbar(
+                            requireActivity(),
+                            requireActivity().getString(R.string.no_internet_connection)
+                        )
                     }
                 }
 
@@ -74,6 +89,58 @@ class EnterPhoneNumberFragment : BaseAuthFragment() {
             }
         }
 
+    }
+
+    private fun loginOrRegister(fullNumber: String) {
+        RetrofitInstance.api.registerWithPhone(LoginPhone(fullNumber, fullNumber))
+            .clone()
+            .enqueue(object : Callback<CallbackLogin> {
+                override fun onResponse(
+                    call: Call<CallbackLogin>,
+                    response: Response<CallbackLogin>
+                ) {
+                    if (response.body() == null) {
+                        RetrofitInstance.api.login(LoginPhone(fullNumber, fullNumber)).clone()
+                            .enqueue(object : Callback<CallbackLogin> {
+                                override fun onResponse(
+                                    call: Call<CallbackLogin>,
+                                    response: Response<CallbackLogin>
+                                ) {
+                                    Log.e(
+                                        TAG,
+                                        "onResponse Callback Login : ${response.body().toString()}"
+                                    )
+                                    try {
+                                        requireActivity().setToken(response.body()!!.user!!.device_token!!)
+                                        requireActivity().setID(response.body()!!.user!!.id.toString())
+                                        requireActivity().setPhone(response.body()!!.user!!.phone!!)
+                                    } catch (e: Exception) {
+                                        Log.e(TAG, "Exception Login: ${e.message}")
+                                    }
+                                }
+
+                                override fun onFailure(call: Call<CallbackLogin>, t: Throwable) {
+                                    Log.e(TAG, "onFailure: ${t.message}")
+                                }
+
+                            })
+                    } else {
+                        Log.e(TAG, "onResponse Callback Register : ${response.body().toString()}")
+                        try {
+                            requireActivity().setToken(response.body()!!.user!!.device_token!!)
+                            requireActivity().setID(response.body()!!.user!!.id.toString())
+                            requireActivity().setPhone(response.body()!!.user!!.phone!!)
+                        } catch (e: Exception) {
+                            Log.e(TAG, "Exception Register: ${e.message}")
+                        }
+                    }
+                }
+
+                override fun onFailure(call: Call<CallbackLogin>, t: Throwable) {
+
+                }
+
+            })
     }
 
     override fun enableViews() {

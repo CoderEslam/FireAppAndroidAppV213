@@ -1,6 +1,6 @@
 package com.devlomi.fireapp.adapters;
 
-import static com.devlomi.fireapp.Advertisement.api.Constants.BASE_URL_VIDEO;
+import static com.devlomi.fireapp.api.Constants.BASE_URL_VIDEO;
 
 import android.content.Context;
 import android.graphics.PorterDuff;

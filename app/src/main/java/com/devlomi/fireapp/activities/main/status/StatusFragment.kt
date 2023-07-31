@@ -17,9 +17,9 @@ import androidx.fragment.app.activityViewModels
 import com.bumptech.glide.Glide
 import com.cjt2325.cameralibrary.ResultCodes
 import com.devlomi.circularstatusview.CircularStatusView
-import com.devlomi.fireapp.Advertisement.api.Constants
-import com.devlomi.fireapp.Advertisement.api.Constants.BASE_URL_VIDEO
-import com.devlomi.fireapp.Advertisement.api.RetrofitInstance
+import com.devlomi.fireapp.api.Constants
+import com.devlomi.fireapp.api.Constants.BASE_URL_VIDEO
+import com.devlomi.fireapp.api.RetrofitInstance
 import com.devlomi.fireapp.R
 import com.devlomi.fireapp.activities.CameraActivity
 import com.devlomi.fireapp.activities.MyStatusActivity

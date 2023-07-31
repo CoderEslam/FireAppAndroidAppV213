@@ -44,6 +44,13 @@
         android:theme="@style/SplashScreenTheme"
         tools:replace="android:supportsRtl,android:allowBackup">
         <activity
+            android:name=".activities.Pix.PixCameraActivity"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".activities.intro.IntroActivity"
             android:exported="true">
             <meta-data
@@ -68,9 +75,7 @@
 
         <uses-library
             android:name="org.apache.http.legacy"
-            android:required="false" />
-
-        <!-- ACTIVITIES -->
+            android:required="false" /> <!-- ACTIVITIES -->
         <activity
             android:name=".activities.setup.EnterUsernameActivity"
             android:screenOrientation="portrait"
@@ -115,11 +120,14 @@
             android:name=".activities.SplashActivity"
             android:exported="true"
             android:screenOrientation="portrait">
-            <!--<intent-filter>
+
+            <!--
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".activities.NewChatActivity"

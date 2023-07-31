@@ -32,22 +32,61 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="583057fa-3e82-494a-8561-5f2f1c716ec7" name="Default Changelist" comment="FireApp">
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_adv_full.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__C.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_camera_camera_camera2_1_1_0_alpha05_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_camera_camera_core_1_1_0_alpha05_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_camera_camera_extensions_1_0_0_alpha25_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_camera_camera_lifecycle_1_1_0_alpha05_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_camera_camera_view_1_0_0_alpha25_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media3_media3_exoplayer_smoothstreaming_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/libs/pix-release.aar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/Pix/PixCameraActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/PixAdapter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/API/Login/CallbackLogin.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/API/Login/LoginPhone.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/API/Login/Pivot.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/API/Login/Role.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/API/Message/CallbackMessage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/API/Message/MessageApi.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/CustomViews.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/UploadRequestBody.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/facebook.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pix_camera.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.androidTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.androidTest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.main.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.unitTest.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/FireAppAndroidAppV213.app.unitTest.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/Advertisement/api/API.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/api/API.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/Advertisement/api/Constants.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/api/Constants.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/Advertisement/api/RetrofitInstance.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/api/RetrofitInstance.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/UserDetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/UserDetailsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/authentication/EnterPhoneNumberFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/authentication/EnterPhoneNumberFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/calls/CallsFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/calls/CallsFragment.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/chats/ChatsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/chats/ChatsAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/chats/FragmentChats.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/chats/FragmentChats.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/services/FCMRegistrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/services/FCMRegistrationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_chat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_chat.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_adv.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_adv.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/menu/menu_chat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/menu/menu_chat.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/messaging/ChatActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/messaging/ChatActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/status/StatusFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/status/StatusFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/settings/AboutFragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/settings/AboutFragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/setup/EnterUsernameViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/setup/EnterUsernameViewModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/CallsAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/CallsAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/extensions/FileExtensions.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/extensions/FileExtensions.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/Ads/ConstantsSession.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/Ads/ConstantsSession.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/Ads/Login/LoginModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/API/Login/LoginModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/Ads/Login/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/API/Login/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/Ads/Login/UserModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/API/Login/UserModel.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/Ads/SessionManger.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/model/Ads/SessionManger.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/IntentUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/IntentUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/network/GroupManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils/network/GroupManager.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/about_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/about_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/content_chat.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/content_chat.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fagment_profile_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fagment_profile_settings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/layout_adv_full.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/layout_adv_full.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/styles.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,9 +150,9 @@
         <option value="resourceFile" />
         <option value="Class" />
         <option value="layoutResourceFile" />
-        <option value="Kotlin Data Class" />
         <option value="Kotlin Object" />
         <option value="Kotlin Enum" />
+        <option value="Kotlin Data Class" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -157,14 +196,17 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.3.1/45a346a05e7ff27a01c59452379c5939cbb53c03/appcompat-1.3.1-sources.jar!/androidx/appcompat/widget/SearchView.java_SELECTED" value="SearchView" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/androidx.appcompat/appcompat/1.3.1/45a346a05e7ff27a01c59452379c5939cbb53c03/appcompat-1.3.1-sources.jar!/androidx/appcompat/widget/Toolbar.java_SELECTED" value="Toolbar" />
+    <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/androidx.camera/camera-view/1.0.0-alpha25/6b3bf91d4346d67ad506d2a7544bcd361c88aadb/camera-view-1.0.0-alpha25-sources.jar!/androidx/camera/view/PreviewView.java_SELECTED" value="PreviewView" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/androidx.media3/media3-ui/1.0.1/58dfb74ccf699d45f4868a51c389c6fa5e68d2da/media3-ui-1.0.1-sources.jar!/androidx/media3/ui/PlayerView.java_SELECTED" value="PlayerView" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/com.aghajari.emojiview/AXEmojiView/1.3.0/1556815146a34c9468b8605f4dc954560f105ed5/AXEmojiView-1.3.0-sources.jar!/com/aghajari/emojiview/view/AXEmojiTextView.java_SELECTED" value="AXEmojiTextView" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/com.devlomi.record-view/record-view/2.0.1/c6fabfed7cb818047a9a5e0c9790852bd588cf11/record-view-2.0.1-sources.jar!/com/devlomi/record_view/RecordView.java_SELECTED" value="RecordView" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/com.devlomi/circularstatusview/1.0.1/5cc217467c0fe441c01c66280caefda84a54003f/circularstatusview-1.0.1-sources.jar!/com/devlomi/circularstatusview/CircularStatusView.java_SELECTED" value="CircularStatusView" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/com.github.abdularis/androidbuttonprogress/1.0.2/560131e8dc6b6ce7e9a9c6306c8c21ca89345869/androidbuttonprogress-1.0.2-sources.jar!/com/github/abdularis/buttonprogress/DownloadButtonProgress.java_SELECTED" value="DownloadButtonProgress" />
     <property name="android-custom-viewC:/Users/eslam/.gradle/caches/modules-2/files-2.1/de.hdodenhof/circleimageview/3.0.0/78063c6cf034f24292cf05a324e69091a58569cf/circleimageview-3.0.0-sources.jar!/de/hdodenhof/circleimageview/CircleImageView.java_SELECTED" value="CircleImageView" />
+    <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/ChatRecyclerView.java_SELECTED" value="ChatRecyclerView" />
     <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/DevlomiSeekbar.java_SELECTED" value="DevlomiSeekbar" />
     <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/GroupVideoGridLayout.kt_SELECTED" value="CallingGridLayout" />
     <property name="android-custom-viewC:/Users/eslam/AndroidStudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/OTPEditText.java_SELECTED" value="OTPEditText" />
@@ -181,7 +223,7 @@
     <property name="android-custom-viewC:/Users/eslam/StudioProjects/FireAppAndroidAppV213/app/src/main/java/com/devlomi/fireapp/views/lavafab/LavaFab.kt_SELECTED" value="LavaFab" />
     <property name="cidr.known.project.marker" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/utils" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="PsdUISettings">
@@ -189,47 +231,21 @@
     <option name="LAST_EDITED_BUILD_TYPE" value="release" />
   </component>
   <component name="RecentsManager">
-    <key name="android.template.336355033">
-      <recent name="com.devlomi.fireapp.activities" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\layout" />
-      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res" />
-      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\drawable" />
-      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\java\com\devlomi\fireapp\views\videoView" />
-      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\lib" />
-    </key>
     <key name="android.template.-59966983">
       <recent name="com.devlomi.fireapp.activities" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/calling/model" />
-      <recent name="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/messaging/holders" />
-    </key>
-    <key name="CreateKotlinClassDialog.RecentsKey">
-      <recent name="com.devlomi.fireapp.events" />
-      <recent name="com.devlomi.fireapp.utils.biometricks" />
-    </key>
     <key name="android.template.288741494">
       <recent name="com.devlomi.fireapp.activities" />
-    </key>
-    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="com.devlomi.fireapp.activities.intro" />
-      <recent name="com.devlomi.fireapp.utils.mediastore" />
-      <recent name="com.devlomi.fireapp.utils.ethree" />
-      <recent name="com.devlomi.fireapp.activities.calling.model" />
-      <recent name="com.devlomi.fireapp.activities.calling.event" />
     </key>
     <key name="android.template.-1850509451">
       <recent name="com.devlomi.fireapp.activities.setup" />
     </key>
     <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
-      <recent name="com.devlomi.fireapp.Advertisement.api" />
+      <recent name="com.devlomi.fireapp.adapters" />
       <recent name="com.devlomi.fireapp.utils" />
+      <recent name="com.devlomi.fireapp.Advertisement.api" />
       <recent name="com.devlomi.fireapp.utils.enc" />
       <recent name="com.devlomi.fireapp" />
-      <recent name="com.devlomi.fireapp.adapters.messaging.holders" />
     </key>
     <key name="android.template.1113037942">
       <recent name="com.devlomi.fireapp.activities.settings" />
@@ -243,6 +259,35 @@
       <recent name="com.devlomi.fireapp.activities" />
       <recent name="com.devlomi.fireapp.services" />
       <recent name="com.devlomi.fireapp" />
+    </key>
+    <key name="android.template.336355033">
+      <recent name="com.devlomi.fireapp.activities" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\java\com\devlomi\fireapp\utils" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\libs" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\layout" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res" />
+      <recent name="C:\Users\eslam\AndroidStudioProjects\FireAppAndroidAppV213\app\src\main\res\drawable" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/calling/model" />
+      <recent name="$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/adapters/messaging/holders" />
+    </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="com.devlomi.fireapp.events" />
+      <recent name="com.devlomi.fireapp.utils.biometricks" />
+    </key>
+    <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="com.devlomi.fireapp.model.API.Login" />
+      <recent name="com.devlomi.fireapp.activities.intro" />
+      <recent name="com.devlomi.fireapp.utils.mediastore" />
+      <recent name="com.devlomi.fireapp.utils.ethree" />
+      <recent name="com.devlomi.fireapp.activities.calling.model" />
+    </key>
+    <key name="android.template.1133158098">
+      <recent name="com.devlomi.fireapp.activities.Pix" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -828,7 +873,14 @@
       <option name="project" value="LOCAL" />
       <updated>1689896676369</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="FireApp">
+      <created>1690396257344</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1690396257344</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -1061,7 +1113,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/com/devlomi/fireapp/activities/main/messaging/ChatActivity.java</url>
-          <line>2593</line>
+          <line>2618</line>
           <option name="timeStamp" value="81" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="java-line">

@@ -1,6 +1,6 @@
 package com.devlomi.fireapp.activities.main.chats;
 
-import static com.devlomi.fireapp.Advertisement.api.Constants.BASE_URL_VIDEO;
+import static com.devlomi.fireapp.api.Constants.BASE_URL_VIDEO;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -239,6 +239,10 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
             public void onClick(View view) {
                 if (callback != null) {
                     callback.onClick(chat, holder.itemView);
+                    ((ChatsHolder) holder).videoView.setVolume(0);
+                    ((ChatsHolder) holder).videoView.stop();
+                    ((ChatsHolder) holder).videoView.release();
+
                 }
             }
         });

@@ -280,8 +280,8 @@ public class IntentUtils {
     }
 
     public static Intent getOpenTwitterIntent() {
-        String twitterId = MyApp.context().getString(R.string.twitter_account);
-        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(twitterId));
+        String linkedinId = MyApp.context().getString(R.string.linkedin_account);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(linkedinId));
         return intent;
     }
 

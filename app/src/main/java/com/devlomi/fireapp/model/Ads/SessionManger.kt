@@ -33,4 +33,32 @@ object SessionManger {
         return sharedPreference.getString(ConstantsSession.NAME.text, "")
     }
 
+    fun Context.setID(v: String) {
+        val sharedPreference =
+            getSharedPreferences(ConstantsSession.ID.text, Context.MODE_PRIVATE)
+        val editor = sharedPreference.edit()
+        editor.putString(ConstantsSession.ID.text, v)
+        editor.apply()
+    }
+
+    fun Context.getID(): String? {
+        val sharedPreference =
+            getSharedPreferences(ConstantsSession.ID.text, Context.MODE_PRIVATE)
+        return sharedPreference.getString(ConstantsSession.ID.text, "")
+    }
+
+    fun Context.setPhone(v: String) {
+        val sharedPreference =
+            getSharedPreferences(ConstantsSession.PHONE.text, Context.MODE_PRIVATE)
+        val editor = sharedPreference.edit()
+        editor.putString(ConstantsSession.PHONE.text, v)
+        editor.apply()
+    }
+
+    fun Context.getPhone(): String? {
+        val sharedPreference =
+            getSharedPreferences(ConstantsSession.PHONE.text, Context.MODE_PRIVATE)
+        return sharedPreference.getString(ConstantsSession.PHONE.text, "")
+    }
+
 }

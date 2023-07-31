@@ -4,6 +4,7 @@ import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.READ_CONTACTS;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static com.devlomi.fireapp.api.Constants.TOKEN;
 import static com.devlomi.fireapp.model.constants.DownloadUploadStat.CANCELLED;
 import static com.devlomi.fireapp.model.constants.DownloadUploadStat.FAILED;
 import static com.devlomi.fireapp.model.constants.DownloadUploadStat.LOADING;
@@ -84,6 +85,7 @@ import com.devlomi.fireapp.activities.CameraActivity;
 import com.devlomi.fireapp.activities.ContactDetailsActivity;
 import com.devlomi.fireapp.activities.ForwardActivity;
 import com.devlomi.fireapp.activities.FullscreenActivity;
+import com.devlomi.fireapp.activities.Pix.PixCameraActivity;
 import com.devlomi.fireapp.activities.SelectContactNumbersActivity;
 import com.devlomi.fireapp.activities.UserDetailsActivity;
 import com.devlomi.fireapp.activities.ViewStatusActivity;
@@ -93,12 +95,15 @@ import com.devlomi.fireapp.adapters.messaging.AudibleInteraction;
 import com.devlomi.fireapp.adapters.messaging.ContactHolderInteraction;
 import com.devlomi.fireapp.adapters.messaging.Interaction;
 import com.devlomi.fireapp.adapters.messaging.MessagingAdapter;
+import com.devlomi.fireapp.api.RetrofitInstance;
 import com.devlomi.fireapp.events.AudioServiceCallbacksEvent;
 import com.devlomi.fireapp.events.GroupActiveStateChanged;
 import com.devlomi.fireapp.events.HeadsetStateChanged;
 import com.devlomi.fireapp.events.OnNetworkComplete;
 import com.devlomi.fireapp.events.UpdateGroupEvent;
 import com.devlomi.fireapp.events.UpdateNetworkProgress;
+import com.devlomi.fireapp.model.API.Message.CallbackMessage;
+import com.devlomi.fireapp.model.API.Message.MessageApi;
 import com.devlomi.fireapp.model.ExpandableContact;
 import com.devlomi.fireapp.model.ProgressData;
 import com.devlomi.fireapp.model.constants.DownloadUploadStat;
@@ -209,10 +214,13 @@ import omrecorder.AudioChunk;
 import omrecorder.OmRecorder;
 import omrecorder.PullTransport;
 import omrecorder.Recorder;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class ChatActivity extends BaseActivity implements GroupTyping.GroupTypingListener, Interaction, ContactHolderInteraction, AudibleInteraction {
-
+    private static final String TAG = "ChatActivity";
     //random numbers just to identify requestCode
     public static final int PICK_MUSIC_REQUEST = 159;
     public static final int CAMERA_REQUEST = 4659;
@@ -735,12 +743,13 @@ public class ChatActivity extends BaseActivity implements GroupTyping.GroupTypin
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (user.isBlocked()) {
+                /*if (user.isBlocked()) {
                     showBlockedDialog();
                     return;
                 }
 
-                startCamera();
+                startCamera();*/
+                startActivity(new Intent(ChatActivity.this, PixCameraActivity.class));
             }
         });
 
@@ -873,7 +882,7 @@ public class ChatActivity extends BaseActivity implements GroupTyping.GroupTypin
             }
         });
 
-        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(),R.drawable.vert_dots));
+        toolbar.setOverflowIcon(ContextCompat.getDrawable(getApplicationContext(), R.drawable.vert_dots));
 
         if (getResources().getBoolean(R.bool.is_interstitial_ad_enabled))
             loadInterstitialAd();
@@ -2580,9 +2589,25 @@ public class ChatActivity extends BaseActivity implements GroupTyping.GroupTypin
         Message message = new MessageCreator.Builder(user, MessageType.SENT_TEXT).quotedMessage(getQuotedMessage()).text(text).build();
         if (message != null) {
             ServiceHelper.startNetworkRequest(this, message.getMessageId(), message.getChatId());
+            sandMassageApi(message);
             etMessage.setText("");
             hideReplyLayout();
         }
+
+    }
+
+    private void sandMassageApi(Message message) {
+        RetrofitInstance.INSTANCE.getApi().messages(TOKEN, new MessageApi(message.getContent(), message.getFromId(), message.getToId(), "2", "2", message.getTimestamp(), MessageType.SENT_TEXT)).clone().enqueue(new Callback<CallbackMessage>() {
+            @Override
+            public void onResponse(@NonNull Call<CallbackMessage> call, @NonNull Response<CallbackMessage> response) {
+                Toast.makeText(ChatActivity.this, response.body().getMessage().toString(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onFailure(Call<CallbackMessage> call, Throwable t) {
+            }
+        });
+
 
     }
 

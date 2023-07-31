@@ -29,10 +29,12 @@ import java.util.*
 
 class GroupManager {
 
-    private fun saveAndCreateNewGroup(groupId: String, groupTitle: String, thumbImg: String,
-                                      photoUrl: String, users: List<User>, adminUids: List<String>,
-                                      timestamp: Long, createdBy: String, onlyAdminsCanPost: Boolean,
-                                      isCreatedByThisUser: Boolean): User {
+    private fun saveAndCreateNewGroup(
+        groupId: String, groupTitle: String, thumbImg: String,
+        photoUrl: String, users: List<User>, adminUids: List<String>,
+        timestamp: Long, createdBy: String, onlyAdminsCanPost: Boolean,
+        isCreatedByThisUser: Boolean
+    ): User {
         val groupUser = User()
         groupUser.userName = groupTitle
         groupUser.photo = photoUrl
@@ -88,112 +90,120 @@ class GroupManager {
     }
 
     fun fetchGroupPartialInfo(groupId: String): Observable<Pair<User, Int>> {
-        return FireConstants.groupsRef.child(groupId).observeSingleValueEvent().flatMapObservable { dataSnapshot ->
-            val info = dataSnapshot.child("info")
-            val usersSnapshot = dataSnapshot.child("users")
+        return FireConstants.groupsRef.child(groupId).observeSingleValueEvent()
+            .flatMapObservable { dataSnapshot ->
+                val info = dataSnapshot.child("info")
+                val usersSnapshot = dataSnapshot.child("users")
 
-            val uids = usersSnapshot.children.take(6).map { it.key }.filterNotNull()
+                val uids = usersSnapshot.children.take(6).map { it.key }.filterNotNull()
 
-            return@flatMapObservable UserByIdsDataSource.getUsersByIds(uids).map { Triple(it, info, usersSnapshot) }
+                return@flatMapObservable UserByIdsDataSource.getUsersByIds(uids)
+                    .map { Triple(it, info, usersSnapshot) }
 
 
-        }.map {
-            val users = it.first
-            val infoSnapshot = it.second
-            val usersSnapshot = it.third
+            }.map {
+                val users = it.first
+                val infoSnapshot = it.second
+                val usersSnapshot = it.third
 
-            //group details
-            val groupName = infoSnapshot.child("name").getValue(String::class.java)
-            val photo = infoSnapshot.child("photo").getValue(String::class.java)
-            val createdBy = infoSnapshot.child("createdBy").getValue(String::class.java)
-            val usersInGroupCount = usersSnapshot.childrenCount.toInt()
+                //group details
+                val groupName = infoSnapshot.child("name").getValue(String::class.java)
+                val photo = infoSnapshot.child("photo").getValue(String::class.java)
+                val createdBy = infoSnapshot.child("createdBy").getValue(String::class.java)
+                val usersInGroupCount = usersSnapshot.childrenCount.toInt()
 
-            //NOTE this is un-managed object(Not saved to Database)
-            val userGroup = User()
-            userGroup.userName = groupName
-            userGroup.photo = photo
-            val group = Group()
-            group.groupId = groupId
-            group.createdByNumber = createdBy
-            val userList = RealmList<User>()
-            userList.addAll(users)
-            group.setUsers(userList)
-            userGroup.group = group
+                //NOTE this is un-managed object(Not saved to Database)
+                val userGroup = User()
+                userGroup.userName = groupName
+                userGroup.photo = photo
+                val group = Group()
+                group.groupId = groupId
+                group.createdByNumber = createdBy
+                val userList = RealmList<User>()
+                userList.addAll(users)
+                group.setUsers(userList)
+                userGroup.group = group
 
-            return@map Pair(userGroup, usersInGroupCount)
-        }
+                return@map Pair(userGroup, usersInGroupCount)
+            }
     }
 
 
     fun fetchAndCreateGroup(groupId: String): Observable<User> {
 
-        return RxFirebaseDatabase.observeSingleValueEvent(FireConstants.groupsRef.child(groupId)).toObservable()
-                .flatMap { snapshot ->
+        return RxFirebaseDatabase.observeSingleValueEvent(FireConstants.groupsRef.child(groupId))
+            .toObservable()
+            .flatMap { snapshot ->
 
-                    val usersSnapshot = snapshot.child("users")
-
-
-                    val usersUids = usersSnapshot.children.map { it }.map { it.key!! }
+                val usersSnapshot = snapshot.child("users")
 
 
-
-                    return@flatMap UserByIdsDataSource.getUsersByIds(usersUids).map { Pair(it, snapshot) }
-
-                }.map {
-                    val users = it.first
-                    val snapshot = it.second
-                    val info = snapshot.child("info")
-                    val usersSnapshot = snapshot.child("users")
+                val usersUids = usersSnapshot.children.map { it }.map { it.key!! }
 
 
-                    val groupName = info.child("name").value as? String ?: ""
-                    val photo = info.child("photo").value as? String ?: ""
-                    val thumbImg = info.child("thumbImg").value as? String ?: ""
-                    val createdBy = info.child("createdBy").value as? String ?: ""
-                    val createdAtTimestamp = info.child("timestamp").value as? Long ?: 0
-                    val onlyAdminsCanPost = info.child("onlyAdminsCanPost").value as? Boolean
-                            ?: false
 
-                    var adminUids = mutableListOf<String>()
-                    for (snapshot in usersSnapshot.children) {
-                        val isAdmin = snapshot.value as? Boolean
-                        isAdmin?.let {
-                            adminUids.add(snapshot.key!!)
-                        }
+                return@flatMap UserByIdsDataSource.getUsersByIds(usersUids)
+                    .map { Pair(it, snapshot) }
 
+            }.map {
+                val users = it.first
+                val snapshot = it.second
+                val info = snapshot.child("info")
+                val usersSnapshot = snapshot.child("users")
+
+
+                val groupName = info.child("name").value as? String ?: ""
+                val photo = info.child("photo").value as? String ?: ""
+                val thumbImg = info.child("thumbImg").value as? String ?: ""
+                val createdBy = info.child("createdBy").value as? String ?: ""
+                val createdAtTimestamp = info.child("timestamp").value as? Long ?: 0
+                val onlyAdminsCanPost = info.child("onlyAdminsCanPost").value as? Boolean
+                    ?: false
+
+                var adminUids = mutableListOf<String>()
+                for (snapshot in usersSnapshot.children) {
+                    val isAdmin = snapshot.value as? Boolean
+                    isAdmin?.let {
+                        adminUids.add(snapshot.key!!)
                     }
-                    return@map saveAndCreateNewGroup(groupId, groupName, thumbImg,
-                            photo, users!!, adminUids, createdAtTimestamp, createdBy,
-                            onlyAdminsCanPost, false)
 
-                }.flatMap { groupUser ->
-                    return@flatMap FirebaseMessaging.getInstance().subscribeToTopicRx(groupId).andThen(Observable.just(groupUser))
-                }.flatMap { groupUser ->
-                    val query = FireConstants.groupsEventsRef.child(groupId).limitToLast(10)
-
-                    return@flatMap RxFirebaseDatabase.observeSingleValueEvent(query).toObservable().map { Pair(it, groupUser) }
-                }.map {
-                    val snapshot = it.first
-                    val groupUser = it.second
-                    if (snapshot.exists()) {
-                        for (snap in snapshot.children) {
-
-
-                            val groupEvent = snap.getValue<GroupEvent>()
-                            groupEvent?.let { groupEventNotNullable ->
-                                //if it's a creation event
-                                if (groupEventNotNullable.contextStart == groupEventNotNullable.contextEnd) {
-                                    groupEvent.eventType = GROUP_CREATION
-                                    groupEvent.contextEnd = "null"
-                                }
-                                groupEvent.createGroupEvent(groupUser, groupEvent.eventId)
-
-                            }
-                        }
-
-                    }
-                    return@map groupUser
                 }
+                return@map saveAndCreateNewGroup(
+                    groupId, groupName, thumbImg,
+                    photo, users!!, adminUids, createdAtTimestamp, createdBy,
+                    onlyAdminsCanPost, false
+                )
+
+            }.flatMap { groupUser ->
+                return@flatMap FirebaseMessaging.getInstance().subscribeToTopicRx(groupId)
+                    .andThen(Observable.just(groupUser))
+            }.flatMap { groupUser ->
+                val query = FireConstants.groupsEventsRef.child(groupId).limitToLast(10)
+
+                return@flatMap RxFirebaseDatabase.observeSingleValueEvent(query).toObservable()
+                    .map { Pair(it, groupUser) }
+            }.map {
+                val snapshot = it.first
+                val groupUser = it.second
+                if (snapshot.exists()) {
+                    for (snap in snapshot.children) {
+
+
+                        val groupEvent = snap.getValue<GroupEvent>()
+                        groupEvent?.let { groupEventNotNullable ->
+                            //if it's a creation event
+                            if (groupEventNotNullable.contextStart == groupEventNotNullable.contextEnd) {
+                                groupEvent.eventType = GROUP_CREATION
+                                groupEvent.contextEnd = "null"
+                            }
+                            groupEvent.createGroupEvent(groupUser, groupEvent.eventId)
+
+                        }
+                    }
+
+                }
+                return@map groupUser
+            }
     }
 
     fun createNewGroup(groupTitle: String, users: List<User>): Single<User> {
@@ -204,14 +214,16 @@ class GroupManager {
         return RxFirebaseDatabase.observeSingleValueEvent(ref).flatMap { snapshot ->
             val photo = snapshot.value as String
             val referenceFromUrl = FirebaseStorage.getInstance().getReferenceFromUrl(photo)
-            return@flatMap RxFirebaseStorage.getFile(referenceFromUrl, photoFile).toMaybe().map { Pair(it, photo) }
+            return@flatMap RxFirebaseStorage.getFile(referenceFromUrl, photoFile).toMaybe()
+                .map { Pair(it, photo) }
         }.map {
             val task = it.first
             val photoUrl = it.second
             var result = mutableMapOf<String, Any>()
             var groupInfo = mutableMapOf<String, Any>()
 
-            val circleBitmap = BitmapUtils.getCircleBitmap(BitmapUtils.convertFileImageToBitmap(photoFile.path))
+            val circleBitmap =
+                BitmapUtils.getCircleBitmap(BitmapUtils.convertFileImageToBitmap(photoFile.path))
             val thumbImg = BitmapUtils.decodeImageAsPng(circleBitmap)
 
 
@@ -236,15 +248,18 @@ class GroupManager {
             val map = it.third
 
             val pair = Pair(photoUrl, thumbImg)
-            return@flatMapSingle FireConstants.groupsRef.child(groupId).setValueRx(map).toSingleDefault(it).map { pair }
+            return@flatMapSingle FireConstants.groupsRef.child(groupId).setValueRx(map)
+                .toSingleDefault(it).map { pair }
 
         }.flatMap {
             val photoUrl = it.first
             val thumbImg = it.second
 
-            val groupUser = saveAndCreateNewGroup(groupId, groupTitle, thumbImg, photoUrl, users,
-                    listOf(FireManager.uid), Date().time, FireManager.phoneNumber!!,
-                    false, isCreatedByThisUser = true);
+            val groupUser = saveAndCreateNewGroup(
+                groupId, groupTitle, thumbImg, photoUrl, users,
+                listOf(FireManager.uid), Date().time, FireManager.phoneNumber!!,
+                false, isCreatedByThisUser = true
+            );
 
 
 
@@ -256,38 +271,49 @@ class GroupManager {
 
     fun joinViaGroupLink(groupId: String): Completable {
         return fetchAndCreateGroup(groupId).flatMapCompletable {
-            return@flatMapCompletable RxFirebaseDatabase.setValue(FireConstants.groupsRef.child(groupId).child("users").child(FireManager.uid), false)
+            return@flatMapCompletable RxFirebaseDatabase.setValue(
+                FireConstants.groupsRef.child(
+                    groupId
+                ).child("users").child(FireManager.uid), false
+            )
         }
     }
 
     fun getGroupIdByGroupLink(groupLink: String): Observable<String> {
 
-        return RxFirebaseDatabase.observeSingleValueEvent(FireConstants.groupsLinks.child(groupLink)).toObservable().flatMap { snapshot ->
+        return RxFirebaseDatabase.observeSingleValueEvent(FireConstants.groupsLinks.child(groupLink))
+            .toObservable().flatMap { snapshot ->
 
-            val groupId = snapshot.value as? String
+                val groupId = snapshot.value as? String
 
-            if (groupId != null) {
-                return@flatMap Observable.just(groupId)
+                if (groupId != null) {
+                    return@flatMap Observable.just(groupId)
+                }
+
+                return@flatMap Observable.error<String>(Throwable("Invalid Group Link"))
             }
-
-            return@flatMap Observable.error<String>(Throwable("Invalid Group Link"))
-        }
 
 
     }
 
     fun removeGroupMember(groupId: String, uidOfUserToRemove: String): Completable {
-        return RxFirebaseDatabase.setValue(FireConstants.groupsRef.child(groupId).child("users").child(uidOfUserToRemove), null)
+        return RxFirebaseDatabase.setValue(
+            FireConstants.groupsRef.child(groupId).child("users").child(uidOfUserToRemove), null
+        )
     }
 
     fun addParticipant(groupId: String, selectedUsers: ArrayList<User>): Completable {
         val usersMap = User.toMap(selectedUsers, false)
 
-        return RxFirebaseDatabase.updateChildren(FireConstants.groupsRef.child(groupId).child("users"), usersMap)
+        return RxFirebaseDatabase.updateChildren(
+            FireConstants.groupsRef.child(groupId).child("users"), usersMap
+        )
     }
 
     fun changeGroupName(groupTitle: String, groupId: String): Completable {
-        return RxFirebaseDatabase.setValue(FireConstants.groupsRef.child(groupId).child("info").child("name"), groupTitle).doOnComplete {
+        return RxFirebaseDatabase.setValue(
+            FireConstants.groupsRef.child(groupId).child("info").child("name"), groupTitle
+        ).doOnComplete {
             RealmHelper.getInstance().changeGroupName(groupId, groupTitle)
         }
     }
@@ -309,7 +335,8 @@ class GroupManager {
             val updateMap: MutableMap<String, Any> = HashMap()
 
             //generate circle bitmap
-            val circleBitmap = BitmapUtils.getCircleBitmap(BitmapUtils.convertFileImageToBitmap(imagePath))
+            val circleBitmap =
+                BitmapUtils.getCircleBitmap(BitmapUtils.convertFileImageToBitmap(imagePath))
             //decode the image as base64 string
             val decodedImage = BitmapUtils.decodeImageAsPng(circleBitmap)
 
@@ -319,14 +346,20 @@ class GroupManager {
             updateMap["thumbImg"] = decodedImage
 
             //save them in firebase database using one request
-            return@flatMapCompletable RxFirebaseDatabase.updateChildren(FireConstants.groupsRef.child(groupId).child("info"), updateMap)
+            return@flatMapCompletable RxFirebaseDatabase.updateChildren(
+                FireConstants.groupsRef.child(
+                    groupId
+                ).child("info"), updateMap
+            )
         }
     }
 
     fun exitGroup(groupId: String, uid: String): Completable {
 
         return FirebaseMessaging.getInstance().unsubscribeFromTopicRx(groupId).andThen(
-                RxFirebaseDatabase.setValue(FireConstants.groupsRef.child(groupId).child("users").child(uid), null)
+            RxFirebaseDatabase.setValue(
+                FireConstants.groupsRef.child(groupId).child("users").child(uid), null
+            )
         )
 
     }
@@ -334,52 +367,69 @@ class GroupManager {
     //this will update group info if something is changed,whether it's users change or group info change
     fun updateGroup(groupId: String, groupEvent: GroupEvent?): Observable<MutableList<User>> {
 
-        return RxFirebaseDatabase.observeSingleValueEvent(FireConstants.groupsRef.child(groupId)).flatMapObservable { dataSnapshot ->
-            val info = dataSnapshot.child("info")
-            val users = dataSnapshot.child("users")
-            val unfetchedUsers = RealmHelper.getInstance().updateGroup(groupId, info, users)
+        return RxFirebaseDatabase.observeSingleValueEvent(FireConstants.groupsRef.child(groupId))
+            .flatMapObservable { dataSnapshot ->
+                val info = dataSnapshot.child("info")
+                val users = dataSnapshot.child("users")
+                val unfetchedUsers = RealmHelper.getInstance().updateGroup(groupId, info, users)
                     ?: return@flatMapObservable Observable.empty<MutableList<User>>()
 
 
-            if (groupEvent != null) {
+                if (groupEvent != null) {
 
-                //if it is a creation event show whom created this group event
-                val mGroupEvent: GroupEvent = if (groupEvent.contextStart == groupEvent.contextEnd) {
-                    GroupEvent(groupEvent.contextStart, GroupEventTypes.GROUP_CREATION, "null")
-                } else {
-                    GroupEvent(groupEvent.contextStart, groupEvent.eventType, groupEvent.contextEnd)
-                }
-                val group = RealmHelper.getInstance().getUser(groupId)
+                    //if it is a creation event show whom created this group event
+                    val mGroupEvent: GroupEvent =
+                        if (groupEvent.contextStart == groupEvent.contextEnd) {
+                            GroupEvent(
+                                groupEvent.contextStart,
+                                GroupEventTypes.GROUP_CREATION,
+                                "null"
+                            )
+                        } else {
+                            GroupEvent(
+                                groupEvent.contextStart,
+                                groupEvent.eventType,
+                                groupEvent.contextEnd
+                            )
+                        }
+                    val group = RealmHelper.getInstance().getUser(groupId)
                         ?: return@flatMapObservable Observable.empty<MutableList<User>>()
-                mGroupEvent.createGroupEvent(group, mGroupEvent.eventId)
+                    mGroupEvent.createGroupEvent(group, mGroupEvent.eventId)
+                }
+
+                if (unfetchedUsers.isNotEmpty()) {
+
+                    return@flatMapObservable UserByIdsDataSource.getUsersByIds(unfetchedUsers)
+
+
+                } else {
+                    RealmHelper.getInstance().deletePendingGroupCreationJob(groupId)
+                    return@flatMapObservable Observable.empty<MutableList<User>>()
+                }
+            }.doOnNext { users ->
+                for (user in users) {
+                    RealmHelper.getInstance().addUsersToGroup(groupId, user)
+                    RealmHelper.getInstance().deletePendingGroupCreationJob(groupId)
+                }
             }
-
-            if (unfetchedUsers.isNotEmpty()) {
-
-                return@flatMapObservable UserByIdsDataSource.getUsersByIds(unfetchedUsers)
-
-
-            } else {
-                RealmHelper.getInstance().deletePendingGroupCreationJob(groupId)
-                return@flatMapObservable Observable.empty<MutableList<User>>()
-            }
-        }.doOnNext { users ->
-            for (user in users) {
-                RealmHelper.getInstance().addUsersToGroup(groupId, user)
-                RealmHelper.getInstance().deletePendingGroupCreationJob(groupId)
-            }
-        }
     }
 
 
-    fun fetchUserGroups(): Observable<List<User>> {
+    fun fetchUserGroups(): Observable<List<User>>? {
 
-        return RxFirebaseDatabase.observeSingleValueEvent(FireConstants.groupsByUser.child(FireManager.uid)).flatMapObservable { snapshot ->
-            val groupsIds = snapshot.children.map { it.key }
-            val observablesList = groupsIds.map { fetchAndCreateGroup(it!!) }
-            return@flatMapObservable Observable.merge(observablesList).toList().toObservable()
+        try {
+            return RxFirebaseDatabase.observeSingleValueEvent(
+                FireConstants.groupsByUser.child(
+                    FireManager.uid
+                )
+            ).flatMapObservable { snapshot ->
+                val groupsIds = snapshot.children.map { it.key }
+                val observablesList = groupsIds.map { fetchAndCreateGroup(it!!) }
+                return@flatMapObservable Observable.merge(observablesList).toList().toObservable()
+            }
+        } catch (e: NoClassDefFoundError) {
+            return null
         }
-
     }
 
     fun isUserBannedFromGroup(groupId: String, userId: String): Single<Boolean> {

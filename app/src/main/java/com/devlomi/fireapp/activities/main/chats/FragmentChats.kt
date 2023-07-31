@@ -11,8 +11,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.devlomi.fireapp.Advertisement.api.Constants.TOKEN
-import com.devlomi.fireapp.Advertisement.api.RetrofitInstance
+import com.devlomi.fireapp.api.Constants.TOKEN
+import com.devlomi.fireapp.api.RetrofitInstance
 import com.devlomi.fireapp.R
 import com.devlomi.fireapp.activities.NewChatActivity
 import com.devlomi.fireapp.activities.NewGroupActivity

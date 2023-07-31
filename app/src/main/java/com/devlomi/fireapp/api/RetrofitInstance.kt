@@ -1,6 +1,6 @@
-package com.devlomi.fireapp.Advertisement.api
+package com.devlomi.fireapp.api
 
-import com.devlomi.fireapp.Advertisement.api.Constants.BASE_URL
+import com.devlomi.fireapp.api.Constants.BASE_URL
 import com.google.gson.GsonBuilder
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

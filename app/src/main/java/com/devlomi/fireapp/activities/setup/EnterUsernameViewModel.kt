@@ -1,5 +1,6 @@
 package com.devlomi.fireapp.activities.setup
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -12,7 +13,7 @@ import io.reactivex.Observable
 import kotlinx.coroutines.launch
 
 class EnterUsernameViewModel : ViewModel() {
-
+    private val TAG = "EnterUsernameViewModel"
     private val _loadUserImage = MutableLiveData<String>()
     val loadUserImageLiveData: LiveData<String>
         get() = _loadUserImage
@@ -20,15 +21,19 @@ class EnterUsernameViewModel : ViewModel() {
     fun fetchUserImage() {
 
         viewModelScope.launch {
+            try {
+                val snapshot = FireConstants.usersRef.child(FireManager.uid)
+                    .toDeffered().await()
 
-            val snapshot = FireConstants.usersRef.child(FireManager.uid)
-                .toDeffered().await()
+                val photoUrl = snapshot.child("photo").value as? String?
 
-            val photoUrl = snapshot.child("photo").value as? String?
-
-            if (photoUrl != null) {
-                _loadUserImage.value = photoUrl
+                if (photoUrl != null) {
+                    _loadUserImage.value = photoUrl
+                }
+            } catch (e: ExceptionInInitializerError) {
+                Log.e(TAG, "fetchUserImage: {e.message}")
             }
+
 
         }
     }

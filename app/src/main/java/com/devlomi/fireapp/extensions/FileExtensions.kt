@@ -1,5 +1,8 @@
 package com.devlomi.fireapp.extensions
 
+import android.content.ContentResolver
+import android.net.Uri
+import android.provider.OpenableColumns
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
@@ -61,3 +64,17 @@ suspend fun File.unzip(unzipLocationRoot: File? = null, listener: (size: Long) -
     }
 
 }
+
+
+fun ContentResolver.getFileName(fileUri: Uri): String {
+    var name = ""
+    val returnCursor = this.query(fileUri, null, null, null, null)
+    if (returnCursor != null) {
+        val nameIndex = returnCursor.getColumnIndex(OpenableColumns.DISPLAY_NAME)
+        returnCursor.moveToFirst()
+        name = returnCursor.getString(nameIndex)
+        returnCursor.close()
+    }
+    return name
+}
+

@@ -10,8 +10,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.devlomi.fireapp.Advertisement.api.Constants
-import com.devlomi.fireapp.Advertisement.api.RetrofitInstance
+import com.devlomi.fireapp.api.Constants
+import com.devlomi.fireapp.api.RetrofitInstance
 import com.devlomi.fireapp.R
 import com.devlomi.fireapp.activities.NewCallActivity
 import com.devlomi.fireapp.activities.main.MainViewModel
