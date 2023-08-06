@@ -42,9 +42,9 @@ android {
         resValue 'integer', "max_group_call_count", "11"
 
         //Maps & Places
-        resValue 'string', "maps_api_key", ""
-        resValue 'string', "foursquare_client_id", ""
-        resValue 'string', "foursquare_client_secret", ""
+        resValue 'string', "maps_api_key", "fsq391Hfe9Dd8cRi3JT+h+ZxpyiVpW/rSvkNp3BG2D7g00k="
+        resValue 'string', "foursquare_client_id", "2YAMU1UGHUUQWM5MAKSAHT1NXHVF2IIB05SWF3OZ5ZADMCP4"
+        resValue 'string', "foursquare_client_secret", "E3LPQ45EWYSHQJVJIVWGU4VGRK5GYRQIUZOFISUNAUY5EITV"
 
         //AdMob Ads Units IDs
         resValue 'string', "banner_unit_id_new_chat", ""

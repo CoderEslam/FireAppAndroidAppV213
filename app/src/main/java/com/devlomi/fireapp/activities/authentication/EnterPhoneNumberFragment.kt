@@ -74,7 +74,8 @@ class EnterPhoneNumberFragment : BaseAuthFragment() {
                             )
                         else {
                             callbacks?.verifyPhoneNumber(number, cp.selectedCountryNameCode)
-                            loginOrRegister(fullNumber)
+                            requireActivity().setPhone(fullNumber)
+
                         }
 
                     } else {
@@ -84,64 +85,12 @@ class EnterPhoneNumberFragment : BaseAuthFragment() {
                         )
                     }
                 }
-
                 show()
             }
         }
 
     }
 
-    private fun loginOrRegister(fullNumber: String) {
-        RetrofitInstance.api.registerWithPhone(LoginPhone(fullNumber, fullNumber))
-            .clone()
-            .enqueue(object : Callback<CallbackLogin> {
-                override fun onResponse(
-                    call: Call<CallbackLogin>,
-                    response: Response<CallbackLogin>
-                ) {
-                    if (response.body() == null) {
-                        RetrofitInstance.api.login(LoginPhone(fullNumber, fullNumber)).clone()
-                            .enqueue(object : Callback<CallbackLogin> {
-                                override fun onResponse(
-                                    call: Call<CallbackLogin>,
-                                    response: Response<CallbackLogin>
-                                ) {
-                                    Log.e(
-                                        TAG,
-                                        "onResponse Callback Login : ${response.body().toString()}"
-                                    )
-                                    try {
-                                        requireActivity().setToken(response.body()!!.user!!.device_token!!)
-                                        requireActivity().setID(response.body()!!.user!!.id.toString())
-                                        requireActivity().setPhone(response.body()!!.user!!.phone!!)
-                                    } catch (e: Exception) {
-                                        Log.e(TAG, "Exception Login: ${e.message}")
-                                    }
-                                }
-
-                                override fun onFailure(call: Call<CallbackLogin>, t: Throwable) {
-                                    Log.e(TAG, "onFailure: ${t.message}")
-                                }
-
-                            })
-                    } else {
-                        Log.e(TAG, "onResponse Callback Register : ${response.body().toString()}")
-                        try {
-                            requireActivity().setToken(response.body()!!.user!!.device_token!!)
-                            requireActivity().setID(response.body()!!.user!!.id.toString())
-                            requireActivity().setPhone(response.body()!!.user!!.phone!!)
-                        } catch (e: Exception) {
-                            Log.e(TAG, "Exception Register: ${e.message}")
-                        }
-                    }
-                }
-
-                override fun onFailure(call: Call<CallbackLogin>, t: Throwable) {
-
-                }
-
-            })
-    }
 
     override fun enableViews() {
         super.enableViews()

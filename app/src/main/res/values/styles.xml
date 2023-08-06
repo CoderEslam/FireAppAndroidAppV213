@@ -15,9 +15,10 @@
     </style>
 
     <style name="AppTheme.NoActionBar">
-        <item name="actionModeBackground">@color/actionModeBackground</item>
+        <item name="actionModeBackground">@color/colorPrimary</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="android:textColor">@color/black_color</item>
         <item name="windowActionModeOverlay">true</item> <!-- This is the important line -->
     </style>
 

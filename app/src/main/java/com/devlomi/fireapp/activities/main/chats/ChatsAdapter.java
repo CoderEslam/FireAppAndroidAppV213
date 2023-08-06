@@ -140,12 +140,8 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
             mHolder.tvLastMessage.setVisibility(View.VISIBLE);
             mHolder.countUnreadBadge.setVisibility(View.VISIBLE);
         }
-
+        Log.e(TAG, "onBindViewHolder: 2");
         if (position == 2) {
-            runAds(mHolder);
-        } else if (position == 1 && chatList.size() == 1) {
-            runAds(mHolder);
-        } else if (position == 0 && chatList.size() == 0) {
             runAds(mHolder);
         } else {
             mHolder._ads_.setVisibility(View.GONE);
@@ -448,6 +444,7 @@ public class ChatsAdapter extends RealmRecyclerViewAdapter<Chat, RecyclerView.Vi
                 } else {
                     mHolder.videoView.setVisibility(View.GONE);
                     mHolder.image_adv.setVisibility(View.VISIBLE);
+                    mHolder.ic_volume_.setVisibility(View.GONE);
                     Glide.with(mHolder.itemView.getContext()).load(BASE_URL_VIDEO + adsModel.getMedia()).into(mHolder.image_adv);
                 }
             } catch (NullPointerException e) {

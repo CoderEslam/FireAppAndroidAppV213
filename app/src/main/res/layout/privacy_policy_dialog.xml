@@ -5,9 +5,9 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/tv_privacy_policy_dialog"
@@ -17,10 +17,11 @@
 
 
         <CheckBox
-            android:text="I Agree"
             android:id="@+id/chb_agree"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/colorPrimary"
+            android:text="@string/i_agree" />
 
     </LinearLayout>
 

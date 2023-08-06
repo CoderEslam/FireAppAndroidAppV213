@@ -12,9 +12,9 @@
         android:id="@+id/rv_chats"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_weight="1"
         android:orientation="vertical"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:layout_weight="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,13 +38,19 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         app:lavaChild="top|left|leftTop"
+        app:lavaDrawShadow="true"
         app:lavaLeftIcon="@drawable/broadcast"
         app:lavaLeftTopIcon="@drawable/group"
         app:lavaParentIcon="@drawable/plus"
         app:lavaParentSize="60dp"
-        app:lavaDrawShadow="true"
         app:lavaTopIcon="@drawable/add_person"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <include
+        android:id="@+id/layout_adv_full"
+        layout="@layout/layout_adv_full"
+        android:elevation="10dp"
+        android:visibility="gone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -21,10 +21,10 @@
         android:id="@+id/tv_fetching_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
+        android:paddingTop="16dp"
         android:text="@string/fetching_group"
         android:textColor="@color/colorBlack"
         android:textSize="18sp"
@@ -46,8 +46,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:background="@color/colorPrimary"
-        android:text="@string/join_group"
         android:backgroundTint="@color/colorPrimary"
+        android:text="@string/join_group"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -121,4 +121,5 @@
         android:layout_height="wrap_content"
         app:constraint_referenced_ids="tv_group_creator,tv_group_name,
         img_group_icon,tv_participants_count,rv,btn_join_group,btn_cancel" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

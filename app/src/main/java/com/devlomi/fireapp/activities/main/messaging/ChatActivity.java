@@ -85,7 +85,6 @@ import com.devlomi.fireapp.activities.CameraActivity;
 import com.devlomi.fireapp.activities.ContactDetailsActivity;
 import com.devlomi.fireapp.activities.ForwardActivity;
 import com.devlomi.fireapp.activities.FullscreenActivity;
-import com.devlomi.fireapp.activities.Pix.PixCameraActivity;
 import com.devlomi.fireapp.activities.SelectContactNumbersActivity;
 import com.devlomi.fireapp.activities.UserDetailsActivity;
 import com.devlomi.fireapp.activities.ViewStatusActivity;
@@ -743,13 +742,13 @@ public class ChatActivity extends BaseActivity implements GroupTyping.GroupTypin
         cameraBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*if (user.isBlocked()) {
+                if (user.isBlocked()) {
                     showBlockedDialog();
                     return;
                 }
 
-                startCamera();*/
-                startActivity(new Intent(ChatActivity.this, PixCameraActivity.class));
+                startCamera();
+//                startActivity(new Intent(ChatActivity.this, PixCameraActivity.class));
             }
         });
 
@@ -2600,7 +2599,7 @@ public class ChatActivity extends BaseActivity implements GroupTyping.GroupTypin
         RetrofitInstance.INSTANCE.getApi().messages(TOKEN, new MessageApi(message.getContent(), message.getFromId(), message.getToId(), "2", "2", message.getTimestamp(), MessageType.SENT_TEXT)).clone().enqueue(new Callback<CallbackMessage>() {
             @Override
             public void onResponse(@NonNull Call<CallbackMessage> call, @NonNull Response<CallbackMessage> response) {
-                Toast.makeText(ChatActivity.this, response.body().getMessage().toString(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(ChatActivity.this, response.body().getMessage().toString(), Toast.LENGTH_SHORT).show();
             }
 
             @Override

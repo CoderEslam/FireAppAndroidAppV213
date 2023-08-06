@@ -11,7 +11,7 @@
     <color name="colorDivider">#979797</color>
     <color name="colorDarkGray">#494949</color>
     <color name="colorGreen">#20b66e</color>
-    <color name="colorBlue">#0080D4</color>
+    <color name="colorBlue">#E2A602</color>
 
     <color name="status_header_text_color">@color/blue</color>
     <color name="bgColor">#FFFFFF</color>
@@ -94,7 +94,7 @@
     <color name="light_blue">#a2d5fa</color>
     <color name="light_gray">#d6d6d6</color>
     <color name="status_seen_color">#5c5c5c</color>
-    <color name="status_not_seen_color">@color/blue</color>
+    <color name="status_not_seen_color">@color/colorPrimary</color>
 
     <color name="quoted_sent_quoted_color">@color/colorGreen</color>
     <color name="quoted_sent_text_color">@color/colorGreen</color>
@@ -109,7 +109,7 @@
     <color name="chats_background">@android:color/transparent</color>
     <color name="otp_text_color">#142F5E</color>
     <color name="otp_line_color">@color/colorPrimaryDark</color>
-    <color name="calling_activity_bg">@color/blue</color>
+    <color name="calling_activity_bg">@color/colorPrimary</color>
     <color name="nearby_places_bg">#F1F1F1</color>
     <color name="splash_bg">@color/bgColor</color>
     <color name="default_inactive_shape_color">#e5e5e5</color>

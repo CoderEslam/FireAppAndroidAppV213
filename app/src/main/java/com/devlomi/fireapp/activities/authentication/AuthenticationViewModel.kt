@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.devlomi.fireapp.R
 import com.devlomi.fireapp.extensions.await
+import com.devlomi.fireapp.model.API.Login.LoginPhone
 import com.devlomi.fireapp.model.constants.EncryptionType
 import com.devlomi.fireapp.utils.enc.ethree.EthreeInstance
 import com.devlomi.fireapp.utils.IntentUtils
@@ -36,6 +37,9 @@ class AuthenticationViewModel : ViewModel() {
 
     private var resendToken: PhoneAuthProvider.ForceResendingToken? = null
 
+    private val _register = MutableLiveData<String>()
+    val register: LiveData<String> get() = _register
+
 
     private val _showLoading = MutableLiveData<Boolean>()
     val showLoading: LiveData<Boolean> get() = _showLoading
@@ -46,8 +50,7 @@ class AuthenticationViewModel : ViewModel() {
     private val _goToAuthActivity = MutableLiveData<Unit>()
     val goToAuthActivity: LiveData<Unit> get() = _goToAuthActivity
 
-    private val _verify =
-        MutableLiveData<Pair<String, PhoneAuthProvider.OnVerificationStateChangedCallbacks>>()
+    private val _verify = MutableLiveData<Pair<String, PhoneAuthProvider.OnVerificationStateChangedCallbacks>>()
     val verify: LiveData<Pair<String, PhoneAuthProvider.OnVerificationStateChangedCallbacks>> get() = _verify
 
     private val _goToEnterVerifyPhoneFragment = MutableLiveData<Bundle>()
@@ -104,7 +107,7 @@ class AuthenticationViewModel : ViewModel() {
                 val authResult = auth.signInWithCredential(credential).await()
                 val uid = authResult.user!!.uid
                 FireManager().saveDeviceId(uid)
-
+                _register.value = uid
                 SharedPreferencesManager.setDeviceIdSaved(true)
 
 

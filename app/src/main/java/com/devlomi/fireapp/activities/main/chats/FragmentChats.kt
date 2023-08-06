@@ -3,26 +3,34 @@ package com.devlomi.fireapp.activities.main.chats
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
+import android.content.pm.ActivityInfo
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.ImageView
+import android.widget.PopupMenu
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.devlomi.fireapp.api.Constants.TOKEN
-import com.devlomi.fireapp.api.RetrofitInstance
+import com.bumptech.glide.Glide
 import com.devlomi.fireapp.R
 import com.devlomi.fireapp.activities.NewChatActivity
 import com.devlomi.fireapp.activities.NewGroupActivity
-import com.devlomi.fireapp.activities.main.messaging.ChatActivity
 import com.devlomi.fireapp.activities.ProfilePhotoDialog
 import com.devlomi.fireapp.activities.main.MainViewModel
 import com.devlomi.fireapp.activities.main.chats.ChatsAdapter.ChatsHolder
+import com.devlomi.fireapp.activities.main.messaging.ChatActivity
+import com.devlomi.fireapp.api.Constants.BASE_URL_VIDEO
+import com.devlomi.fireapp.api.Constants.TOKEN
+import com.devlomi.fireapp.api.RetrofitInstance
 import com.devlomi.fireapp.fragments.BaseFragment
 import com.devlomi.fireapp.interfaces.FragmentCallback
 import com.devlomi.fireapp.model.Ads.Ads.AdsList
+import com.devlomi.fireapp.model.Ads.Ads.AdsModel
 import com.devlomi.fireapp.model.constants.GroupEventTypes
 import com.devlomi.fireapp.model.constants.MessageStat
 import com.devlomi.fireapp.model.constants.MessageType
@@ -37,6 +45,7 @@ import com.devlomi.fireapp.utils.network.FireManager
 import com.devlomi.fireapp.utils.network.GroupManager
 import com.devlomi.fireapp.views.lavafab.Child
 import com.devlomi.fireapp.views.lavafab.LavaFab
+import com.devlomi.fireapp.views.videoView.ui.widget.VideoView
 import com.google.android.gms.ads.AdView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -47,7 +56,7 @@ import io.realm.RealmResults
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import kotlin.collections.ArrayList
+import java.util.Random
 
 class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
     ChatsAdapter.ChatsAdapterCallback {
@@ -65,7 +74,7 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
     override var adView: AdView? = null
     private var callback: FragmentCallback? = null
     private var actionMenu: Menu? = null
-
+    private val TAG = "FragmentChats"
     private val mainViewModel: MainViewModel by activityViewModels()
     private val viewModel: ChatsFragmentViewModel by activityViewModels()
     var actionMode: ActionMode? = null
@@ -115,9 +124,7 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
     }
 
     private fun areAllOfChatsGroups(): Boolean {
-
         var b = false
-
         val selectedItems = selectedChats
         for (chat in selectedItems) {
             val user = chat.user
@@ -127,7 +134,6 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
                 return false
             }
         }
-
         return b
 
     }
@@ -139,7 +145,6 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
     ): View? {
         val view = inflater.inflate(R.layout.fragment_chats, container, false)
         init(view)
-
         return view
     }
 
@@ -459,6 +464,11 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
                                     response.body()?.data?.get(0) ?: null
                                 )
                                 chatList?.let { list -> it.notifyItemRangeChanged(0, list.size) }
+                                if (Random().nextInt(100) == 50) {
+                                    response.body()?.data?.get(0)?.let {
+                                        runAds(requireView(), it)
+                                    }
+                                }
                             }
                         }
 
@@ -478,6 +488,7 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
 
         }
     }
+
 
     override fun onClick(chat: Chat, view: View) {
 //        if isInAction mode then select or remove the clicked chat from selectedActionList
@@ -687,4 +698,80 @@ class FragmentChats : BaseFragment(), GroupTypingListener, ActionMode.Callback,
         adapter?.onDestroy()
     }
 
+    private fun runAds(view: View, adsModel: AdsModel?) {
+        requireActivity().requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE;
+        val _ads_: View? = view.findViewById(R.id.layout_adv_full)
+        val videoView: VideoView? = _ads_?.findViewById(R.id.video_adv)
+        val ic_volume_: ImageView? = _ads_?.findViewById(R.id.ic_volume_)
+        val ic_option_: ImageView? = _ads_?.findViewById(R.id.ic_option_)
+        val image_adv: ImageView? = _ads_?.findViewById(R.id.image_adv)
+        var isMute = false
+        _ads_?.visibility = View.VISIBLE
+        //        Log.e(TAG, "runAds: " + adsModel.toString());
+        if (adsModel != null) {
+            try {
+                if (adsModel.media.contains(".mp4") || adsModel.media.contains(".mov") || adsModel.media.contains(
+                        ".wmv"
+                    ) || adsModel.media.contains(".avi") || adsModel.media.contains(".mkv") || adsModel.media.contains(
+                        ".webm"
+                    ) || adsModel.media.contains(".avchd")
+                ) {
+                    videoView?.visibility = View.VISIBLE
+                    videoView?.setMedia(Uri.parse(BASE_URL_VIDEO + adsModel.media))
+                } else {
+                    videoView?.visibility = View.GONE
+                    image_adv?.visibility = View.VISIBLE
+                    ic_volume_?.visibility = View.GONE
+                    if (image_adv != null) {
+                        Glide.with(requireActivity()).load(BASE_URL_VIDEO + adsModel.media)
+                            .into(image_adv)
+                    }
+                }
+            } catch (e: NullPointerException) {
+                Log.e(TAG, "onBindViewHolder: " + e.message)
+                _ads_?.visibility = View.GONE
+            }
+        } else {
+            _ads_?.visibility = View.GONE
+        }
+        ic_option_?.setOnClickListener { view: View? ->
+            val popupMenu =
+                PopupMenu(requireActivity(), view)
+            popupMenu.menuInflater.inflate(R.menu.menu_adv_option, popupMenu.menu)
+            popupMenu.setOnMenuItemClickListener { menuItem -> // Toast message on menu item clicked
+
+                return@setOnMenuItemClickListener true
+            }
+            // Showing the popup menu
+            popupMenu.show()
+        }
+        ic_volume_?.setOnClickListener { view: View? ->
+            if (!isMute) {
+                videoView?.volume = 0f
+                ic_volume_.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireActivity(),
+                        R.drawable.ic_volume_off
+                    )
+                )
+                isMute = true
+            } else {
+                videoView?.volume = 100f
+                ic_volume_.setImageDrawable(
+                    ContextCompat.getDrawable(
+                        requireActivity(),
+                        R.drawable.ic_volume_up
+                    )
+                )
+                isMute = false
+            }
+        }
+        image_adv?.setImageDrawable(
+            ContextCompat.getDrawable(
+                requireActivity(),
+                R.drawable.logo
+            )
+        )
+        videoView?.start()
+    }
 }

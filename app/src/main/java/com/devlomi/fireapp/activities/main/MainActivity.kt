@@ -3,6 +3,7 @@ package com.devlomi.fireapp.activities.main
 import android.Manifest.permission.CAMERA
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
@@ -169,10 +170,13 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
             val itemId: Int = item.itemId
             if (itemId == R.id.message) {
                 selectedFragment = FragmentChats()
+                requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
             } else if (itemId == R.id.status) {
                 selectedFragment = StatusFragment()
+                requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
             } else if (itemId == R.id.calls) {
                 selectedFragment = CallsFragment()
+                requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
             }
             if (selectedFragment != null) {
                 supportFragmentManager.beginTransaction()
@@ -204,6 +208,7 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
         ignoreBatteryDialog?.dismiss()
         super.goingToUpdateActivity()
     }
+
     override fun onResume() {
         super.onResume()
         options = getOptionsByPreference(this)
@@ -331,8 +336,6 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
     }
 
 
-
-
     override fun fetchStatuses() {
         users?.let {
             viewModel.fetchStatuses(it)
@@ -390,7 +393,6 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
     }
-
 
 
     override fun onPause() {
@@ -484,7 +486,6 @@ class MainActivity : BaseActivity(), FabRotationAnimation.RotateAnimationListene
     fun exitSearchMode() {
         isInSearchMode = false
     }
-
 
 
     override fun onRotationAnimationEnd(drawable: Int) {
