@@ -70,7 +70,7 @@
                         android:maxLines="1"
                         android:textColor="@color/blue"
                         android:textStyle="bold"
-                        tools:text="Alphabet" />
+                        tools:text="Home" />
 
 
                     <TextView
@@ -84,7 +84,7 @@
                         android:maxLines="1"
                         android:textColor="@color/text_color_grey"
                         android:textSize="12sp"
-                        tools:text="Silicon Valley" />
+                        tools:text="Location" />
                 </LinearLayout>
 
 
