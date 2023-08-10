@@ -34,7 +34,8 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
             android:layout_weight="1"
             android:paddingStart="8dp"
             android:paddingTop="8dp"
@@ -45,9 +46,9 @@
             android:id="@+id/switch_nearby_places"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
             android:paddingBottom="8dp"
-            app:trackTint="@color/colorPrimary"
-            android:layout_marginRight="8dp" />
+            app:trackTint="@color/colorPrimary" />
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView

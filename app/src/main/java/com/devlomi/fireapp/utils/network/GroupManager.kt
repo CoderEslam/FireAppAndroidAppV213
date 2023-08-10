@@ -102,30 +102,30 @@ class GroupManager {
 
 
             }.map {
-                val users = it.first
-                val infoSnapshot = it.second
-                val usersSnapshot = it.third
+            val users = it.first
+            val infoSnapshot = it.second
+            val usersSnapshot = it.third
 
-                //group details
-                val groupName = infoSnapshot.child("name").getValue(String::class.java)
-                val photo = infoSnapshot.child("photo").getValue(String::class.java)
-                val createdBy = infoSnapshot.child("createdBy").getValue(String::class.java)
-                val usersInGroupCount = usersSnapshot.childrenCount.toInt()
+            //group details
+            val groupName = infoSnapshot.child("name").getValue(String::class.java)
+            val photo = infoSnapshot.child("photo").getValue(String::class.java)
+            val createdBy = infoSnapshot.child("createdBy").getValue(String::class.java)
+            val usersInGroupCount = usersSnapshot.childrenCount.toInt()
 
-                //NOTE this is un-managed object(Not saved to Database)
-                val userGroup = User()
-                userGroup.userName = groupName
-                userGroup.photo = photo
-                val group = Group()
-                group.groupId = groupId
-                group.createdByNumber = createdBy
-                val userList = RealmList<User>()
-                userList.addAll(users)
-                group.setUsers(userList)
-                userGroup.group = group
+            //NOTE this is un-managed object(Not saved to Database)
+            val userGroup = User()
+            userGroup.userName = groupName
+            userGroup.photo = photo
+            val group = Group()
+            group.groupId = groupId
+            group.createdByNumber = createdBy
+            val userList = RealmList<User>()
+            userList.addAll(users)
+            group.setUsers(userList)
+            userGroup.group = group
 
-                return@map Pair(userGroup, usersInGroupCount)
-            }
+            return@map Pair(userGroup, usersInGroupCount)
+        }
     }
 
 
@@ -284,14 +284,14 @@ class GroupManager {
         return RxFirebaseDatabase.observeSingleValueEvent(FireConstants.groupsLinks.child(groupLink))
             .toObservable().flatMap { snapshot ->
 
-                val groupId = snapshot.value as? String
+            val groupId = snapshot.value as? String
 
-                if (groupId != null) {
-                    return@flatMap Observable.just(groupId)
-                }
-
-                return@flatMap Observable.error<String>(Throwable("Invalid Group Link"))
+            if (groupId != null) {
+                return@flatMap Observable.just(groupId)
             }
+
+            return@flatMap Observable.error<String>(Throwable("Invalid Group Link"))
+        }
 
 
     }
@@ -407,29 +407,26 @@ class GroupManager {
                     return@flatMapObservable Observable.empty<MutableList<User>>()
                 }
             }.doOnNext { users ->
-                for (user in users) {
-                    RealmHelper.getInstance().addUsersToGroup(groupId, user)
-                    RealmHelper.getInstance().deletePendingGroupCreationJob(groupId)
-                }
+            for (user in users) {
+                RealmHelper.getInstance().addUsersToGroup(groupId, user)
+                RealmHelper.getInstance().deletePendingGroupCreationJob(groupId)
             }
+        }
     }
 
 
-    fun fetchUserGroups(): Observable<List<User>>? {
+    fun fetchUserGroups(): Observable<List<User>> {
 
-        try {
-            return RxFirebaseDatabase.observeSingleValueEvent(
-                FireConstants.groupsByUser.child(
-                    FireManager.uid
-                )
-            ).flatMapObservable { snapshot ->
-                val groupsIds = snapshot.children.map { it.key }
-                val observablesList = groupsIds.map { fetchAndCreateGroup(it!!) }
-                return@flatMapObservable Observable.merge(observablesList).toList().toObservable()
-            }
-        } catch (e: NoClassDefFoundError) {
-            return null
+        return RxFirebaseDatabase.observeSingleValueEvent(
+            FireConstants.groupsByUser.child(
+                FireManager.uid
+            )
+        ).flatMapObservable { snapshot ->
+            val groupsIds = snapshot.children.map { it.key }
+            val observablesList = groupsIds.map { fetchAndCreateGroup(it!!) }
+            return@flatMapObservable Observable.merge(observablesList).toList().toObservable()
         }
+
     }
 
     fun isUserBannedFromGroup(groupId: String, userId: String): Single<Boolean> {
@@ -438,4 +435,3 @@ class GroupManager {
 
 
 }
-

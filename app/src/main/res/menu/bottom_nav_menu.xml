@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/message"
-        android:icon="@drawable/message"
+        android:icon="@drawable/message_selection"
         android:title="@string/message"
         app:actionViewClass="androidx.appcompat.widget.SearchView"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/status"
-        android:icon="@drawable/status"
+        android:icon="@drawable/status_selection"
         android:title="@string/status"
         app:showAsAction="never" />
 
     <item
         android:id="@+id/calls"
-        android:icon="@drawable/calles"
+        android:icon="@drawable/calls_selection"
         android:title="@string/calls"
         app:showAsAction="never" />
 </menu>

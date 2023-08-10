@@ -3,21 +3,16 @@ package com.cjt2325.cameralibrary;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
-import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
 
+import androidx.annotation.Nullable;
+
 import com.cjt2325.cameralibrary.util.ScreenUtils;
 
-/**
- * =====================================
- * 作    者: 陈嘉桐
- * 版    本：1.1.4
- * 创建日期：2017/4/26
- * 描    述：对焦框
- * =====================================
- */
+
 public class FoucsView extends View {
+
     private int size;
     private int center_x;
     private int center_y;

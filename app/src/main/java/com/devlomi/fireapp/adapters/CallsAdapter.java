@@ -68,8 +68,7 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
     @NonNull
     @Override
     public PhoneCallHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View row = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_call, parent, false);
-        return new PhoneCallHolder(row);
+        return new PhoneCallHolder(LayoutInflater.from(parent.getContext()).inflate(R.layout.row_call, parent, false));
     }
 
 
@@ -127,37 +126,6 @@ public class CallsAdapter extends RealmRecyclerViewAdapter<FireCall, CallsAdapte
                     popupMenu.show();
                 }
             });
-//            AudioManager audioManager = (AudioManager) holder.itemView.getContext().getSystemService(Context.AUDIO_SERVICE);
-            /*mHolder.ic_volume_.setOnClickListener(new View.OnClickListener() {
-                @RequiresApi(api = Build.VERSION_CODES.M)
-                @SuppressLint("UseCompatLoadingForDrawables")
-                @Override
-                public void onClick(View view) {
-                    mHolder.videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-                        @Override
-                        public void onPrepared(MediaPlayer mp) {
-                            mp.setVolume(0, 0);
-                        }
-                    });
-                    if (!isMute) {
-//                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_off));
-//                        audioManager.adjustVolume(AudioManager.ADJUST_MUTE, AudioManager.FLAG_SHOW_UI);
-//                        isMute = true;
-                    } else {
-//                        mHolder.videoView.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
-//                            @Override
-//                            public void onPrepared(MediaPlayer mp) {
-//                                mp.setVolume(0, 100);
-//                            }
-//                        });
-//                        mHolder.ic_volume_.setImageDrawable(mHolder.ic_volume_.getContext().getDrawable(R.drawable.ic_volume_up));
-//                        isMute = false;
-//                        audioManager.adjustVolume(AudioManager.ADJUST_UNMUTE, AudioManager.FLAG_SHOW_UI);
-
-                    }
-                }
-            });*/
-
             holder.image_adv.setImageDrawable(holder.itemView.getContext().getDrawable(R.drawable.logo));
 //            mHolder.videoView.setVideoURI(Uri.parse("android.resource://" + mHolder.itemView.getContext().getPackageName() + "/" + R.drawable.logo));
 

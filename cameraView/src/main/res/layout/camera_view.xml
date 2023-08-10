@@ -32,8 +32,8 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:paddingLeft="20dp"
-        android:paddingRight="20dp"
         android:paddingTop="10dp"
+        android:paddingRight="20dp"
         android:paddingBottom="10dp"
         android:visibility="gone">
 
@@ -59,12 +59,12 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:visibility="gone"
             android:id="@+id/pick_image"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_photo" />
+            android:src="@drawable/ic_photo"
+            android:visibility="gone" />
 
 
         <ImageView
@@ -80,8 +80,6 @@
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
             android:src="@drawable/ic_switch_camera" />
-
-
 
 
     </LinearLayout>

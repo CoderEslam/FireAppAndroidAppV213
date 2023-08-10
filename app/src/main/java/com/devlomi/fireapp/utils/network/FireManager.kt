@@ -15,7 +15,6 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.ServerValue
 import com.google.firebase.database.ktx.getValue
 import com.google.firebase.functions.FirebaseFunctions
-//import com.google.firebase.functions.FirebaseFunctions
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
 import durdinapps.rxfirebase2.RxFirebaseDatabase
@@ -291,9 +290,9 @@ class FireManager {
     fun getServerTime(): Single<Long> {
         return RxFirebaseFunctions.getHttpsCallable(FirebaseFunctions.getInstance(), "getTime")
             .map { task ->
-                Log.e("FirebaseFunction", "FirebaseFunction: $task")
                 return@map task.data as? Long
             }
+
     }
 
 
@@ -325,16 +324,16 @@ class FireManager {
                 }
 
             }.map {
-            imagePath.path
-        }.doOnSuccess {
-            foundPhoto?.let { photo ->
-                RealmHelper.getInstance().updateUserImg(uid, photo, imagePath.path, oldLocalPath)
+                imagePath.path
+            }.doOnSuccess {
+                foundPhoto?.let { photo ->
+                    RealmHelper.getInstance().updateUserImg(uid, photo, imagePath.path, oldLocalPath)
 
+                }
+
+            }.doFinally {
+                imageDownloadProcessIds.remove(uid)
             }
-
-        }.doFinally {
-            imageDownloadProcessIds.remove(uid)
-        }
 
 
     }
@@ -520,8 +519,8 @@ class FireManager {
                         }
                     return@map thumbImg
                 }.doOnSuccess {
-                RealmHelper.getInstance().setLastImageSyncDate(user.uid, Date().time)
-            }
+                    RealmHelper.getInstance().setLastImageSyncDate(user.uid, Date().time)
+                }
         }
 
         @JvmStatic
@@ -537,10 +536,10 @@ class FireManager {
                 .doFinally {
                     imageDownloadProcessIds.remove(uid)
                 }.doOnSuccess {
-                //save user image to realm if it's not the same
-                RealmHelper.getInstance().updateUserImg(uid, photo, imagePath.path, oldLocalPath)
+                    //save user image to realm if it's not the same
+                    RealmHelper.getInstance().updateUserImg(uid, photo, imagePath.path, oldLocalPath)
 
-            }
+                }
 
         }
 
@@ -550,4 +549,3 @@ class FireManager {
 
     }
 }
-

@@ -55,6 +55,7 @@ import io.agora.rtc.RtcEngine
 import io.agora.rtc.video.VideoCanvas
 import io.reactivex.rxkotlin.addTo
 import kotlinx.android.synthetic.main.activity_phone_call.*
+import kotlinx.android.synthetic.main.activity_phone_call_alt.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -69,8 +70,8 @@ class CallingActivity : BaseActivity(), ServiceConnection {
     private lateinit var btnReject: FloatingActionButton
     private lateinit var btnHangup: FloatingActionButton
     private lateinit var btnSpeaker: ImageButton
-    private lateinit var btnMic: ImageButton
-    private lateinit var btnVideo: ImageButton
+    private lateinit var btnMic: ImageView
+    private lateinit var btnVideo: ImageView
     private lateinit var constraint: ConstraintLayout
     private lateinit var btnFlipCamera: ImageButton
     private lateinit var bottomHolder: CardView
@@ -118,7 +119,8 @@ class CallingActivity : BaseActivity(), ServiceConnection {
 
         callDirection = intent.getIntExtra(IntentUtils.CALL_DIRECTION, -1)
         mCallId = intent.getStringExtra(IntentUtils.CALL_ID)
-        action = intent.getIntExtra(IntentUtils.CALL_ACTION_TYPE, IntentUtils.NOTIFICATION_ACTION_NONE)
+        action =
+            intent.getIntExtra(IntentUtils.CALL_ACTION_TYPE, IntentUtils.NOTIFICATION_ACTION_NONE)
 
 
 
@@ -157,14 +159,14 @@ class CallingActivity : BaseActivity(), ServiceConnection {
 
                 } else {
                     fetchUserByUid(uid)
-                            .subscribe({ user ->
-                                if (user != null) {
-                                    RealmHelper.getInstance().updateUserObjectForCall(uid, mCallId)
-                                    tvUsername.text = user.properUserName
-                                }
-                            }, { throwable ->
+                        .subscribe({ user ->
+                            if (user != null) {
+                                RealmHelper.getInstance().updateUserObjectForCall(uid, mCallId)
+                                tvUsername.text = user.properUserName
+                            }
+                        }, { throwable ->
 
-                            }).addTo(disposables)
+                        }).addTo(disposables)
                 }
 
             }
@@ -220,7 +222,10 @@ class CallingActivity : BaseActivity(), ServiceConnection {
             }
         }
 
-        LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver!!, IntentFilter(IntentUtils.ACTION_FINISH_CALLING_ACTIVITY))
+        LocalBroadcastManager.getInstance(this).registerReceiver(
+            broadcastReceiver!!,
+            IntentFilter(IntentUtils.ACTION_FINISH_CALLING_ACTIVITY)
+        )
 
     }
 
@@ -240,37 +245,37 @@ class CallingActivity : BaseActivity(), ServiceConnection {
             MotionEvent.ACTION_DOWN -> {
 
                 dx = view!!.x - event.rawX
-                dy = view!!.getY() - event.rawY;
+                dy = view!!.y - event.rawY;
 
             }
             MotionEvent.ACTION_MOVE -> {
 
-                var x = event.rawX + dx
+                val x = event.rawX + dx
 
                 val y = event.rawY + dy
 
                 if (x < 0 || x > rootWidth - localViewGroupWidth) {
                     if (y >= 0 && y < rootHeight - localViewGroupHeight) {
                         view!!.animate()
-                                .y(y)
-                                .setDuration(0)
-                                .start()
+                            .y(y)
+                            .setDuration(0)
+                            .start()
                     }
 
                 } else if (y > 0 && y > rootHeight - localViewGroupHeight) {
                     if (x >= 0 && x > rootWidth - localViewGroupWidth) {
                         view!!.animate()
-                                .x(x)
-                                .setDuration(0)
-                                .start()
+                            .x(x)
+                            .setDuration(0)
+                            .start()
                     }
 
                 } else {
                     view!!.animate()
-                            .x(x)
-                            .y(y)
-                            .setDuration(0)
-                            .start()
+                        .x(x)
+                        .y(y)
+                        .setDuration(0)
+                        .start()
                 }
 
 
@@ -310,10 +315,22 @@ class CallingActivity : BaseActivity(), ServiceConnection {
 
     private fun getCallTypeText(): String {
         return when (callType) {
-            CallType.VIDEO -> String.format(getString(R.string.fireapp_video_call), getString(R.string.app_name))
-            CallType.CONFERENCE_VIDEO -> String.format(getString(R.string.fireapp_conference_video_call), getString(R.string.app_name))
-            CallType.CONFERENCE_VOICE -> String.format(getString(R.string.fireapp_conference_voice_call), getString(R.string.app_name))
-            else -> String.format(getString(R.string.fireapp_voice_call), getString(R.string.app_name))
+            CallType.VIDEO -> String.format(
+                getString(R.string.fireapp_video_call),
+                getString(R.string.app_name)
+            )
+            CallType.CONFERENCE_VIDEO -> String.format(
+                getString(R.string.fireapp_conference_video_call),
+                getString(R.string.app_name)
+            )
+            CallType.CONFERENCE_VOICE -> String.format(
+                getString(R.string.fireapp_conference_voice_call),
+                getString(R.string.app_name)
+            )
+            else -> String.format(
+                getString(R.string.fireapp_voice_call),
+                getString(R.string.app_name)
+            )
         }
     }
 
@@ -408,7 +425,7 @@ class CallingActivity : BaseActivity(), ServiceConnection {
 
             is CallingViewState.MicMuted -> {
                 val isMicMuted = callingViewState.setMuted
-                setIconBg(btnMic, isMicMuted)
+                setMicOff(btnMic, isMicMuted)
             }
 
             is CallingViewState.SetupRemoteViewForUid -> {
@@ -466,22 +483,22 @@ class CallingActivity : BaseActivity(), ServiceConnection {
 
 
     private fun disableSpeaker() {
-        setIconBg(btnSpeaker, false)
+        setMicOff(btnSpeaker, false)
     }
 
     private fun enableSpeaker() {
-        setIconBg(btnSpeaker, true)
+        setMicOff(btnSpeaker, true)
     }
 
     private fun pauseLocalVideo() {
-        setIconBg(btnVideo, false)
+        setCameraOff(btnVideo, false)
         removeLocalView()
         btnFlipCamera.visibility = View.GONE
         btnSpeaker.visibility = View.VISIBLE
     }
 
     private fun resumeLocalVideo() {
-        setIconBg(btnVideo, true)
+        setCameraOff(btnVideo, true)
         localViewGroup.isVisible = true
         if (localSurfaceView != null && localSurfaceView?.parent == null) {
             localViewGroup.addView(localSurfaceView)
@@ -498,18 +515,21 @@ class CallingActivity : BaseActivity(), ServiceConnection {
         if (!videoOffered) {
             btnVideo.visibility = View.GONE
             btnFlipCamera.visibility = View.GONE
-            val fireAppVoiceCall = String.format(getString(R.string.fireapp_voice_call), getString(R.string.app_name))
+            val fireAppVoiceCall =
+                String.format(getString(R.string.fireapp_voice_call), getString(R.string.app_name))
             tvCallType.text = fireAppVoiceCall
         } else {
             enableSpeaker()
             btnSpeaker.visibility = View.INVISIBLE
-            val fireAppVideoCall = String.format(getString(R.string.fireapp_video_call), getString(R.string.app_name))
+            val fireAppVideoCall =
+                String.format(getString(R.string.fireapp_video_call), getString(R.string.app_name))
             tvCallType.text = fireAppVideoCall
-            setIconBg(btnVideo, true)
+            setCameraOff(btnVideo, true)
         }
     }
 
-    private fun isVideoCall(): Boolean = callType == CallType.VIDEO || callType == CallType.CONFERENCE_VIDEO
+    private fun isVideoCall(): Boolean =
+        callType == CallType.VIDEO || callType == CallType.CONFERENCE_VIDEO
 
 
     //hide or show buttons depending on call direction (incoming,outgoing)
@@ -594,7 +614,7 @@ class CallingActivity : BaseActivity(), ServiceConnection {
         }
 
 
-        setIconBg(btnVideo, true)
+        setCameraOff(btnVideo, true)
         localViewGroup.isVisible = true
         btnFlipCamera.isVisible = true
         btnVideo.isVisible = true
@@ -606,7 +626,6 @@ class CallingActivity : BaseActivity(), ServiceConnection {
         localViewGroup.removeAllViews()
         localViewGroup.isVisible = false
     }
-
 
 
     private fun removeRemoteView(uid: Int) {
@@ -635,28 +654,46 @@ class CallingActivity : BaseActivity(), ServiceConnection {
 
 
     private fun updateUI() {
-
         if (isVideoCall()) {
             btnSpeaker.visibility = View.INVISIBLE
             btnFlipCamera.visibility = View.VISIBLE
             btnVideo.visibility = View.VISIBLE
-
         } else {
             btnSpeaker.visibility = View.VISIBLE
             btnFlipCamera.visibility = View.INVISIBLE
             btnVideo.visibility = View.GONE
-
         }
-
     }
 
 
     //this will change button background when it's active
-    private fun setIconBg(view: View, show: Boolean) {
-        if (show) view.background = ContextCompat.getDrawable(this, R.drawable.active_icon_bg) else view.background = null
+    private fun setMicOff(view: View, show: Boolean) {
+        if (show) (view as ImageView).setImageDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.mic_mute
+            )
+        ) else (view as ImageView).setImageDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.mic_on
+            )
+        )
     }
 
-
+    private fun setCameraOff(view: View, show: Boolean) {
+        if (show) (view as ImageView).setImageDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.camera_video_on
+            )
+        ) else (view as ImageView).setImageDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.camera_video_off
+            )
+        )
+    }
 
 
     //these flags will make the screen turns on whenever a call has come
@@ -669,10 +706,12 @@ class CallingActivity : BaseActivity(), ServiceConnection {
             keyguardManager.requestDismissKeyguard(this, null)
             window.addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
         } else {
-            window.addFlags(WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD or
-                    WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED or
-                    WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON or
-                    WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON)
+            window.addFlags(
+                WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD or
+                        WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED or
+                        WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON or
+                        WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
+            )
         }
     }
 
@@ -686,8 +725,17 @@ class CallingActivity : BaseActivity(), ServiceConnection {
             when (action) {
                 IntentUtils.ACTION_START_NEW_CALL -> {
                     val channel = UUID.randomUUID().toString()
-                    val fireCall = FireCall(FireManager.generateKey(), user, FireCallDirection.OUTGOING, System.currentTimeMillis(), phoneNumber
-                            ?: "", isVideoCall(), callType.value, channel)
+                    val fireCall = FireCall(
+                        FireManager.generateKey(),
+                        user,
+                        FireCallDirection.OUTGOING,
+                        System.currentTimeMillis(),
+                        phoneNumber
+                            ?: "",
+                        isVideoCall(),
+                        callType.value,
+                        channel
+                    )
 
                     setStateEvent(CallingStateEvent.StartCall(fireCall, false))
                 }
@@ -715,7 +763,6 @@ class CallingActivity : BaseActivity(), ServiceConnection {
 
         }
     }
-
 
 
     override fun onServiceDisconnected(componentName: ComponentName) {
@@ -758,7 +805,8 @@ class CallingActivity : BaseActivity(), ServiceConnection {
         surfaceV.setZOrderMediaOverlay(true)
 
 
-        val setupRemoteVideo = rtcEngine()?.setupRemoteVideo(VideoCanvas(surfaceV, VideoCanvas.RENDER_MODE_FILL, uid))
+        val setupRemoteVideo =
+            rtcEngine()?.setupRemoteVideo(VideoCanvas(surfaceV, VideoCanvas.RENDER_MODE_FILL, uid))
 
 
 
@@ -769,6 +817,7 @@ class CallingActivity : BaseActivity(), ServiceConnection {
         remote_view.isVisible = true
 
     }
+
     private fun addRemoteView(uid: Int, surfaceV: SurfaceView) {
         remote_view.addItem(uid, surfaceV)
         btnVideo.visibility = View.VISIBLE

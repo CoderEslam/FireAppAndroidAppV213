@@ -13,15 +13,14 @@
         android:layout_height="wrap_content" />
 
 
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_send_contact_select"
-        android:background="@color/colorPrimary"
-        app:srcCompat="@drawable/ic_send"
-        android:layout_gravity="bottom|right"
-        app:fabSize="normal"
-        android:layout_margin="@dimen/fab_margin"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="@dimen/fab_margin"
+        android:backgroundTint="@color/colorPrimary"
+        app:fabSize="normal"
+        app:srcCompat="@drawable/ic_send" />
 
 </FrameLayout>
