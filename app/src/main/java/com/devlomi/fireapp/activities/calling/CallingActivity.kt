@@ -55,7 +55,6 @@ import io.agora.rtc.RtcEngine
 import io.agora.rtc.video.VideoCanvas
 import io.reactivex.rxkotlin.addTo
 import kotlinx.android.synthetic.main.activity_phone_call.*
-import kotlinx.android.synthetic.main.activity_phone_call_alt.*
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -483,11 +482,11 @@ class CallingActivity : BaseActivity(), ServiceConnection {
 
 
     private fun disableSpeaker() {
-        setMicOff(btnSpeaker, false)
+        setSpeakerOpen(btnSpeaker, false)
     }
 
     private fun enableSpeaker() {
-        setMicOff(btnSpeaker, true)
+        setSpeakerOpen(btnSpeaker, true)
     }
 
     private fun pauseLocalVideo() {
@@ -504,7 +503,7 @@ class CallingActivity : BaseActivity(), ServiceConnection {
             localViewGroup.addView(localSurfaceView)
         }
 
-        btnSpeaker.visibility = View.INVISIBLE
+        btnSpeaker.visibility = View.VISIBLE //INVISIBLE
         btnFlipCamera.visibility = View.VISIBLE
     }
 
@@ -520,7 +519,7 @@ class CallingActivity : BaseActivity(), ServiceConnection {
             tvCallType.text = fireAppVoiceCall
         } else {
             enableSpeaker()
-            btnSpeaker.visibility = View.INVISIBLE
+            btnSpeaker.visibility = View.VISIBLE //INVISIBLE
             val fireAppVideoCall =
                 String.format(getString(R.string.fireapp_video_call), getString(R.string.app_name))
             tvCallType.text = fireAppVideoCall
@@ -618,7 +617,7 @@ class CallingActivity : BaseActivity(), ServiceConnection {
         localViewGroup.isVisible = true
         btnFlipCamera.isVisible = true
         btnVideo.isVisible = true
-        btnSpeaker.visibility = View.INVISIBLE
+        btnSpeaker.visibility = View.VISIBLE //INVISIBLE
     }
 
 
@@ -655,7 +654,7 @@ class CallingActivity : BaseActivity(), ServiceConnection {
 
     private fun updateUI() {
         if (isVideoCall()) {
-            btnSpeaker.visibility = View.INVISIBLE
+            btnSpeaker.visibility = View.VISIBLE //INVISIBLE
             btnFlipCamera.visibility = View.VISIBLE
             btnVideo.visibility = View.VISIBLE
         } else {
@@ -691,6 +690,20 @@ class CallingActivity : BaseActivity(), ServiceConnection {
             ContextCompat.getDrawable(
                 this,
                 R.drawable.camera_video_off
+            )
+        )
+    }
+
+    private fun setSpeakerOpen(view: View, show: Boolean) {
+        if (show) (view as ImageView).setImageDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.ic_volume_up
+            )
+        ) else (view as ImageView).setImageDrawable(
+            ContextCompat.getDrawable(
+                this,
+                R.drawable.ic_speaker_phone
             )
         )
     }

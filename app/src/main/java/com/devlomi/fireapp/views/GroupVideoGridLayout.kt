@@ -16,9 +16,9 @@ import com.devlomi.fireapp.common.extensions.isOdd
 import kotlin.collections.ArrayList
 
 class CallingGridLayout @JvmOverloads constructor(
-        context: Context,
-        attributeSet: AttributeSet? = null,
-        defStyle: Int = -1
+    context: Context,
+    attributeSet: AttributeSet? = null,
+    defStyle: Int = -1
 ) : FrameLayout(context, attributeSet, defStyle) {
 
 
@@ -68,7 +68,7 @@ class CallingGridLayout @JvmOverloads constructor(
                 val viewX = if (it.row == 1) 0f else gridWidth.toFloat()
                 button.x = viewX
                 val viewY =
-                        if (it.column == 1) 0f else (gridHeight.toFloat() * (it.column - 1))
+                    if (it.column == 1) 0f else (gridHeight.toFloat() * (it.column - 1))
                 button.y = viewY
 
                 it.view = button
@@ -124,7 +124,7 @@ class CallingGridLayout @JvmOverloads constructor(
 
     private fun isFirstItemFullWidth(): Boolean = items.firstOrNull()?.fullWidth ?: false
     private fun getPreviousItemOrDefault(index: Int): GridItem =
-            items.getOrNull(index - 1) ?: GridItem(1, null, 1, 1, true)
+        items.getOrNull(index - 1) ?: GridItem(1, null, 1, 1, true)
 
     fun removeAllItems() {
         items.clear()
@@ -134,10 +134,10 @@ class CallingGridLayout @JvmOverloads constructor(
 }
 
 data class GridItem(
-        val id: Int,
-        var view: View? = null,
-        val column: Int,
-        val row: Int,
-        val fullWidth: Boolean = false
+    val id: Int,
+    var view: View? = null,
+    val column: Int,
+    val row: Int,
+    val fullWidth: Boolean = false
 )
 
